@@ -1,0 +1,6 @@
+### Carpetas ###
+node_modules
+.next
+
+### Archivos ###
+yarn.lock
