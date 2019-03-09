@@ -24,7 +24,7 @@ export class Layout extends PureComponent {
           <link rel="stylesheet" type="text/css" href="static/normalize.css" />
         </Head>
         <header>
-          <div className="logo">
+          <div className="logo container">
             <img src="/static/img/logo.jpg" />
           </div>
         </header>

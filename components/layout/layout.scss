@@ -8,3 +8,17 @@ footer {
   height: 100px;
   background-color: #000000;
 }
+
+img {
+  width: 100%;
+}
+
+.logo {
+  width: 300px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1;
+}

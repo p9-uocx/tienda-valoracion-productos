@@ -12,23 +12,31 @@
     "url": "https://github.com/p9-uocx/tienda-valoracion-productos/issues"
   },
   "scripts": {
-    "serve": "next start",
-    "build": "next build",
-    "start": "next"
+    "backend": "nodemon --experimental-modules server",
+    "backend:debug": "nodemon --inspect --experimental-modules server",
+    "frontend:serve": "next start",
+    "frontend:build": "next build",
+    "frontend": "next",
+    "start": "concurrently 'npm run backend' 'npm run frontend'",
+    "start:debug": "concurrently 'npm run backend:debug' 'npm run frontend'"
   },
   "browserslist": [
     "last 2 versions",
     "> 1%"
   ],
   "dependencies": {
-    "@zeit/next-sass": "^1.0.1",
     "next": "^8.0.3",
-    "node-sass": "^4.11.0",
     "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "react-dom": "^16.8.4",
+    "restify": "^8.1.0",
+    "restify-router": "^0.5.1"
   },
   "devDependencies": {
+    "@zeit/next-sass": "^1.0.1",
     "autoprefixer": "^9.4.10",
+    "concurrently": "^4.1.0",
+    "node-sass": "^4.11.0",
+    "nodemon": "^1.18.10",
     "prop-types": "^15.7.2"
   }
 }
