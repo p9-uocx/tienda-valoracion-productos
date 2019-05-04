@@ -10,7 +10,7 @@ export class Layout extends PureComponent {
   };
 
   static defaultProps = {
-    title: 'Tinda Online',
+    title: 'Tienda Online',
   };
 
   static defailt;

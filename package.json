@@ -12,8 +12,8 @@
     "url": "https://github.com/p9-uocx/tienda-valoracion-productos/issues"
   },
   "scripts": {
-    "backend": "nodemon --experimental-modules server",
-    "backend:debug": "nodemon --inspect --experimental-modules server",
+    "backend": "nodemon server",
+    "backend:debug": "nodemon --inspect server",
     "frontend:serve": "next start",
     "frontend:build": "next build",
     "frontend": "next",
