@@ -4,21 +4,50 @@ footer {
   right: 0;
   bottom: 0;
   color: #ffffff;
-
   height: 100px;
   background-color: #000000;
 }
 
-img {
-  width: 100%;
+header {
+  background-color: #445268;
+  padding: 18px 0;
+}
+.header_container {
+  width: 50%;
+  margin: 0 auto;
 }
 
-.logo {
-  width: 300px;
+#logo {
+  vertical-align: middle;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  flex: 1 1;
+.account_container {
+  float: right;
+  color: #ffffff;
+  padding: 10px 0;
+  margin-right: 62px;  
 }
+
+.account_icon {
+  float: left;
+  line-height: 15px;    
+  margin: 0 20px 0 0;  
+}
+
+
+.icons {
+  font-size: 30px;
+  display: inline-block;
+  vertical-align: middle;
+  color: #ffffff;
+}
+
+.text-account {
+  font-size: 13px;
+}
+
+.text-bold {
+  font-weight: 700;
+  font-size: 14px;
+}
+
