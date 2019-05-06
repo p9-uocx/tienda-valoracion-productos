@@ -52,7 +52,7 @@ export default class Index extends PureComponent {
 								<img src="/static/img/slider/img3b.jpg" alt="first Slide" />
 							</Col>
 						</Row>
-						<Row>
+						<Row id="padding-policy-box">
 							<Col className="policy-box">
 								<div className="icon-service">
 									<span className="flaticon-truck"></span>
@@ -60,7 +60,7 @@ export default class Index extends PureComponent {
 
 								<div class="service-content">
 									<div class="info-title">
-										<h4>Free Shipping</h4>
+										<h5>Free Shipping</h5>
 									</div>
 									<div class="sub-title">
 										<span>On Order Over 99€</span>
@@ -74,7 +74,7 @@ export default class Index extends PureComponent {
 
 								<div class="service-content">
 									<div class="info-title">
-										<h3>Guarantee</h3>
+										<h5>Guarantee</h5>
 									</div>
 									<div class="sub-title">
 										<span>30 Days Money Back</span>
@@ -83,36 +83,47 @@ export default class Index extends PureComponent {
 							</Col>
 							<Col className="policy-box">
 								<div className="icon-service">
-									<span className="flaticon-money"></span>
+									<span className="flaticon-money-1"></span>
 								</div>
 
 								<div class="service-content">
 									<div class="info-title">
-										<h3>Guarantee</h3>
+										<h5>Payment On Delivery</h5>
 									</div>
 									<div class="sub-title">
-										<span>30 Days Money Back</span>
+										<span>Cash On Delivery Option</span>
 									</div>
 								</div>
 							</Col>
 							<Col className="policy-box">
 								<div className="icon-service">
-									<span className="flaticon-money"></span>
+									<span className="flaticon-support"></span>
 								</div>
 
 								<div class="service-content">
 									<div class="info-title">
-										<h3>Guarantee</h3>
+										<h5>Online Suport</h5>
 									</div>
 									<div class="sub-title">
-										<span>30 Days Money Back</span>
+										<span>We Have Support 24/7</span>
 									</div>
 								</div>
 							</Col>
 						</Row>
+						<Row id="deal-title">
+							<Col sm="auto">
+								<div>
+									<h3>Deal of the Week</h3>									
+								</div>
+							</Col>
+							<Col id="hr">
+								<hr/>
+							</Col>
+
+						</Row>
 					</Container>
 
-					<h1>Home!!</h1>
+
 					<Link href="/about">
 						<a>about</a>
 					</Link>
