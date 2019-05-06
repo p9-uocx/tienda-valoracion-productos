@@ -9,7 +9,7 @@ export class NavMenu extends PureComponent {
         return (
             <Nav className="nav-text">
                 <Nav.Item className="home">
-                    <Nav.Link href="/">Home</Nav.Link>
+                    <Nav.Link href="/">Home</Nav.Link>                    
                 </Nav.Item>
                 <Nav.Item>
                     <Nav.Link href="/">Bedroom Furniture</Nav.Link>
