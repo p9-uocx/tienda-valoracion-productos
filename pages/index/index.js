@@ -9,13 +9,14 @@ import Carousel from 'react-bootstrap/Carousel';
 
 // Todos los componentes reutilizables sera importados con @Components y despues dentro de los corchetes seleccionar el o los componentes necesarios
 import { Layout } from '@Components';
+import { NavMenu } from '@Components';
 
 // importamos el css especifo de cada componente, esta en SASS
 import './index.scss';
-import { NavMenu } from '../../components/nav';
+
 
 // aqui tienes que exportar el compoente, puede ser una funcion o una clase
-export default class About extends PureComponent {
+export default class Index extends PureComponent {
 	// esto es de next.js, y esta funcion se ejecuta antes de hacer nada. Y vale para traer datos de backEnd por ejejmplo.
 	static async getInitialProps({ req }) {
 		const userAgent = req ? req.headers['user-agent'] : navigator.userAgent;
@@ -33,22 +34,80 @@ export default class About extends PureComponent {
 					<Container>
 						<NavMenu></NavMenu>
 						<Row>
-							<Col sm={8}>
+							<Col sm={9}>
 								<Carousel>
 									<Carousel.Item>
-										<img src="/static/img/slider/slider-1-3.jpg" alt="first Slide"/>
+										<img src="/static/img/slider/slider-1-3.jpg" alt="first Slide" />
 									</Carousel.Item>
 									<Carousel.Item>
-										<img src="/static/img/slider/slider-2-3.jpg" alt="first Slide"/>
+										<img src="/static/img/slider/slider-2-3.jpg" alt="first Slide" />
 									</Carousel.Item>
 									<Carousel.Item>
-										<img src="/static/img/slider/slider3-3.jpg" alt="first Slide"/>
+										<img src="/static/img/slider/slider3-3.jpg" alt="first Slide" />
 									</Carousel.Item>
-								</Carousel>							
+								</Carousel>
 							</Col>
-							<Col sm={1}>
-								<img src="/static/img/slider/img3a.jpg" alt="first Slide"/>
-								<img src="/static/img/slider/img3b.jpg" alt="first Slide"/>
+							<Col sm={3}>
+								<img src="/static/img/slider/img3a.jpg" alt="first Slide" />
+								<img src="/static/img/slider/img3b.jpg" alt="first Slide" />
+							</Col>
+						</Row>
+						<Row>
+							<Col className="policy-box">
+								<div className="icon-service">
+									<span className="flaticon-truck"></span>
+								</div>
+
+								<div class="service-content">
+									<div class="info-title">
+										<h4>Free Shipping</h4>
+									</div>
+									<div class="sub-title">
+										<span>On Order Over 99€</span>
+									</div>
+								</div>
+							</Col>
+							<Col className="policy-box">
+								<div className="icon-service">
+									<span className="flaticon-money"></span>
+								</div>
+
+								<div class="service-content">
+									<div class="info-title">
+										<h3>Guarantee</h3>
+									</div>
+									<div class="sub-title">
+										<span>30 Days Money Back</span>
+									</div>
+								</div>
+							</Col>
+							<Col className="policy-box">
+								<div className="icon-service">
+									<span className="flaticon-money"></span>
+								</div>
+
+								<div class="service-content">
+									<div class="info-title">
+										<h3>Guarantee</h3>
+									</div>
+									<div class="sub-title">
+										<span>30 Days Money Back</span>
+									</div>
+								</div>
+							</Col>
+							<Col className="policy-box">
+								<div className="icon-service">
+									<span className="flaticon-money"></span>
+								</div>
+
+								<div class="service-content">
+									<div class="info-title">
+										<h3>Guarantee</h3>
+									</div>
+									<div class="sub-title">
+										<span>30 Days Money Back</span>
+									</div>
+								</div>
 							</Col>
 						</Row>
 					</Container>
