@@ -12,9 +12,7 @@ export class Layout extends PureComponent {
   static defaultProps = {
     title: 'Tienda Online',
   };
-
-  static defailt;
-
+  
   render() {
     return (
       <div>
@@ -31,34 +29,35 @@ export class Layout extends PureComponent {
           />
         </Head>
         <header>
-          <div className="header_container">
-            <div>
-              <img id="logo" src="/static/img/header/logo2.png" />
-              <div className="account_container">
-                <div className="account_icon">
-                  <div className="account_icon">
-                    <span className="fas fa-user icons"></span>
-                  </div>
-                  <div className="account_icon">
-                    <div className="text-account text-bold">Account</div>
-                    <div className="text-account">Hello! Sign in</div>
-                  </div>
-                </div>
-                <div className="account_icon">
-                  <div className="account_icon">
-                    <span className="fas fa-shopping-basket icons"></span>
-                  </div>
-                  <div className="account_icon">
-                    <div className="text-account text-bold">Cart</div>
-                    <div className="text-account">0.00 €</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </header>
+				<div className="header_container container">
+					<div>
+						<img id="logo" src="/static/img/header/logo2.png" />
+						<div className="account_container">
+							<div className="account_icon">
+								<div className="account_icon">
+									<span className="fas fa-user icons"></span>
+								</div>
+								<div className="account_icon">
+									<div className="text-account text-bold">Account</div>
+									<div className="text-account">Hello! Sign in</div>
+								</div>
+							</div>
+							<div className="account_icon">
+								<div className="account_icon">
+									<span className="fas fa-shopping-basket icons"></span>
+								</div>
+								<div className="account_icon">
+									<div className="text-account text-bold">Cart</div>
+									<div className="text-account">0.00 €</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+        
         <main>{this.props.children}</main>
-        <footer className="container">
+        <footer>
           <span>Aqui el footer</span>
         </footer>
       </div>
