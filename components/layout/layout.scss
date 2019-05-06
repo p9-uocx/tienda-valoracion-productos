@@ -21,15 +21,14 @@ header {
   float: right;
   color: #ffffff;
   padding: 10px 0;
-  margin-right: 28px;  
+  margin-right: -50px;
 }
 
 .account_icon {
   float: left;
-  line-height: 15px;    
-  margin: 0 20px 0 0;  
+  line-height: 15px;
+  margin: 0 20px 0 0;
 }
-
 
 .icons {
   font-size: 30px;
@@ -47,3 +46,12 @@ header {
   font-size: 14px;
 }
 
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1186px !important;
+  }
+}
+
+.col-sm-9 {
+  padding-right: 0px !important;
+}

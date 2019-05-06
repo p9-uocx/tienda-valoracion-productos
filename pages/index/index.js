@@ -48,7 +48,7 @@ export default class Index extends PureComponent {
 								</Carousel>
 							</Col>
 							<Col sm={3}>
-								<img src="/static/img/slider/img3a.jpg" alt="first Slide" />
+								<img id="img3a-padding" src="/static/img/slider/img3a.jpg" alt="first Slide" />
 								<img src="/static/img/slider/img3b.jpg" alt="first Slide" />
 							</Col>
 						</Row>
