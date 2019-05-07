@@ -11,7 +11,7 @@ import Rating from 'react-rating';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { faStar as fasStar } from '@fortawesome/free-solid-svg-icons';
+import { faStar as fasStar, faBars } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 
 library.add(farStar, fasStar);
@@ -145,10 +145,12 @@ export default class Index extends PureComponent {
 										<span className="price-label">$189.00</span>
 										<span className="old-price-label">$280.00</span>
 									</div>
-									<div><Rating
-										emptySymbol="star-o"
-										fullSymbol="star"
-										fractions={2} /></div>
+									<div>
+										<Rating
+											emptySymbol="fas fa-star"
+											fullSymbol="far fa-star"
+											fractions={2} />
+									</div>
 									<Link href=""><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
 								</Col>
 								<Col sm={3}>
@@ -159,7 +161,12 @@ export default class Index extends PureComponent {
 										<span className="price-label">$189.00</span>
 										<span className="old-price-label">$280.00</span>
 									</div>
-									<div><Rating /></div>
+									<div>
+										<Rating
+											emptySymbol="fas fa-star"
+											fullSymbol="far fa-star"
+											fractions={2} />
+									</div>
 									<Link href=""><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
 								</Col>
 								<Col sm={3}>
@@ -170,7 +177,12 @@ export default class Index extends PureComponent {
 										<span className="price-label">$189.00</span>
 										<span className="old-price-label">$280.00</span>
 									</div>
-									<div><Rating /></div>
+									<div>
+										<Rating
+											emptySymbol="fas fa-star"
+											fullSymbol="far fa-star"
+											fractions={2} />
+									</div>
 									<Link href=""><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
 								</Col>
 								<Col sm={3}>
@@ -181,7 +193,12 @@ export default class Index extends PureComponent {
 										<span className="price-label">$189.00</span>
 										<span className="old-price-label">$280.00</span>
 									</div>
-									<div><Rating /></div>
+									<div>
+										<Rating
+											emptySymbol="fas fa-star"
+											fullSymbol="far fa-star"
+											fractions={2} />
+									</div>
 									<Link href=""><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
 								</Col>
 							</Row>
@@ -222,10 +239,12 @@ export default class Index extends PureComponent {
 										<span className="price-label">$189.00</span>
 										<span className="old-price-label">$280.00</span>
 									</div>
-									<div><Rating
-										emptySymbol="fa fa-star-o fa-2x"
-										fullSymbol="fa fa-star fa-2x"
-										fractions={2} /></div>
+									<div>
+										<Rating
+											emptySymbol="fas fa-star"
+											fullSymbol="far fa-star"
+											fractions={2} />
+									</div>
 									<Link href=""><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
 								</Col>
 								<Col sm={3}>
@@ -236,7 +255,12 @@ export default class Index extends PureComponent {
 										<span className="price-label">$189.00</span>
 										<span className="old-price-label">$280.00</span>
 									</div>
-									<div><Rating /></div>
+									<div>
+										<Rating
+											emptySymbol="fas fa-star"
+											fullSymbol="far fa-star"
+											fractions={2} />
+									</div>
 									<Link href=""><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
 								</Col>
 								<Col sm={3}>
@@ -247,7 +271,12 @@ export default class Index extends PureComponent {
 										<span className="price-label">$189.00</span>
 										<span className="old-price-label">$280.00</span>
 									</div>
-									<div><Rating /></div>
+									<div>
+										<Rating
+											emptySymbol="fas fa-star"
+											fullSymbol="far fa-star"
+											fractions={2} />
+									</div>
 									<Link href=""><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
 								</Col>
 								<Col sm={3}>
@@ -258,7 +287,12 @@ export default class Index extends PureComponent {
 										<span className="price-label">$189.00</span>
 										<span className="old-price-label">$280.00</span>
 									</div>
-									<div><Rating /></div>
+									<div>
+										<Rating
+											emptySymbol="fas fa-star"
+											fullSymbol="far fa-star"
+											fractions={2} />
+									</div>
 									<Link href=""><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
 								</Col>
 							</Row>

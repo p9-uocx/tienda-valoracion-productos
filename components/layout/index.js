@@ -20,7 +20,8 @@ export class Layout extends PureComponent {
           <title>{this.props.title}</title>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <link rel="stylesheet" type="text/css" href="static/normalize.css" />
-          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"></link>
+          <link rel="stylesheet" type="text/css" href="/static/fontawesome/css/all.css" />
+
           <link
             rel="stylesheet"
             href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -28,6 +29,7 @@ export class Layout extends PureComponent {
             crossorigin="anonymous"
           />
           <link rel="stylesheet" type="text/css" href="/static/flaticon-font/flaticon.css"/>
+          <script defer src="/static/fontawesome/js/all.js"></script>
         </Head>
         <header>
 				<div className="header_container container">
