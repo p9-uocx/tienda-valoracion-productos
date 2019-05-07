@@ -8,11 +8,13 @@ import Col from 'react-bootstrap/Col';
 import Carousel from 'react-bootstrap/Carousel';
 import Image from 'react-bootstrap/Image';
 import Rating from 'react-rating';
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStroopwafel } from '@fortawesome/free-solid-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-library.add(faStroopwafel)
+import { faStar as fasStar } from '@fortawesome/free-solid-svg-icons';
+import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
+
+library.add(farStar, fasStar);
 
 // Todos los componentes reutilizables sera importados con @Components y despues dentro de los corchetes seleccionar el o los componentes necesarios
 import { Layout } from '@Components';
@@ -68,11 +70,11 @@ export default class Index extends PureComponent {
 										<span className="flaticon-truck"></span>
 									</div>
 
-									<div class="service-content">
-										<div class="info-title">
+									<div className="service-content">
+										<div className="info-title">
 											<h5>Free Shipping</h5>
 										</div>
-										<div class="sub-title">
+										<div className="sub-title">
 											<span>On Order Over 99€</span>
 										</div>
 									</div>
@@ -82,11 +84,11 @@ export default class Index extends PureComponent {
 										<span className="flaticon-money"></span>
 									</div>
 
-									<div class="service-content">
-										<div class="info-title">
+									<div className="service-content">
+										<div className="info-title">
 											<h5>Guarantee</h5>
 										</div>
-										<div class="sub-title">
+										<div className="sub-title">
 											<span>30 Days Money Back</span>
 										</div>
 									</div>
@@ -95,11 +97,11 @@ export default class Index extends PureComponent {
 									<div className="icon-service">
 										<span className="flaticon-money-1"></span>
 									</div>
-									<div class="service-content">
-										<div class="info-title">
+									<div className="service-content">
+										<div className="info-title">
 											<h5>Payment On Delivery</h5>
 										</div>
-										<div class="sub-title">
+										<div className="sub-title">
 											<span>Cash On Delivery Option</span>
 										</div>
 									</div>
@@ -108,11 +110,11 @@ export default class Index extends PureComponent {
 									<div className="icon-service">
 										<span className="flaticon-support"></span>
 									</div>
-									<div class="service-content">
-										<div class="info-title">
+									<div className="service-content">
+										<div className="info-title">
 											<h5>Online Suport</h5>
 										</div>
-										<div class="sub-title">
+										<div className="sub-title">
 											<span>We Have Support 24/7</span>
 										</div>
 									</div>
@@ -144,8 +146,8 @@ export default class Index extends PureComponent {
 										<span className="old-price-label">$280.00</span>
 									</div>
 									<div><Rating
-										emptySymbol="fa fa-star-o fa-2x"
-										fullSymbol="fa fa-star fa-2x"
+										emptySymbol="star-o"
+										fullSymbol="star"
 										fractions={2} /></div>
 									<Link href=""><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
 								</Col>
