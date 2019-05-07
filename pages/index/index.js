@@ -6,6 +6,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Carousel from 'react-bootstrap/Carousel';
+import Image from 'react-bootstrap/Image'
 
 // Todos los componentes reutilizables sera importados con @Components y despues dentro de los corchetes seleccionar el o los componentes necesarios
 import { Layout } from '@Components';
@@ -52,76 +53,113 @@ export default class Index extends PureComponent {
 								<img src="/static/img/slider/img3b.jpg" alt="first Slide" />
 							</Col>
 						</Row>
-						<Row id="padding-policy-box">
-							<Col className="policy-box">
-								<div className="icon-service">
-									<span className="flaticon-truck"></span>
-								</div>
+						{/* Policy Section */}
+						<section id="padding-policy-box">
+							<Row >
+								<Col className="policy-box">
+									<div className="icon-service">
+										<span className="flaticon-truck"></span>
+									</div>
 
-								<div class="service-content">
-									<div class="info-title">
-										<h5>Free Shipping</h5>
+									<div class="service-content">
+										<div class="info-title">
+											<h5>Free Shipping</h5>
+										</div>
+										<div class="sub-title">
+											<span>On Order Over 99€</span>
+										</div>
 									</div>
-									<div class="sub-title">
-										<span>On Order Over 99€</span>
+								</Col>
+								<Col className="policy-box">
+									<div className="icon-service">
+										<span className="flaticon-money"></span>
 									</div>
-								</div>
-							</Col>
-							<Col className="policy-box">
-								<div className="icon-service">
-									<span className="flaticon-money"></span>
-								</div>
 
-								<div class="service-content">
-									<div class="info-title">
-										<h5>Guarantee</h5>
+									<div class="service-content">
+										<div class="info-title">
+											<h5>Guarantee</h5>
+										</div>
+										<div class="sub-title">
+											<span>30 Days Money Back</span>
+										</div>
 									</div>
-									<div class="sub-title">
-										<span>30 Days Money Back</span>
+								</Col>
+								<Col className="policy-box">
+									<div className="icon-service">
+										<span className="flaticon-money-1"></span>
 									</div>
-								</div>
-							</Col>
-							<Col className="policy-box">
-								<div className="icon-service">
-									<span className="flaticon-money-1"></span>
-								</div>
+									<div class="service-content">
+										<div class="info-title">
+											<h5>Payment On Delivery</h5>
+										</div>
+										<div class="sub-title">
+											<span>Cash On Delivery Option</span>
+										</div>
+									</div>
+								</Col>
+								<Col className="policy-box">
+									<div className="icon-service">
+										<span className="flaticon-support"></span>
+									</div>
+									<div class="service-content">
+										<div class="info-title">
+											<h5>Online Suport</h5>
+										</div>
+										<div class="sub-title">
+											<span>We Have Support 24/7</span>
+										</div>
+									</div>
+								</Col>
+							</Row>
+						</section>
+						{/* Deal Section */}
+						<section id="deal-title">
+							<Row>
+								<Col sm="auto">
+									<div>
+										<h3>Deal of the Week</h3>
+									</div>
+								</Col>
+								<Col id="hr">
+									<hr />
+								</Col>
+							</Row>
+						</section>
+						{/* Product Section */}
+						<section>
+							<Row>
+								<Col sm={3}>
+									<div>
+										<Image src="/static/img/products/2_4.jpg" alt="product 1" fluid />
+									</div>
+									<div className="price-box">
+										<span className="price-label">$189.00</span>
+										<span className="old-price-label">$280.00</span>
+									</div>
 
-								<div class="service-content">
-									<div class="info-title">
-										<h5>Payment On Delivery</h5>
+								</Col>
+								<Col sm={3}>
+									<div>
+										<Image src="/static/img/products/2_4.jpg" alt="product 1" fluid />
 									</div>
-									<div class="sub-title">
-										<span>Cash On Delivery Option</span>
+								</Col>
+								<Col sm={3}>
+									<div>
+										<Image src="/static/img/products/2_4.jpg" alt="product 1" fluid />
 									</div>
-								</div>
-							</Col>
-							<Col className="policy-box">
-								<div className="icon-service">
-									<span className="flaticon-support"></span>
-								</div>
+								</Col>
+								<Col sm={3}>
+									<div>
+										<Image src="/static/img/products/2_4.jpg" alt="product 1" fluid />
+									</div>
+								</Col>
 
-								<div class="service-content">
-									<div class="info-title">
-										<h5>Online Suport</h5>
-									</div>
-									<div class="sub-title">
-										<span>We Have Support 24/7</span>
-									</div>
-								</div>
-							</Col>
-						</Row>
-						<Row id="deal-title">
-							<Col sm="auto">
-								<div>
-									<h3>Deal of the Week</h3>									
-								</div>
-							</Col>
-							<Col id="hr">
-								<hr/>
-							</Col>
+							</Row>
 
-						</Row>
+						</section>
+
 					</Container>
+
 
 
 					<Link href="/about">
