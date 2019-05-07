@@ -51,7 +51,6 @@ hr {
 .old-price-label {
 	padding-left: 8px;
 }
-
 #section-container {
 	background-color: #445268;
 	padding: 20px;
@@ -59,7 +58,10 @@ hr {
 	text-align: center;
 	
 }
-
 #section-container p {
 	margin: 0;
+}
+
+.border-right-product {
+  border-right: 1px solid #e2e2e2;
 }

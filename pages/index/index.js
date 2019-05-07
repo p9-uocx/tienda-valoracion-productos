@@ -137,7 +137,7 @@ export default class Index extends PureComponent {
 						{/* Product Section */}
 						<section id="product-section">
 							<Row>
-								<Col sm={3}>
+								<Col className="border-right-product" sm={3}>
 									<div>
 										<Image src="/static/img/products/2_4.jpg" alt="product 1" fluid />
 									</div>
@@ -153,7 +153,7 @@ export default class Index extends PureComponent {
 									</div>
 									<Link href=""><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
 								</Col>
-								<Col sm={3}>
+								<Col className="border-right-product" sm={3}>
 									<div>
 										<Image src="/static/img/products/5_5.jpg" alt="product 1" fluid />
 									</div>
@@ -169,7 +169,7 @@ export default class Index extends PureComponent {
 									</div>
 									<Link href=""><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
 								</Col>
-								<Col sm={3}>
+								<Col className="border-right-product" sm={3}>
 									<div>
 										<Image src="/static/img/products/6_2.jpg" alt="product 1" fluid />
 									</div>
@@ -231,7 +231,7 @@ export default class Index extends PureComponent {
 						{/* Product Section */}
 						<section id="product-section">
 							<Row>
-								<Col sm={3}>
+								<Col className="border-right-product" sm={3}>
 									<div>
 										<Image src="/static/img/products/2_4.jpg" alt="product 1" fluid />
 									</div>
@@ -247,7 +247,7 @@ export default class Index extends PureComponent {
 									</div>
 									<Link href=""><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
 								</Col>
-								<Col sm={3}>
+								<Col className="border-right-product" sm={3}>
 									<div>
 										<Image src="/static/img/products/5_5.jpg" alt="product 1" fluid />
 									</div>
@@ -263,7 +263,7 @@ export default class Index extends PureComponent {
 									</div>
 									<Link href=""><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
 								</Col>
-								<Col sm={3}>
+								<Col className="border-right-product" sm={3}>
 									<div>
 										<Image src="/static/img/products/6_2.jpg" alt="product 1" fluid />
 									</div>
