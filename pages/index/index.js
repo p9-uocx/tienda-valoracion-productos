@@ -8,6 +8,11 @@ import Col from 'react-bootstrap/Col';
 import Carousel from 'react-bootstrap/Carousel';
 import Image from 'react-bootstrap/Image';
 import Rating from 'react-rating';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStroopwafel } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faStroopwafel)
 
 // Todos los componentes reutilizables sera importados con @Components y despues dentro de los corchetes seleccionar el o los componentes necesarios
 import { Layout } from '@Components';
@@ -138,26 +143,41 @@ export default class Index extends PureComponent {
 										<span className="price-label">$189.00</span>
 										<span className="old-price-label">$280.00</span>
 									</div>
-									<Rating
-										emptySymbol="fa fa-star-o"
-										fullSymbol="fa fa-star"
-  									fractions={2}
-									/>
+									<div><Rating /></div>
+									<Link href=""><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
 								</Col>
 								<Col sm={3}>
 									<div>
 										<Image src="/static/img/products/2_4.jpg" alt="product 1" fluid />
 									</div>
+									<div className="price-box">
+										<span className="price-label">$189.00</span>
+										<span className="old-price-label">$280.00</span>
+									</div>
+									<div><Rating /></div>
+									<Link href=""><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
 								</Col>
 								<Col sm={3}>
 									<div>
 										<Image src="/static/img/products/2_4.jpg" alt="product 1" fluid />
 									</div>
+									<div className="price-box">
+										<span className="price-label">$189.00</span>
+										<span className="old-price-label">$280.00</span>
+									</div>
+									<div><Rating /></div>
+									<Link href=""><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
 								</Col>
 								<Col sm={3}>
 									<div>
 										<Image src="/static/img/products/2_4.jpg" alt="product 1" fluid />
 									</div>
+									<div className="price-box">
+										<span className="price-label">$189.00</span>
+										<span className="old-price-label">$280.00</span>
+									</div>
+									<div><Rating /></div>
+									<Link href=""><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
 								</Col>
 
 							</Row>
