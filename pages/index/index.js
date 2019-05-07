@@ -6,7 +6,8 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Carousel from 'react-bootstrap/Carousel';
-import Image from 'react-bootstrap/Image'
+import Image from 'react-bootstrap/Image';
+import Rating from 'react-rating';
 
 // Todos los componentes reutilizables sera importados con @Components y despues dentro de los corchetes seleccionar el o los componentes necesarios
 import { Layout } from '@Components';
@@ -14,6 +15,7 @@ import { NavMenu } from '@Components';
 
 // importamos el css especifo de cada componente, esta en SASS
 import './index.scss';
+import '../../components/layout/layout.scss';
 
 
 // aqui tienes que exportar el compoente, puede ser una funcion o una clase
@@ -136,7 +138,11 @@ export default class Index extends PureComponent {
 										<span className="price-label">$189.00</span>
 										<span className="old-price-label">$280.00</span>
 									</div>
-
+									<Rating
+										emptySymbol="fa fa-star-o"
+										fullSymbol="fa fa-star"
+  									fractions={2}
+									/>
 								</Col>
 								<Col sm={3}>
 									<div>
@@ -155,9 +161,7 @@ export default class Index extends PureComponent {
 								</Col>
 
 							</Row>
-
 						</section>
-
 					</Container>
 
 
