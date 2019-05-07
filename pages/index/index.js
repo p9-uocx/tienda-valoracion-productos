@@ -147,8 +147,8 @@ export default class Index extends PureComponent {
 									</div>
 									<div>
 										<Rating
-											emptySymbol="fas fa-star"
-											fullSymbol="far fa-star"
+											emptySymbol="far fa-star"
+											fullSymbol="fas fa-star"
 											fractions={2} />
 									</div>
 									<Link href=""><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
@@ -163,8 +163,8 @@ export default class Index extends PureComponent {
 									</div>
 									<div>
 										<Rating
-											emptySymbol="fas fa-star"
-											fullSymbol="far fa-star"
+											emptySymbol="far fa-star"
+											fullSymbol="fas fa-star"
 											fractions={2} />
 									</div>
 									<Link href=""><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
@@ -179,8 +179,8 @@ export default class Index extends PureComponent {
 									</div>
 									<div>
 										<Rating
-											emptySymbol="fas fa-star"
-											fullSymbol="far fa-star"
+											emptySymbol="far fa-star"
+											fullSymbol="fas fa-star"
 											fractions={2} />
 									</div>
 									<Link href=""><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
@@ -195,8 +195,8 @@ export default class Index extends PureComponent {
 									</div>
 									<div>
 										<Rating
-											emptySymbol="fas fa-star"
-											fullSymbol="far fa-star"
+											emptySymbol="far fa-star"
+											fullSymbol="fas fa-star"
 											fractions={2} />
 									</div>
 									<Link href=""><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
@@ -241,8 +241,8 @@ export default class Index extends PureComponent {
 									</div>
 									<div>
 										<Rating
-											emptySymbol="fas fa-star"
-											fullSymbol="far fa-star"
+											emptySymbol="far fa-star"
+											fullSymbol="fas fa-star"
 											fractions={2} />
 									</div>
 									<Link href=""><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
@@ -257,8 +257,8 @@ export default class Index extends PureComponent {
 									</div>
 									<div>
 										<Rating
-											emptySymbol="fas fa-star"
-											fullSymbol="far fa-star"
+											emptySymbol="far fa-star"
+											fullSymbol="fas fa-star"
 											fractions={2} />
 									</div>
 									<Link href=""><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
@@ -273,8 +273,8 @@ export default class Index extends PureComponent {
 									</div>
 									<div>
 										<Rating
-											emptySymbol="fas fa-star"
-											fullSymbol="far fa-star"
+											emptySymbol="far fa-star"
+											fullSymbol="fas fa-star"
 											fractions={2} />
 									</div>
 									<Link href=""><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
@@ -289,8 +289,8 @@ export default class Index extends PureComponent {
 									</div>
 									<div>
 										<Rating
-											emptySymbol="fas fa-star"
-											fullSymbol="far fa-star"
+											emptySymbol="far fa-star"
+											fullSymbol="fas fa-star"
 											fractions={2} />
 									</div>
 									<Link href=""><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
