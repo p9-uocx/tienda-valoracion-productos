@@ -189,10 +189,74 @@ export default class Index extends PureComponent {
 								<Col>
 									<div id="section-container">
 										<div>
-											<p>589,551buyers from more than 150 countries experience secure trading on <Image fluid id="logo" src="/static/img/header/logo2.png" /></p>
+											<p>589,551buyers from more than 150 countries experience secure trading on <Image fluid id="logo" src="/static/img/header/logo2-1.png" /></p>
 										</div>
 									</div>
-
+								</Col>
+							</Row>
+						</section>
+						{/* Deal Section */}
+						<section id="deal-title">
+							<Row>
+								<Col sm="auto">
+									<div>
+										<h3>Featured Products</h3>
+									</div>
+								</Col>
+								<Col id="hr">
+									<hr />
+								</Col>
+							</Row>
+						</section>
+						{/* Product Section */}
+						<section id="product-section">
+							<Row>
+								<Col sm={3}>
+									<div>
+										<Image src="/static/img/products/2_4.jpg" alt="product 1" fluid />
+									</div>
+									<div className="price-box">
+										<span className="price-label">$189.00</span>
+										<span className="old-price-label">$280.00</span>
+									</div>
+									<div><Rating
+										emptySymbol="fa fa-star-o fa-2x"
+										fullSymbol="fa fa-star fa-2x"
+										fractions={2} /></div>
+									<Link href=""><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
+								</Col>
+								<Col sm={3}>
+									<div>
+										<Image src="/static/img/products/5_5.jpg" alt="product 1" fluid />
+									</div>
+									<div className="price-box">
+										<span className="price-label">$189.00</span>
+										<span className="old-price-label">$280.00</span>
+									</div>
+									<div><Rating /></div>
+									<Link href=""><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
+								</Col>
+								<Col sm={3}>
+									<div>
+										<Image src="/static/img/products/6_2.jpg" alt="product 1" fluid />
+									</div>
+									<div className="price-box">
+										<span className="price-label">$189.00</span>
+										<span className="old-price-label">$280.00</span>
+									</div>
+									<div><Rating /></div>
+									<Link href=""><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
+								</Col>
+								<Col sm={3}>
+									<div>
+										<Image src="/static/img/products/9_4.jpg" alt="product 1" fluid />
+									</div>
+									<div className="price-box">
+										<span className="price-label">$189.00</span>
+										<span className="old-price-label">$280.00</span>
+									</div>
+									<div><Rating /></div>
+									<Link href=""><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
 								</Col>
 							</Row>
 						</section>
