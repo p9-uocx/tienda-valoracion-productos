@@ -184,6 +184,7 @@ export default class Index extends PureComponent {
 								</Col>
 							</Row>
 						</section>
+						{/*Seccion Separador*/}
 						<section>
 							<Row>
 								<Col>
@@ -259,6 +260,12 @@ export default class Index extends PureComponent {
 									<Link href=""><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
 								</Col>
 							</Row>
+						</section>
+						<section>
+							<div>
+								<Image fluid src="/static/img/img3c.jpg" alt="product image"></Image>
+							</div>
+
 						</section>
 
 					</Container>
