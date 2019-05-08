@@ -9,9 +9,9 @@ import Carousel from 'react-bootstrap/Carousel';
 import Image from 'react-bootstrap/Image';
 import Rating from 'react-rating';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { faStar as fasStar, faBars } from '@fortawesome/free-solid-svg-icons';
+
+import { faStar as fasStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 
 library.add(farStar, fasStar);
@@ -206,7 +206,7 @@ export default class Index extends PureComponent {
 						{/*Seccion Separador*/}
 						<section>
 							<Row>
-								<Col>
+								<Col className="no-padding">
 									<div id="section-container">
 										<div>
 											<p>589,551buyers from more than 150 countries experience secure trading on <Image fluid id="logo" src="/static/img/header/logo2-1.png" /></p>
