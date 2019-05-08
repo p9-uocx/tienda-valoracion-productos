@@ -62,8 +62,61 @@ export class Layout extends PureComponent {
         </header>
         <main>{this.props.children}</main>
 
+        <section className="footer-container">
+          <Container>
+            <Row>
+              <Col sm={4}>
+                <h4 className="h4-padding-bottom">Contact Details</h4>
+                <ul className="contact-details no-padding">
+                  <li>
+                    <span className="fa fa-map-marker contact-icon"></span>
+                    <span className="contact-content">45 Grand Central Terminal NewYork<br />NY 017 United States USA</span>
+                  </li>
+                  <li>
+                    <span className="fa fa-phone contact-icon"></span>
+                    <span className="contact-content">+123) 456 789 - (+204) 666 888</span>
+                  </li>
+                  <li>
+                    <span className="fa fa-envelope contact-icon"></span>
+                    <span className="contact-content">contact@expert.com</span>
+                  </li>
+                  <li>
+                    <span className="fa fa-clock contact-icon"></span>
+                    <span className="contact-content">Mon-Sat 9:00am - 5:00pm Sun:Closed</span>
+                  </li>
+                </ul>
+              </Col>
+              <Col className="about-padding-left" sm={4}>
+                <h4 className="h4-padding-bottom">About Us</h4>
+                <ul className="about-details no-padding">
+                  <li>Our Blog</li>
+                  <li>About our Shop</li>
+                  <li>Secure Shopping</li>
+                  <li>Delivery Information</li>
+                  <li>Store Locations</li>
+                </ul>
+              </Col>
+              <Col sm={4}>
+                <h4 className="h4-padding-bottom">SUBSCRIBE OUR NEWSLETTER</h4>
+                <div class="visible">
+                  <div>
+                    <input name="email" type="email" id="newsletter" class="input-text" placeholder="Enter your email" data-validate="{required:true, 'validate-email':true}"></input>
+                  </div>
+                  <div>
+                    <button className="subscribe-button" title="Subscribe" type="submit">
+                      <span>Subscribe</span>
+                    </button>
+                  </div>
+                </div>
+              </Col>
+            </Row>
+          </Container>
+        </section>
+
         <footer>
-          <span>Aqui el footer</span>
+          <Container>
+            <span>Copyright © 2019 Expert Inc. All rights reserved.</span>
+          </Container>
         </footer>
       </div>
     );

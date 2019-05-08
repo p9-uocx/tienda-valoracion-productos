@@ -299,16 +299,8 @@ export default class Index extends PureComponent {
 							<div>
 								<Image fluid src="/static/img/img3c.jpg" alt="product image"></Image>
 							</div>
-
 						</section>
-
 					</Container>
-
-
-
-					<Link href="/about">
-						<a>about</a>
-					</Link>
 				</Layout>
 			</div>
 		);
