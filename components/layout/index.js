@@ -1,6 +1,9 @@
 import React, { PureComponent } from 'react';
 import Head from 'next/head';
 import { string } from 'prop-types';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 import './layout.scss';
 
@@ -58,7 +61,7 @@ export class Layout extends PureComponent {
           </div>
         </header>
         <main>{this.props.children}</main>
-        
+
         <footer>
           <span>Aqui el footer</span>
         </footer>
