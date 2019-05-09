@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import Head from 'next/head';
 import { string } from 'prop-types';
+import Image from 'react-bootstrap/Image';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -98,9 +99,9 @@ export class Layout extends PureComponent {
               </Col>
               <Col sm={4}>
                 <h4 className="h4-padding-bottom">SUBSCRIBE OUR NEWSLETTER</h4>
-                <div class="visible">
+                <div>
                   <div>
-                    <input name="email" type="email" id="newsletter" class="input-text" placeholder="Enter your email" data-validate="{required:true, 'validate-email':true}"></input>
+                    <input name="email" type="email" id="newsletter" className="input-text" placeholder="Enter your email" data-validate="{required:true, 'validate-email':true}"></input>
                   </div>
                   <div>
                     <button className="subscribe-button" title="Subscribe" type="submit">
@@ -116,6 +117,7 @@ export class Layout extends PureComponent {
         <footer>
           <Container>
             <span>Copyright © 2019 Expert Inc. All rights reserved.</span>
+            <Image fluid id="logo-footer" src="/static/img/header/logo2-1.png" />
           </Container>
         </footer>
       </div>

@@ -295,7 +295,8 @@ export default class Index extends PureComponent {
 								</Col>
 							</Row>
 						</section>
-						<section>
+						{/* IMAGE SECTION */}
+						<section className="padding-bottom-img">
 							<div>
 								<Image fluid src="/static/img/img3c.jpg" alt="product image"></Image>
 							</div>
