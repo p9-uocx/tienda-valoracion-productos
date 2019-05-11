@@ -5,6 +5,7 @@ import Image from 'react-bootstrap/Image';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Link from 'next/link';
 
 import './layout.scss';
 
@@ -39,15 +40,17 @@ export class Layout extends PureComponent {
             <div>
               <img id="logo" src="/static/img/header/logo2.png" />
               <div className="account_container">
-                <div className="account_icon">
+                <Link href="/login">
                   <div className="account_icon">
-                    <span className="fas fa-user icons"></span>
+                    <div className="account_icon">
+                      <span className="fas fa-user icons"></span>
+                    </div>
+                    <div className="account_icon">
+                      <div className="text-account text-bold">Account</div>
+                      <div className="text-account">Hello! Sign in</div>
+                    </div>
                   </div>
-                  <div className="account_icon">
-                    <div className="text-account text-bold">Account</div>
-                    <div className="text-account">Hello! Sign in</div>
-                  </div>
-                </div>
+                </Link>
                 <div className="account_icon">
                   <div className="account_icon">
                     <span className="fas fa-shopping-basket icons"></span>
