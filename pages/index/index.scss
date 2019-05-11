@@ -8,6 +8,14 @@
   padding-bottom: 7px;
 }
 
+.policy-box:hover {
+  border: 1px solid #F2C557;
+  background-color: #ffffff;
+  .icon-service {
+    color: #F2C557;
+  }
+}
+
 #padding-policy-box {
   padding-top: 30px;
 }
