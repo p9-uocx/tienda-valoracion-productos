@@ -231,7 +231,7 @@ export default class Index extends PureComponent {
 							<Row>
 								<Col className="border-right-product" sm={3}>
 									<div>
-										<Image src="/static/img/products/2_4.jpg" alt="product 1" fluid />
+										<Image src="/static/img/products/3_4.jpg" alt="product 1" fluid />
 									</div>
 									<div className="price-box">
 										<span className="price-label">$189.00</span>
@@ -247,7 +247,7 @@ export default class Index extends PureComponent {
 								</Col>
 								<Col className="border-right-product" sm={3}>
 									<div>
-										<Image src="/static/img/products/5_5.jpg" alt="product 1" fluid />
+										<Image src="/static/img/products/4_1_1.jpg" alt="product 1" fluid />
 									</div>
 									<div className="price-box">
 										<span className="price-label">$189.00</span>
@@ -263,7 +263,7 @@ export default class Index extends PureComponent {
 								</Col>
 								<Col className="border-right-product" sm={3}>
 									<div>
-										<Image src="/static/img/products/6_2.jpg" alt="product 1" fluid />
+										<Image src="/static/img/products/7_1_1.jpg" alt="product 1" fluid />
 									</div>
 									<div className="price-box">
 										<span className="price-label">$189.00</span>
@@ -279,7 +279,7 @@ export default class Index extends PureComponent {
 								</Col>
 								<Col sm={3}>
 									<div>
-										<Image src="/static/img/products/9_4.jpg" alt="product 1" fluid />
+										<Image src="/static/img/products/8_1_1.jpg" alt="product 1" fluid />
 									</div>
 									<div className="price-box">
 										<span className="price-label">$189.00</span>
