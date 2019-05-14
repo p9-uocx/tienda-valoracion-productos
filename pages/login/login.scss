@@ -31,3 +31,32 @@
     width: 180px;
     color: #222222;
 }
+
+.login-user-container {
+    padding-top: 102px;
+    padding-bottom: 60px;
+}
+
+.login-user-content {
+    margin: 0;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    margin-bottom: 10px;
+    min-height: 405px;
+    padding: 25px 30px;
+    color: #666666;
+}
+
+.login-user-content h6 {
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.login-form {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.input-padding {
+    padding-bottom: 15px;
+}

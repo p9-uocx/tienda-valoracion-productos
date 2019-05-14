@@ -37,6 +37,29 @@ export default class Login extends PureComponent {
 								</div>
 							</Col>
 							<Col sm={6}>
+								<div className="login-user-container">
+									<div className="login-user-content">
+										<h6>Registered Customers</h6>
+										<p>If you have an account with us, please log in</p>
+										<form className="login-form" action="" method="post">
+											<div className="input-padding">
+												<label htmlFor="mail">Email Address<span>*</span></label><br />
+												<input id="mail" type="text" /><br />
+											</div>
+											<div>
+												<label htmlFor="password">Password<span>*</span></label><br />
+												<input id="password" type="password" />
+											</div>
+										</form>
+										<div className="primary">
+											<button className="register-button" title="login" type="submit">
+												<span>Login</span>
+											</button>
+										</div>
+
+									</div>
+
+								</div>
 
 							</Col>
 						</Row>
