@@ -43,20 +43,21 @@ export default class Login extends PureComponent {
 										<p>If you have an account with us, please log in</p>
 										<form className="login-form" action="" method="post">
 											<div className="input-padding">
-												<label htmlFor="mail">Email Address<span>*</span></label><br />
-												<input id="mail" type="text" /><br />
+												<label htmlFor="mail">Email Address<span className="red"> *</span></label><br />
+												<input id="mail" required type="text" /><br />
 											</div>
 											<div>
-												<label htmlFor="password">Password<span>*</span></label><br />
-												<input id="password" type="password" />
+												<label htmlFor="password">Password<span className="red"> *</span></label><br />
+												<input id="password" required type="password" />
 											</div>
 										</form>
-										<div className="primary">
+										<div className="login-button-container">
 											<button className="login-button" title="login" type="submit">
 												<span>Login</span>
 											</button>
+											<a className="forgot-pass">Forgot your password?</a>
 										</div>
-
+										<span className="red">* Required Fields</span>
 									</div>
 
 								</div>

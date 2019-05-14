@@ -60,6 +60,15 @@
 .input-padding {
     padding-bottom: 15px;
 }
+.red {
+    color: red;
+    font-size: 13px;
+}
+
+.login-button-container {
+    padding-bottom: 20px;
+}
+
 
 .login-button {
     background: linear-gradient(0deg, #f0c049 0%, #fbdd99 100%) !important;
@@ -70,4 +79,18 @@
     border-radius: 0 3px 3px 0;
     width: 110px;
     color: #222222;
+}
+input {
+    border: 1px solid #e6e6e6;
+    padding: 8px 20px;
+    font-size: 13px;
+    border-radius: 3px;
+    width: 100%;
+}
+
+.forgot-pass {
+    color: red !important;
+    float: right;
+    font-size: 13px;
+    padding-top: 15px;
 }
