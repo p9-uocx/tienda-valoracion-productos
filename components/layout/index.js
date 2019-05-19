@@ -80,7 +80,7 @@ export class Layout extends PureComponent {
                   </li>
                   <li>
                     <span className="fa fa-phone contact-icon"></span>
-                    <span className="contact-content">+123) 456 789 - (+204) 666 888</span>
+                    <span className="contact-content">+(123) 456 789 - (+204) 666 888</span>
                   </li>
                   <li>
                     <span className="fa fa-envelope contact-icon"></span>
