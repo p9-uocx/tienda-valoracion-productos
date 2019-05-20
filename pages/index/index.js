@@ -8,6 +8,7 @@ import Col from 'react-bootstrap/Col';
 import Carousel from 'react-bootstrap/Carousel';
 import Image from 'react-bootstrap/Image';
 import Rating from 'react-rating';
+import StarRatingComponent from 'react-star-rating-component';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faStar as fasStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
@@ -31,8 +32,30 @@ export default class Index extends PureComponent {
 		return { userAgent };
 	}
 
+	constructor() {
+		super();
+
+		this.state = {
+			rating: 0
+		};
+	}
+
+	onStarClick(nextValue, prevValue, name) {
+		console.log('name: %s, nextValue: %s, prevValue: %s', name, nextValue, prevValue);
+		this.setState({ rating: nextValue });
+	}
+
 	// este metodo tiene que estar siempre en React, es el encargado de pintar el html
 	render() {
+		const { rating1 } = this.state;
+		const { rating2 } = this.state;
+		const { rating3 } = this.state;
+		const { rating4 } = this.state;
+		const { rating5 } = this.state;
+		const { rating6 } = this.state;
+		const { rating7 } = this.state;
+		const { rating8 } = this.state;
+
 		return (
 			<div>
 				{/* Usaremos este componente para cargar todas las cabeceras footer y cosas comunes del proyecto */}
@@ -143,11 +166,13 @@ export default class Index extends PureComponent {
 										<span className="price-label">$189.00</span>
 										<span className="old-price-label">$280.00</span>
 									</div>
-									<div>
-										<Rating
-											emptySymbol="far fa-star"
-											fullSymbol="fas fa-star"
-											fractions={2} />
+									<div className="rating-container"> 
+										<StarRatingComponent
+											name="rate1"
+											starCount={5}
+											value={rating1}
+											onStarClick={this.onStarClick.bind(this)}
+										/>
 									</div>
 									<Link href=""><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
 								</Col>
@@ -159,11 +184,13 @@ export default class Index extends PureComponent {
 										<span className="price-label">$189.00</span>
 										<span className="old-price-label">$280.00</span>
 									</div>
-									<div>
-										<Rating
-											emptySymbol="far fa-star"
-											fullSymbol="fas fa-star"
-											fractions={2} />
+									<div className="rating-container"> 
+										<StarRatingComponent
+											name="rate2"
+											starCount={5}
+											value={rating2}
+											onStarClick={this.onStarClick.bind(this)}
+										/>
 									</div>
 									<Link href=""><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
 								</Col>
@@ -175,11 +202,13 @@ export default class Index extends PureComponent {
 										<span className="price-label">$189.00</span>
 										<span className="old-price-label">$280.00</span>
 									</div>
-									<div>
-										<Rating
-											emptySymbol="far fa-star"
-											fullSymbol="fas fa-star"
-											fractions={2} />
+									<div className="rating-container"> 
+										<StarRatingComponent
+											name="rate3"
+											starCount={5}
+											value={rating3}
+											onStarClick={this.onStarClick.bind(this)}
+										/>
 									</div>
 									<Link href=""><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
 								</Col>
@@ -191,11 +220,13 @@ export default class Index extends PureComponent {
 										<span className="price-label">$189.00</span>
 										<span className="old-price-label">$280.00</span>
 									</div>
-									<div>
-										<Rating
-											emptySymbol="far fa-star"
-											fullSymbol="fas fa-star"
-											fractions={2} />
+									<div className="rating-container"> 
+										<StarRatingComponent
+											name="rate4"
+											starCount={5}
+											value={rating4}
+											onStarClick={this.onStarClick.bind(this)}
+										/>
 									</div>
 									<Link href=""><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
 								</Col>
@@ -237,11 +268,13 @@ export default class Index extends PureComponent {
 										<span className="price-label">$189.00</span>
 										<span className="old-price-label">$280.00</span>
 									</div>
-									<div>
-										<Rating
-											emptySymbol="far fa-star"
-											fullSymbol="fas fa-star"
-											fractions={2} />
+									<div className="rating-container"> 
+										<StarRatingComponent
+											name="rate5"
+											starCount={5}
+											value={rating5}
+											onStarClick={this.onStarClick.bind(this)}
+										/>
 									</div>
 									<Link href=""><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
 								</Col>
@@ -253,11 +286,13 @@ export default class Index extends PureComponent {
 										<span className="price-label">$189.00</span>
 										<span className="old-price-label">$280.00</span>
 									</div>
-									<div>
-										<Rating
-											emptySymbol="far fa-star"
-											fullSymbol="fas fa-star"
-											fractions={2} />
+									<div className="rating-container"> 
+										<StarRatingComponent
+											name="rate6"
+											starCount={5}
+											value={rating6}
+											onStarClick={this.onStarClick.bind(this)}
+										/>
 									</div>
 									<Link href=""><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
 								</Col>
@@ -269,11 +304,13 @@ export default class Index extends PureComponent {
 										<span className="price-label">$189.00</span>
 										<span className="old-price-label">$280.00</span>
 									</div>
-									<div>
-										<Rating
-											emptySymbol="far fa-star"
-											fullSymbol="fas fa-star"
-											fractions={2} />
+									<div className="rating-container"> 
+										<StarRatingComponent
+											name="rate7"
+											starCount={5}
+											value={rating7}
+											onStarClick={this.onStarClick.bind(this)}
+										/>
 									</div>
 									<Link href=""><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
 								</Col>
@@ -285,11 +322,13 @@ export default class Index extends PureComponent {
 										<span className="price-label">$189.00</span>
 										<span className="old-price-label">$280.00</span>
 									</div>
-									<div>
-										<Rating
-											emptySymbol="far fa-star"
-											fullSymbol="fas fa-star"
-											fractions={2} />
+									<div className="rating-container"> 
+										<StarRatingComponent
+											name="rate8"
+											starCount={5}
+											value={rating8}
+											onStarClick={this.onStarClick.bind(this)}
+										/>
 									</div>
 									<Link href=""><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
 								</Col>
