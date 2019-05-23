@@ -45,6 +45,7 @@ export class ProductsB extends PureComponent {
 								name="rate5"
 								starCount={5}
 								value={rating5}
+								emptyStarColor={'#CCCCCC'}
 								onStarClick={this.onStarClick.bind(this)}
 							/>
 						</div>
@@ -65,6 +66,7 @@ export class ProductsB extends PureComponent {
 								name="rate6"
 								starCount={5}
 								value={rating6}
+								emptyStarColor={'#CCCCCC'}
 								onStarClick={this.onStarClick.bind(this)}
 							/>
 						</div>
@@ -85,6 +87,7 @@ export class ProductsB extends PureComponent {
 								name="rate7"
 								starCount={5}
 								value={rating7}
+								emptyStarColor={'#CCCCCC'}
 								onStarClick={this.onStarClick.bind(this)}
 							/>
 						</div>
@@ -105,6 +108,7 @@ export class ProductsB extends PureComponent {
 								name="rate8"
 								starCount={5}
 								value={rating8}
+								emptyStarColor={'#CCCCCC'}
 								onStarClick={this.onStarClick.bind(this)}
 							/>
 						</div>
