@@ -7,7 +7,6 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Carousel from 'react-bootstrap/Carousel';
 import Image from 'react-bootstrap/Image';
-import Rating from 'react-rating';
 import StarRatingComponent from 'react-star-rating-component';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faStar as fasStar } from '@fortawesome/free-solid-svg-icons';
@@ -22,6 +21,7 @@ import { NavMenu } from '@Components';
 // importamos el css especifo de cada componente, esta en SASS
 import './index.scss';
 import '../../components/layout/layout.scss';
+import { Policy } from '../../components/policy_section';
 
 
 // aqui tienes que exportar el compoente, puede ser una funcion o una clase
@@ -84,77 +84,7 @@ export default class Index extends PureComponent {
 							</Col>
 						</Row>
 						{/* Policy Section */}
-						<section id="padding-policy-box">
-							<Row >
-								<Col className="policy-box">
-									<div className="icon-service">
-										<span className="flaticon-truck"></span>
-									</div>
-
-									<div className="service-content">
-										<div className="info-title">
-											<h5>Free Shipping</h5>
-										</div>
-										<div className="sub-title">
-											<span>On Order Over 99€</span>
-										</div>
-									</div>
-								</Col>
-								<Col className="policy-box">
-									<div className="icon-service">
-										<span className="flaticon-money"></span>
-									</div>
-
-									<div className="service-content">
-										<div className="info-title">
-											<h5>Guarantee</h5>
-										</div>
-										<div className="sub-title">
-											<span>30 Days Money Back</span>
-										</div>
-									</div>
-								</Col>
-								<Col className="policy-box">
-									<div className="icon-service">
-										<span className="flaticon-money-1"></span>
-									</div>
-									<div className="service-content">
-										<div className="info-title">
-											<h5>Payment On Delivery</h5>
-										</div>
-										<div className="sub-title">
-											<span>Cash On Delivery Option</span>
-										</div>
-									</div>
-								</Col>
-								<Col className="policy-box">
-									<div className="icon-service">
-										<span className="flaticon-support"></span>
-									</div>
-									<div className="service-content">
-										<div className="info-title">
-											<h5>Online Suport</h5>
-										</div>
-										<div className="sub-title">
-											<span>We Have Support 24/7</span>
-										</div>
-									</div>
-								</Col>
-							</Row>
-						</section>
-						{/* Deal Section */}
-						<section id="deal-title">
-							<Row>
-								<Col sm="auto">
-									<div>
-										<h3>Deal of the Week</h3>
-									</div>
-								</Col>
-								<Col id="hr">
-									<hr />
-								</Col>
-							</Row>
-						</section>
+						<Policy></Policy>
 						{/* Product Section */}
 						<section id="product-section">
 							<Row>
