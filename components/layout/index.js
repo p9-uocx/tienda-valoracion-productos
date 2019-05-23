@@ -75,19 +75,19 @@ export class Layout extends PureComponent {
                 <h4 className="h4-padding-bottom">Contact Details</h4>
                 <ul className="contact-details no-padding">
                   <li>
-                    <span className="fa fa-map-marker contact-icon"></span>
+                    <i className="fa fa-map-marker contact-icon"/>
                     <span className="contact-content">45 Grand Central Terminal NewYork<br />NY 017 United States USA</span>
                   </li>
                   <li>
-                    <span className="fa fa-phone contact-icon"></span>
+                    <i className="fa fa-phone contact-icon"/>
                     <span className="contact-content">+(123) 456 789 - (+204) 666 888</span>
                   </li>
                   <li>
-                    <span className="fa fa-envelope contact-icon"></span>
+                    <i className="fa fa-envelope contact-icon"/>
                     <span className="contact-content">contact@expert.com</span>
                   </li>
                   <li>
-                    <span className="fa fa-clock contact-icon"></span>
+                    <i className="fa fa-clock contact-icon"/>
                     <span className="contact-content">Mon-Sat 9:00am - 5:00pm Sun:Closed</span>
                   </li>
                 </ul>
