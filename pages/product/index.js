@@ -50,6 +50,10 @@ export default class Product extends PureComponent {
 									<span>|</span>
 									<span>Add your review</span>
 								</div>
+								<div className="price-box product-price-box">
+									<span className="old-price-label old-product-price">$280.00</span>
+									<span className="price-label product-price-label">$189.00</span>
+								</div>
 							</Col>
 						</Row>
 					</Container>
