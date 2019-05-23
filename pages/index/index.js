@@ -48,7 +48,7 @@ export default class Index extends PureComponent {
 						{/* Policy Section */}
 						<Policy></Policy>
 						{/* Deal Section */}
-						<section id="deal-title">
+						<section className="deal-title">
 							<Row>
 								<Col sm="auto">
 									<div>
@@ -75,7 +75,7 @@ export default class Index extends PureComponent {
 							</Row>
 						</section>
 						{/* Deal Section */}
-						<section id="deal-title">
+						<section className="deal-title">
 							<Row>
 								<Col sm="auto">
 									<div>
