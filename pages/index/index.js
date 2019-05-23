@@ -5,7 +5,6 @@ import Link from 'next/link';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Carousel from 'react-bootstrap/Carousel';
 import Image from 'react-bootstrap/Image';
 import StarRatingComponent from 'react-star-rating-component';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -24,6 +23,7 @@ import './index.scss';
 import '../../components/layout/layout.scss';
 import { ProductsA } from '../../components/products_A';
 import { ProductsB } from '../../components/products_B';
+import { CustomCarousel } from '../../components/carousel';
 
 // aqui tienes que exportar el compoente, puede ser una funcion o una clase
 export default class Index extends PureComponent {
@@ -43,27 +43,23 @@ export default class Index extends PureComponent {
 					{/* <Layout> Todo lo que este aqui dentro estara includo con las cabeceras y footer </Layout> */}
 					<Container>
 						<NavMenu></NavMenu>
-						<Row>
-							<Col sm={9}>
-								<Carousel>
-									<Carousel.Item>
-										<img src="/static/img/slider/slider-1-3.jpg" alt="first Slide" />
-									</Carousel.Item>
-									<Carousel.Item>
-										<img src="/static/img/slider/slider-2-3.jpg" alt="first Slide" />
-									</Carousel.Item>
-									<Carousel.Item>
-										<img src="/static/img/slider/slider3-3.jpg" alt="first Slide" />
-									</Carousel.Item>
-								</Carousel>
-							</Col>
-							<Col sm={3}>
-								<img id="img3a-padding" src="/static/img/slider/img3a.jpg" alt="first Slide" />
-								<img src="/static/img/slider/img3b.jpg" alt="first Slide" />
-							</Col>
-						</Row>
+						{/* Carousel Section*/}
+						<CustomCarousel></CustomCarousel>
 						{/* Policy Section */}
 						<Policy></Policy>
+						{/* Deal Section */}
+						<section id="deal-title">
+							<Row>
+								<Col sm="auto">
+									<div>
+										<h3>Deal of the Week</h3>
+									</div>
+								</Col>
+								<Col id="hr">
+									<hr />
+								</Col>
+							</Row>
+						</section>
 						{/* Product Section */}
 						<ProductsA></ProductsA>
 						{/*Seccion Separador*/}
