@@ -29,7 +29,7 @@ export default class Product extends PureComponent {
 
 		return (
 			<div>
-				<Layout title="Login" {...this.props}>
+				<Layout title="Product Page" {...this.props}>
 					<Container>
 						<NavMenu></NavMenu>
 						<Row className="row-padding-top">
