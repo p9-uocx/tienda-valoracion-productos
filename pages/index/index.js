@@ -6,7 +6,6 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
-import StarRatingComponent from 'react-star-rating-component';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faStar as fasStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
@@ -17,13 +16,13 @@ library.add(farStar, fasStar);
 import { Layout } from '@Components';
 import { NavMenu } from '@Components';
 import { Policy } from '@Components';
+import { ProductsA } from '@Components';
+import { ProductsB } from '@Components';
+import { CustomCarousel } from '@Components';
 
 // importamos el css especifo de cada componente, esta en SASS
 import './index.scss';
 import '../../components/layout/layout.scss';
-import { ProductsA } from '../../components/products_A';
-import { ProductsB } from '../../components/products_B';
-import { CustomCarousel } from '../../components/carousel';
 
 // aqui tienes que exportar el compoente, puede ser una funcion o una clase
 export default class Index extends PureComponent {

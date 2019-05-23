@@ -5,7 +5,6 @@ import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
 import StarRatingComponent from 'react-star-rating-component';
 
-
 export class ProductsB extends PureComponent {
 
 	constructor() {
@@ -32,8 +31,10 @@ export class ProductsB extends PureComponent {
 			<section id="product-section">
 				<Row>
 					<Col className="border-right-product" sm={3}>
-						<div>
-							<Image src="/static/img/products/3_4.jpg" alt="product 1" fluid />
+						<div className="cursor-pointer">
+							<Link href="/product">
+								<Image src="/static/img/products/3_4.jpg" alt="product 1" fluid />
+							</Link>
 						</div>
 						<div className="price-box">
 							<span className="price-label">$189.00</span>
@@ -47,11 +48,13 @@ export class ProductsB extends PureComponent {
 								onStarClick={this.onStarClick.bind(this)}
 							/>
 						</div>
-						<Link href=""><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
+						<Link href="/product"><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
 					</Col>
 					<Col className="border-right-product" sm={3}>
-						<div>
-							<Image src="/static/img/products/4_1_1.jpg" alt="product 1" fluid />
+						<div className="cursor-pointer">
+							<Link href="/product">
+								<Image src="/static/img/products/4_1_1.jpg" alt="product 6" fluid />
+							</Link>
 						</div>
 						<div className="price-box">
 							<span className="price-label">$189.00</span>
@@ -65,11 +68,13 @@ export class ProductsB extends PureComponent {
 								onStarClick={this.onStarClick.bind(this)}
 							/>
 						</div>
-						<Link href=""><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
+						<Link href="/product"><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
 					</Col>
 					<Col className="border-right-product" sm={3}>
-						<div>
-							<Image src="/static/img/products/7_1_1.jpg" alt="product 1" fluid />
+						<div className="cursor-pointer">
+							<Link href="/product">
+								<Image src="/static/img/products/7_1_1.jpg" alt="product 7" fluid />
+							</Link>
 						</div>
 						<div className="price-box">
 							<span className="price-label">$189.00</span>
@@ -83,11 +88,13 @@ export class ProductsB extends PureComponent {
 								onStarClick={this.onStarClick.bind(this)}
 							/>
 						</div>
-						<Link href=""><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
+						<Link href="/product"><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
 					</Col>
 					<Col sm={3}>
-						<div>
-							<Image src="/static/img/products/8_1_1.jpg" alt="product 1" fluid />
+						<div className="cursor-pointer">
+							<Link href="/product">
+								<Image src="/static/img/products/8_1_1.jpg" alt="product 8" fluid />
+							</Link>
 						</div>
 						<div className="price-box">
 							<span className="price-label">$189.00</span>
@@ -101,7 +108,7 @@ export class ProductsB extends PureComponent {
 								onStarClick={this.onStarClick.bind(this)}
 							/>
 						</div>
-						<Link href=""><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
+						<Link href="/product"><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
 					</Col>
 				</Row>
 			</section>

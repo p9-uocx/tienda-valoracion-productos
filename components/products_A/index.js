@@ -27,10 +27,6 @@ export class ProductsA extends PureComponent {
 		const { rating2 } = this.state;
 		const { rating3 } = this.state;
 		const { rating4 } = this.state;
-		const { rating5 } = this.state;
-		const { rating6 } = this.state;
-		const { rating7 } = this.state;
-		const { rating8 } = this.state;
 
 		return (
 			<section id="product-section">

@@ -6,7 +6,7 @@ import Col from 'react-bootstrap/Col';
 import { Layout } from '../../components/layout';
 import { NavMenu } from '../../components/nav';
 
-import './login.scss';
+import './product.scss';
 
 export default class Product extends PureComponent {
 
