@@ -60,11 +60,11 @@ export default class Product extends PureComponent {
 									<span className="old-price-label old-product-price">$280.00</span>
 								</div>
 								<div id="stock">
-									<div class="stock available" title="Availability">
-										<i class="fa fa-check" aria-hidden="true"></i>
-										<span class="">In stock</span>
+									<div className="stock available" title="Availability">
+										<i className="fa fa-check" aria-hidden="true"></i>
+										<span className="">In stock</span>
 									</div>
-									<div class="product attribute sku">
+									<div className="product attribute sku">
 										<span><strong>SKU: </strong>furniture05</span>
 									</div>
 								</div>

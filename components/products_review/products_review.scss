@@ -1,4 +1,48 @@
+.reviews-container {
+  padding: 30px;
+  color: #666666;
+  font-size: 14px;
+}
+div.col-sm-4 {
+  padding: 0;
+}
+
 .block-title {
-    border-bottom: 1px solid #dfdfdf;
-    padding-bottom: 10px;
+  border-bottom: 1px solid #dfdfdf;
+  padding-bottom: 10px;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.block-title strong {
+  font-weight: 300;
+  line-height: 1.1;
+  font-size: 1.5rem;
+}
+
+.review-content {
+  padding-top: 35px;
+  text-align: justify;
+  border-bottom: 1px solid #dfdfdf;
+}
+.rating-container {
+  padding-top: 10px;
+  font-size: 20px;
+}
+
+.review-details {
+  padding-top: 15px;
+}
+
+/**************************/
+
+.user-review-intro {
+  padding-top: 25px;
+}
+
+.user-review-intro span {
+  text-transform: uppercase;
+}
+.user-review-rating span span:nth-child(1) {
+    color: red;
 }
