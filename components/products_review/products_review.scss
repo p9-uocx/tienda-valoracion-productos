@@ -46,3 +46,18 @@ div.col-sm-4 {
 .user-review-rating span span:nth-child(1) {
     color: red;
 }
+
+.review-button-container {
+    padding-top: 10px;
+}
+
+.review-button {
+    background: linear-gradient(0deg, #f0c049 0%, #fbdd99 100%) !important;
+    border: 1px solid #be952c !important;
+    padding: 0;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 0 3px 3px 0;
+    width: 140%;
+    color: #222222;
+  }

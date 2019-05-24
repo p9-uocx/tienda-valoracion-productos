@@ -17,8 +17,14 @@ export class ProductsReview extends PureComponent {
 			numReviews: 3,
 			contentReview: 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.',
 			user: 'Tuyen Le',
-			fechaReview: '12/4/19'
+			fechaReview: '12/4/19',
+			userRating: 0
 		};
+	}
+
+	onStarClick(nextValue, prevValue, name) {
+		console.log('name: %s, nextValue: %s, prevValue: %s', name, nextValue, prevValue);
+		this.setState({ userRating: nextValue });
 	}
 
 	render() {
@@ -66,13 +72,24 @@ export class ProductsReview extends PureComponent {
 				<Row>
 					<div className="rating-container">
 						<StarRatingComponent
-							name="rate1"
+							name="userRating"
 							starCount={5}
-							value={0}
+							value={this.state.userRating}
 							emptyStarColor={'#CCCCCC'}
+							onStarClick={this.onStarClick.bind(this)}
 						/>
 					</div>
-
+				</Row>
+				<Row>
+					<div className="user-review-content">
+						<label for="review-content">Review <span>*</span></label>
+						<textarea name="" id="review-content" cols="103" rows="3"></textarea>
+					</div>
+					<div className="review-button-container">
+						<button className="review-button" title="Submit Review" type="submit">
+							<span>Submit Review</span>
+						</button>
+					</div>
 				</Row>
 
 			</div>
