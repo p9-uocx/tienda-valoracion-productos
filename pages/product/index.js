@@ -4,17 +4,15 @@ import Image from 'react-bootstrap/Image';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { Layout } from '../../components/layout';
-import { NavMenu } from '../../components/nav';
-import StarRatingComponent from 'react-star-rating-component';
 import Tab from 'react-bootstrap/Tab';
-import TabContainer from 'react-bootstrap/TabContainer';
-import TabContent from 'react-bootstrap/TabContent';
-import TabPane from 'react-bootstrap/TabPane';
 import Nav from 'react-bootstrap/Nav';
+import StarRatingComponent from 'react-star-rating-component';
+import { Layout } from '../../components/layout';
+import { Policy } from '../../components';
+import { NavMenu } from '../../components/nav';
+
 
 import './product.scss';
-import { Policy } from '../../components';
 
 export default class Product extends PureComponent {
 
@@ -45,7 +43,7 @@ export default class Product extends PureComponent {
 							</Col>
 							{/* Product Details Column*/}
 							<Col className="col-padding">
-								<p>{this.state.title}</p>
+								<p id="product-title">{this.state.title}</p>
 								<div className="reviews-info">
 									<StarRatingComponent
 										name="rate1"
