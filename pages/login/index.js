@@ -28,7 +28,7 @@ export default class Login extends PureComponent {
 											process faster, store multiple shipping addresses, view and track your orders in your account
 											and more.
 										</p>
-										<div className="primary">
+										<div>
 											<button className="register-button" title="register" type="submit">
 												<span>Create an Account</span>
 											</button>

@@ -1,41 +1,74 @@
 .row-padding-top {
-    padding-top: 35px;
+  padding-top: 35px;
 }
 
 .col-padding {
-    padding-top: 40px;
-    padding-left: 50px;
+  padding-top: 40px;
+  padding-left: 50px;
 }
 
 .reviews-info {
-    line-height: 0px;
-    color: #888;
-    font-size: 14px;
+  line-height: 0px;
+  color: #888;
+  font-size: 14px;
 }
 
 .reviews-info span {
-    position: relative;
-    top: -1px;
-    left: 15px;
+  position: relative;
+  top: -1px;
+  left: 15px;
 }
 
 .reviews-info span:nth-child(3) {
-    position: relative;
-    left: 25px;
+  position: relative;
+  left: 25px;
 }
 
 .reviews-info span:nth-child(4) {
-    position: relative;
-    left: 35px;
+  position: relative;
+  left: 35px;
 }
 
 .product-price-box {
-    padding-top: 20px;
+  padding-top: 20px;
 }
 
 .old-product-price {
-    padding: 0 15px 0 0 !important;
+  padding: 0 15px 0 0 !important;
 }
 .product-price-label {
-    font-weight: 800;
+  font-weight: 800;
+}
+#hr-product {
+  border: 1px solid #e2e2e2;
+}
+.description-text {
+  color: #888;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.cart-button {
+  background: linear-gradient(0deg, #f0c049 0%, #fbdd99 100%) !important;
+  border: 1px solid #be952c !important;
+  padding: 0;
+  height: 45px;
+  line-height: 45px;
+  border-radius: 0 3px 3px 0;
+  width: 100%;
+  color: #222222;
+}
+
+#padding-bottom {
+  padding-bottom: 30px;
+}
+/******** TABS *********/
+
+.padding-top {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.nav-pills .nav-link.active {
+  background-color: #f0c049;
 }
