@@ -57,8 +57,17 @@ export default class Product extends PureComponent {
 									<span>Add your review</span>
 								</div>
 								<div className="price-box product-price-box">
-									<span className="old-price-label old-product-price">$280.00</span>
 									<span className="price-label product-price-label">$189.00</span>
+									<span className="old-price-label old-product-price">$280.00</span>
+								</div>
+								<div id="stock">
+									<div class="stock available" title="Availability">
+										<i class="fa fa-check" aria-hidden="true"></i>
+										<span class="">In stock</span>
+									</div>
+									<div class="product attribute sku">
+										<span><strong>SKU: </strong>furniture05</span>
+									</div>
 								</div>
 								<div>
 									<hr id="hr-product" />
@@ -107,7 +116,7 @@ export default class Product extends PureComponent {
 												Eos cu utroque inermis invenire, eu pri alterum antiopam. Nisl erroribus definitiones nec an, ne mutat scripserit est. Eros veri ad pri. An soleat maluisset per. Has eu idque similique, et blandit scriptorem necessitatibus mea. Vis quaeque ocurreret ea.</p>
 										</Tab.Pane>
 										<Tab.Pane eventKey="second">
-											
+
 										</Tab.Pane>
 									</Tab.Content>
 								</Col>

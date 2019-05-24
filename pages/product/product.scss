@@ -34,10 +34,11 @@
 }
 
 .old-product-price {
-  padding: 0 15px 0 0 !important;
+  padding: 0 0px 0 10px !important;
 }
 .product-price-label {
   font-weight: 800;
+  font-size: 19px;
 }
 #hr-product {
   border: 1px solid #e2e2e2;
@@ -46,6 +47,13 @@
   color: #888;
   font-size: 14px;
   line-height: 20px;
+}
+
+#stock {
+    padding: 20px 0 20px 0;
+}
+.stock.available > span {
+    padding-left: 5px;
 }
 
 .cart-button {
