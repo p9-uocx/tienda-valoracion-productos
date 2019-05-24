@@ -13,6 +13,7 @@ import { NavMenu } from '../../components/nav';
 
 
 import './product.scss';
+import { ProductsReview } from '../../components/products_review';
 
 export default class Product extends PureComponent {
 
@@ -125,7 +126,7 @@ export default class Product extends PureComponent {
 											</p>
 										</Tab.Pane>
 										<Tab.Pane eventKey="second">
-
+											<ProductsReview></ProductsReview>
 										</Tab.Pane>
 									</Tab.Content>
 								</Col>
