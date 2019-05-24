@@ -109,11 +109,22 @@ export default class Product extends PureComponent {
 								<Col sm={9}>
 									<Tab.Content>
 										<Tab.Pane eventKey="first">
-											<p className="description-text">Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.
-
-												Cum altera mandamus in, mea verear disputationi et. Vel regione discere ut, legere expetenda ut eos. In nam nibh invenire similique. Atqui mollis ea his, ius graecis accommodare te. No eam tota nostrum cotidieque. Est cu nibh clita. Sed an nominavi maiestatis, et duo corrumpit constituto, duo id rebum lucilius. Te eam iisque deseruisse, ipsum euismod his at. Eu putent habemus voluptua sit, sit cu rationibus scripserit, modus voluptaria ex per. Aeque dicam consulatu eu his, probatus neglegentur disputationi sit et. Ei nec ludus epicuri petentium, vis appetere maluisset ad. Et hinc exerci utinam cum. Sonet saperet nominavi est at, vel eu sumo tritani. Cum ex minim legere.
-
-												Eos cu utroque inermis invenire, eu pri alterum antiopam. Nisl erroribus definitiones nec an, ne mutat scripserit est. Eros veri ad pri. An soleat maluisset per. Has eu idque similique, et blandit scriptorem necessitatibus mea. Vis quaeque ocurreret ea.</p>
+											<p className="description-text">Lorem ipsum dolor sit amet, an munere tibique consequat mel,
+												congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in
+												eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum.
+												Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis,
+												labores officiis torquatos cum ei.<br></br><br></br>
+												Cum altera mandamus in, mea verear disputationi et. Vel regione discere ut, legere expetenda ut eos.
+												In nam nibh invenire similique. Atqui mollis ea his, ius graecis accommodare te. No eam tota nostrum cotidieque.
+												Est cu nibh clita. Sed an nominavi maiestatis, et duo corrumpit constituto, duo id rebum lucilius.
+												Te eam iisque deseruisse, ipsum euismod his at. Eu putent habemus voluptua sit, sit cu rationibus scripserit,
+												modus voluptaria ex per. Aeque dicam consulatu eu his, probatus neglegentur disputationi sit et.
+												Ei nec ludus epicuri petentium, vis appetere maluisset ad. Et hinc exerci utinam cum. Sonet saperet nominavi est at,
+												vel eu sumo tritani. Cum ex minim legere.<br></br><br></br>
+												Eos cu utroque inermis invenire, eu pri alterum antiopam. Nisl erroribus definitiones nec an, ne mutat scripserit est.
+												Eros veri ad pri. An soleat maluisset per. Has eu idque similique, et blandit scriptorem necessitatibus mea.
+												Vis quaeque ocurreret ea.
+											</p>
 										</Tab.Pane>
 										<Tab.Pane eventKey="second">
 
