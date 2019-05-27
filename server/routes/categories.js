@@ -1,26 +1,62 @@
 const Router = require('restify-router').Router;
 const router = new Router();
 
-// podemos uasr los 4 metodos hhtp para responder al frontEnd (get, post, put, delete)
-router.get('/category', (req, res) => {
-  // el parametro req es un objeto que trae los datos de la peticion
-  // el parametro res es un objeto con metodos para enviar las respuestas desde el back
+const { CategoryModel } = require('../db/category');
+const { ProductModel } = require('../db/product');
+const { CatHasProdModel } = require('../db/category-product');
 
-  // el metodo send del objeto res envia responde datos, por ejemplo en este caso un objeto en JSON: { hola: 'adsa' }
-  res.send({ hola: 'adsa' });
+router.get('/category', (req, res) => {
+  CategoryModel.getAllCategories()
+    .then(data => {
+      res.send(200, { data });
+    })
+    .catch(error => {
+      res.send(500, { error });
+    });
+});
+
+router.get('/category/:id', (req, res) => {
+  CategoryModel.getCategoryById(req.params.id)
+    .then(category => {
+      CatHasProdModel.getCatHasProdByCategoryId(category[0].id_category).then(catHasProd => {
+        ProductModel.getProductById(catHasProd[0].product_id).then(products => {
+          res.send(200, { data: { ...category[0], products } });
+        });
+      });
+    })
+    .catch(error => {
+      res.send(500, { error });
+    });
 });
 
 router.post('/category', (req, res) => {
-  res.send({ hola: 'adsa' });
+  CategoryModel.createCategory(req.body)
+    .then(data => {
+      res.send(200, { data });
+    })
+    .catch(error => {
+      res.send(500, { error });
+    });
 });
 
-router.put('/category', (req, res) => {
-  res.send({ hola: 'adsa' });
+router.put('/category/:id', (req, res) => {
+  CategoryModel.updateCategory(req.params.id, req.body)
+    .then(data => {
+      res.send(200, { data });
+    })
+    .catch(error => {
+      res.send(500, { error });
+    });
 });
 
-router.del('/category', (req, res) => {
-  res.send({ hola: 'adsa' });
+router.del('/category/:id', (req, res) => {
+  CategoryModel.deleteCategory(req.params.id)
+    .then(data => {
+      res.send(200, { data });
+    })
+    .catch(error => {
+      res.send(500, { error });
+    });
 });
 
-// hay que exportar el router con sus metodos para poner importarlo despues y unirlo al server
 module.exports = router;

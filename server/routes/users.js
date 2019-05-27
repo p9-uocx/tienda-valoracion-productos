@@ -2,6 +2,8 @@ const Router = require('restify-router').Router;
 const router = new Router();
 
 const { UserModel } = require('../db/user');
+const { RoleModel } = require('../db/rol');
+const { ReviewModel } = require('../db/review');
 
 router.get('/user', (req, res) => {
   UserModel.getAllUsers()
@@ -15,9 +17,12 @@ router.get('/user', (req, res) => {
 
 router.get('/user/:id', (req, res) => {
   UserModel.getUserById(req.params.id)
-    .then(data => {
-      res.send(200, { data });
-    })
+    .then(user => RoleModel.getRolById(user[0].rol).then(rol => ({ ...user[0], rol: rol[0] })))
+    .then(data =>
+      ReviewModel.getReviewsByUserId(data.id_user).then(reviews => {
+        res.send(200, { data: { ...data, reviews } });
+      }),
+    )
     .catch(error => {
       res.send(500, { error });
     });

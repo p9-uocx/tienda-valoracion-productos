@@ -1,0 +1,59 @@
+const { Mysql } = require('./config');
+
+exports.ReviewModel = new (class ReviewModel extends Mysql {
+  getAllReviews() {
+    return this.query('SELECT * FROM reviews');
+  }
+
+  getReviewsByIds(productId, userId) {
+    if (!productId || !userId || isNaN(productId) || isNaN(userId))
+      return Promise.reject('User ID and Product ID is not defined or is incorrect');
+    return this.query(`SELECT * FROM reviews WHERE product_id=${productId} AND user_id=${userId}`);
+  }
+
+  getReviewsByProductId(productId) {
+    if (!productId || isNaN(productId))
+      return Promise.reject('ProductId is not defined or is incorrect');
+    return this.query(`SELECT * FROM reviews WHERE product_id=${productId}`);
+  }
+
+  getReviewsByUserId(userId) {
+    if (!userId || isNaN(userId)) return Promise.reject('UserId is not defined or is incorrect');
+    return this.query(`SELECT * FROM reviews WHERE user_id=${userId}`);
+  }
+
+  createReview({ title, descripction, images_url, rating, user_id, product_id, date_add }) {
+    if (!title || !descripction || !images_url || !rating || !user_id || !product_id || !date_add)
+      return Promise.reject('Review data is incomplete');
+
+    return this.query(
+      `INSERT INTO reviews 
+      (title, descripction, images_url, rating, user_id, product_id, date_add) 
+      VALUES (${title},${descripction},${images_url},${rating},${user_id},${product_id},${date_add})`,
+    );
+  }
+
+  deleteReview(productId, userId) {
+    if (!productId || !userId || isNaN(productId) || isNaN(userId))
+      return Promise.reject('User ID and Product ID is not defined or is incorrect');
+
+    return this.query(`DELETE FROM reviews WHERE product_id=${productId} AND user_id=${userId}`);
+  }
+
+  updateReview(
+    productId,
+    userId,
+    { title, descripction, images_url, rating, user_id, product_id },
+  ) {
+    if (!title || !descripction || !images_url || !rating || !user_id || !product_id)
+      return Promise.reject('Review data is incomplete');
+    if (!productId || !userId || isNaN(productId) || isNaN(userId))
+      return Promise.reject('User ID and Product ID is not defined or is incorrect');
+
+    return this.query(
+      `UPDATE reviews
+      SET title=${title},descripction=${descripction},images_url=${images_url},rating=${rating},user_id=${user_id},product_id${product_id} 
+      WHERE product_id=${productId} AND user_id=${userId}`,
+    );
+  }
+})();
