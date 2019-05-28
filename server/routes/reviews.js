@@ -4,7 +4,7 @@ const router = new Router();
 const { ReviewModel } = require('../db/review');
 
 router.get('/review', (req, res) => {
-  ReviewModel.getAllProducts()
+  ReviewModel.getAllReviews()
     .then(data => {
       res.send(200, { data });
     })
@@ -14,7 +14,7 @@ router.get('/review', (req, res) => {
 });
 
 router.get('/review/:userId/:productId', (req, res) => {
-  ReviewModel.updateProduct(req.params.id, req.body)
+  ReviewModel.getReviewsByIds(req.params.userId, req.params.productId)
     .then(data => {
       res.send(200, { data });
     })
@@ -24,7 +24,7 @@ router.get('/review/:userId/:productId', (req, res) => {
 });
 
 router.post('/review', (req, res) => {
-  ReviewModel.createProduct(req.body)
+  ReviewModel.createReview(req.body)
     .then(data => {
       res.send(200, { data });
     })
@@ -34,7 +34,7 @@ router.post('/review', (req, res) => {
 });
 
 router.put('/review/:userId/:productId', (req, res) => {
-  ReviewModel.updateProduct(req.params.id, req.body)
+  ReviewModel.updateReview(req.params.userId, req.params.productId, req.body)
     .then(data => {
       res.send(200, { data });
     })
@@ -44,7 +44,7 @@ router.put('/review/:userId/:productId', (req, res) => {
 });
 
 router.del('/review/:userId/:productId', (req, res) => {
-  ReviewModel.deleteProduct(req.params.id)
+  ReviewModel.deleteReview(req.params.userId, req.params.productId)
     .then(data => {
       res.send(200, { data });
     })

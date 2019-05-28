@@ -18,7 +18,7 @@ router.get('/role/:id', (req, res) => {
   RoleModel.getRolById(req.params.id)
     .then(role =>
       UserModel.getUsersByRol(req.params.id).then(users => {
-        res.send(200, { ...role[0], users });
+        res.send(200, { data: { ...role[0], users } });
       }),
     )
     .catch(error => {

@@ -15,14 +15,15 @@ exports.UserModel = new (class UserModel extends Mysql {
     return this.query(`SELECT * FROM Users WHERE rol=${rolId}`);
   }
 
-  createUser({ first_name, last_name, gender, email, password, rol, date_add }) {
-    if (!first_name || !last_name || !gender || !email || !password || !rol || !date_add)
+  createUser({ first_name, last_name, gender, email, password, rol }) {
+    if (!first_name || !last_name || !gender || !email || !password || !rol)
       return Promise.reject('User data is incomplete');
+    const date = new Date().toISOString();
 
     return this.query(
       `INSERT INTO Users 
       (first_name, last_name, gender, email, password, rol, date_add) 
-      VALUES (${first_name},${last_name},${gender},${email},${password},${rol},${date_add})`,
+      VALUES ('${first_name}','${last_name}','${gender}','${email}','${password}',${rol},'${date}')`,
     );
   }
 
@@ -39,7 +40,7 @@ exports.UserModel = new (class UserModel extends Mysql {
 
     return this.query(
       `UPDATE Users
-      SET first_name=${first_name}, last_name=${last_name}, gender=${gender}, email=${email}, password=${password}, rol=${rol}
+      SET first_name='${first_name}', last_name='${last_name}', gender='${gender}', email='${email}', password='${password}', rol=${rol}
       WHERE id_user=${id}`,
     );
   }

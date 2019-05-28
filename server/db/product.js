@@ -25,7 +25,6 @@ exports.ProductModel = new (class ProductModel extends Mysql {
     available,
     meta_title,
     meta_description,
-    date_add,
   }) {
     if (
       !reference ||
@@ -36,15 +35,15 @@ exports.ProductModel = new (class ProductModel extends Mysql {
       !excerpt ||
       !available ||
       !meta_title ||
-      !meta_description ||
-      !date_add
+      !meta_description
     )
       return Promise.reject('Product data is incomplete');
+    const date = new Date().toISOString();
 
     return this.query(
       `INSERT INTO Products 
-      (reference,title,description,price,img_url,excerpt,available,meta_title,meta_description,date_add,) 
-      VALUES (${reference},${title},${description},${price},${img_url},${excerpt},${available},${meta_title},${meta_description},${date_add})`,
+      (reference,title,description,price,img_url,excerpt,available,meta_title,meta_description,date_add) 
+      VALUES (${reference},'${title}','${description}',${price},'${img_url}','${excerpt}',${available},'${meta_title}','${meta_description}','${date}')`,
     );
   }
 
@@ -84,7 +83,7 @@ exports.ProductModel = new (class ProductModel extends Mysql {
 
     return this.query(
       `UPDATE Products
-      SET reference=${reference},title=${title},description=${description},price=${price},img_url=${img_url},excerpt=${excerpt},available=${available},meta_title=${meta_title},meta_description=${meta_description} 
+      SET reference=${reference},title='${title}',description='${description}',price=${price},img_url='${img_url}',excerpt='${excerpt}',available=${available},meta_title='${meta_title}',meta_description='${meta_description}' 
       WHERE id_product=${id}`,
     );
   }
