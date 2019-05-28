@@ -16,6 +16,10 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
+-- Privilegios para `p9_uoc_user`@`%`
+GRANT USAGE ON *.* TO 'p9_uoc_user'@'%' IDENTIFIED BY PASSWORD '*FA372851786D3E6EFEEA781E4E4944231BA18538';
+GRANT ALL PRIVILEGES ON `p9_uoc`.* TO 'p9_uoc_user'@'%' WITH GRANT OPTION;
+
 --
 -- Base de datos: `p9_uoc`
 --
