@@ -1,12 +1,11 @@
 const Router = require('restify-router').Router;
 const router = new Router();
 
-const { UserModel } = require('../db/user');
 const { RoleModel } = require('../db/rol');
-const { ReviewModel } = require('../db/review');
+const { UserModel } = require('../db/user');
 
-router.get('/user', (req, res) => {
-  UserModel.getAllUsers()
+router.get('/role', (req, res) => {
+  RoleModel.getAllRoles()
     .then(data => {
       res.send(200, { data });
     })
@@ -15,12 +14,11 @@ router.get('/user', (req, res) => {
     });
 });
 
-router.get('/user/:id', (req, res) => {
-  UserModel.getUserById(req.params.id)
-    .then(user => RoleModel.getRolById(user[0].rol).then(rol => ({ ...user[0], rol: rol[0] })))
-    .then(data =>
-      ReviewModel.getReviewsByUserId(data.id_user).then(reviews => {
-        res.send(200, { data: { ...data, reviews } });
+router.get('/role/:id', (req, res) => {
+  RoleModel.getRolById(req.params.id)
+    .then(role =>
+      UserModel.getUsersByRol(req.params.id).then(users => {
+        res.send(200, { data: { ...role[0], users } });
       }),
     )
     .catch(error => {
@@ -28,8 +26,8 @@ router.get('/user/:id', (req, res) => {
     });
 });
 
-router.post('/user', (req, res) => {
-  UserModel.createUser(req.body)
+router.post('/role', (req, res) => {
+  RoleModel.createRol(req.body)
     .then(data => {
       res.send(200, { data });
     })
@@ -38,8 +36,8 @@ router.post('/user', (req, res) => {
     });
 });
 
-router.put('/user/:id', (req, res) => {
-  UserModel.updateUser(req.params.id, req.body)
+router.put('/role/:id', (req, res) => {
+  RoleModel.updateRol(req.params.id, req.body)
     .then(data => {
       res.send(200, { data });
     })
@@ -48,8 +46,8 @@ router.put('/user/:id', (req, res) => {
     });
 });
 
-router.del('/user/:id', (req, res) => {
-  UserModel.deleteUser(req.params.id)
+router.del('/role/:id', (req, res) => {
+  RoleModel.deleteRol(req.params.id)
     .then(data => {
       res.send(200, { data });
     })

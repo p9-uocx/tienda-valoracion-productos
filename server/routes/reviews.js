@@ -1,12 +1,10 @@
 const Router = require('restify-router').Router;
 const router = new Router();
 
-const { UserModel } = require('../db/user');
-const { RoleModel } = require('../db/rol');
 const { ReviewModel } = require('../db/review');
 
-router.get('/user', (req, res) => {
-  UserModel.getAllUsers()
+router.get('/review', (req, res) => {
+  ReviewModel.getAllReviews()
     .then(data => {
       res.send(200, { data });
     })
@@ -15,21 +13,8 @@ router.get('/user', (req, res) => {
     });
 });
 
-router.get('/user/:id', (req, res) => {
-  UserModel.getUserById(req.params.id)
-    .then(user => RoleModel.getRolById(user[0].rol).then(rol => ({ ...user[0], rol: rol[0] })))
-    .then(data =>
-      ReviewModel.getReviewsByUserId(data.id_user).then(reviews => {
-        res.send(200, { data: { ...data, reviews } });
-      }),
-    )
-    .catch(error => {
-      res.send(500, { error });
-    });
-});
-
-router.post('/user', (req, res) => {
-  UserModel.createUser(req.body)
+router.get('/review/:userId/:productId', (req, res) => {
+  ReviewModel.getReviewsByIds(req.params.userId, req.params.productId)
     .then(data => {
       res.send(200, { data });
     })
@@ -38,8 +23,8 @@ router.post('/user', (req, res) => {
     });
 });
 
-router.put('/user/:id', (req, res) => {
-  UserModel.updateUser(req.params.id, req.body)
+router.post('/review', (req, res) => {
+  ReviewModel.createReview(req.body)
     .then(data => {
       res.send(200, { data });
     })
@@ -48,8 +33,18 @@ router.put('/user/:id', (req, res) => {
     });
 });
 
-router.del('/user/:id', (req, res) => {
-  UserModel.deleteUser(req.params.id)
+router.put('/review/:userId/:productId', (req, res) => {
+  ReviewModel.updateReview(req.params.userId, req.params.productId, req.body)
+    .then(data => {
+      res.send(200, { data });
+    })
+    .catch(error => {
+      res.send(500, { error });
+    });
+});
+
+router.del('/review/:userId/:productId', (req, res) => {
+  ReviewModel.deleteReview(req.params.userId, req.params.productId)
     .then(data => {
       res.send(200, { data });
     })

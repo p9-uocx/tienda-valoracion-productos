@@ -1,30 +1,34 @@
 const mysql = require('mysql');
 
-export class mysql {
+exports.Mysql = class Mysql {
   constructor() {
     this.dataBase = mysql.createConnection({
       host: 'localhost',
-      user: 'me',
-      password: 'secret',
-      database: 'my_db',
+      port: '8889',
+      user: 'p9_uoc_user',
+      password: 'EIBgv7o1CA4bqlK4',
+      database: 'p9_uoc',
     });
   }
 
   connect() {
-    dataBase.connect();
+    this.dataBase.connect(err => {
+      if (err) throw new Error(err.stack);
+    });
   }
 
-  query(query, callback) {
-    dataBase.connect();
-    this.dataBase.query(query, (error, results, fields) => {
-      if (error) throw error;
-      console.log('The solution is: ', results[0].solution);
-      this.dataBase.end();
-      callback(results, fields);
+  query(query) {
+    return new Promise((resolve, reject) => {
+      this.dataBase.query(query, (err, results, fields) => {
+        if (err) reject(err);
+        resolve(results, fields);
+      });
     });
   }
 
   connectEnd() {
-    this.dataBase.end();
+    this.dataBase.end(err => {
+      if (err) throw new Error(err.stack);
+    });
   }
-}
+};
