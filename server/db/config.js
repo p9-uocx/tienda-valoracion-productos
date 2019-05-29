@@ -4,10 +4,11 @@ exports.Mysql = class Mysql {
   constructor() {
     this.dataBase = mysql.createConnection({
       host: 'localhost',
-      port: '8889',
+      port: '3306',
       user: 'p9_uoc_user',
       password: 'EIBgv7o1CA4bqlK4',
       database: 'p9_uoc',
+      dateStrings: true,
     });
   }
 
