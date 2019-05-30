@@ -82,7 +82,7 @@ export class ProductsReview extends PureComponent {
 				</Row>
 				<Row>
 					<div className="user-review-content">
-						<label for="review-content">Review <span>*</span></label>
+						<label>Review <span>*</span></label>
 						<textarea name="" id="review-content" cols="103" rows="3"></textarea>
 					</div>
 					<div className="review-button-container">
