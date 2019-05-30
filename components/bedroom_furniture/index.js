@@ -9,8 +9,8 @@ import StarRatingComponent from 'react-star-rating-component';
 
 export class BedroomFurniture extends PureComponent {
 
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 
 		this.state = {
 			rating: 0,
@@ -27,7 +27,7 @@ export class BedroomFurniture extends PureComponent {
 				this.setState({ categorias: categorias })
 			})
 			.catch(error => {
-				console.log("something bad happened somewhere, rollback!");
+				console.log("Fetching error...");
 		});
 	}
 
