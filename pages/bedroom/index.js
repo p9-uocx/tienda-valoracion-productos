@@ -9,7 +9,7 @@ import { NavMenu } from '../../components/nav';
 import { BedroomFurniture } from '@Components';
 import { ProductsB } from '@Components';
 
-export default class BedroomFurnitePage extends PureComponent {
+export default class BedroomFurniturePage extends PureComponent {
 
 	render() {
 		return (

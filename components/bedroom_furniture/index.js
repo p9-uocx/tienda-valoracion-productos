@@ -14,21 +14,18 @@ export class BedroomFurniture extends PureComponent {
 
 		this.state = {
 			rating: 0,
-			categorias: []
+			categorias: null
 		};
 	}
 
-	componentWillMount() {
+	componentDidMount() {
 		fetch(`${process.env.DB_API_HOST}/category`)
-			.then((response) => {
-				return response.json()
-			})
-			.then((categorias) => {
-				this.setState({ categorias: categorias })
-			})
+			.then((response) => response.json())
+			.then(categorias => this.setState({categorias}))
 			.catch(error => {
-				console.log("Fetching error...");
-		});
+				console.log("Fetching Error...")
+			})
+			
 	}
 
 
@@ -39,7 +36,7 @@ export class BedroomFurniture extends PureComponent {
 
 	render() {
 
-		console.log(this.state.categorias);
+		
 
 		const { rating1 } = this.state;
 		const { rating2 } = this.state;
