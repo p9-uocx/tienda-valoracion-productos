@@ -14,22 +14,10 @@ export class BedroomFurniture extends PureComponent {
 
 		this.state = {
 			rating: 0,
-			categorias: null
+
 		};
 	}
-
-	componentDidMount() {
-		fetch(`${process.env.DB_API_HOST}/category`)
-			.then(response => response.text())
-			.then(categorias => this.setState({categorias}))
-			.then(categorias => console.log("Categorias:" + categorias))
-			.catch(error => {
-				console.log("Error fetching..." + error.message)
-			})
-			
-	}
-
-
+	
 	onStarClick(nextValue, prevValue, name) {
 		console.log('name: %s, nextValue: %s, prevValue: %s', name, nextValue, prevValue);
 		this.setState({ rating: nextValue });
@@ -37,7 +25,7 @@ export class BedroomFurniture extends PureComponent {
 
 	render() {
 
-		
+		//console.log(this.props.data)
 
 		const { rating1 } = this.state;
 		const { rating2 } = this.state;
@@ -46,6 +34,12 @@ export class BedroomFurniture extends PureComponent {
 
 		return (
 			<section id="product-section">
+
+				{this.props.data.category.map(function (elemento) {
+					return elemento.name;
+				})}
+
+
 				<Row>
 					<Col className="border-right-product" sm={3}>
 						<div className="cursor-pointer">
@@ -53,6 +47,9 @@ export class BedroomFurniture extends PureComponent {
 								<Image src="/static/img/products/2_4.jpg" alt="product 1" fluid />
 							</Link>
 						</div>
+
+
+
 						<div className="price-box">
 							<span className="price-label">$189.00</span>
 							<span className="old-price-label">$280.00</span>

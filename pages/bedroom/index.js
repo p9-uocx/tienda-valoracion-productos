@@ -11,7 +11,26 @@ import { ProductsB } from '@Components';
 
 export default class BedroomFurniturePage extends PureComponent {
 
+	static async getInitialProps({ req }) {
+		const res = await fetch(`${process.env.DB_API_HOST}/category`);
+		const categoryData = await res.json();
+
+		const apiReqProduct = await fetch(`${process.env.DB_API_HOST}/product`);
+		const productData = await apiReqProduct.json();
+
+		const dataCombined = { category: categoryData.data, product: productData.data };
+		console.log(dataCombined);
+
+		return { datosServivor: dataCombined }
+
+
+	}
+
+
 	render() {
+
+		console.log(this.props.datosServivor)
+		
 		return (
 			<Layout>
 				<Container>
@@ -28,7 +47,7 @@ export default class BedroomFurniturePage extends PureComponent {
 							</Col>
 						</Row>
 					</section>
-					<BedroomFurniture></BedroomFurniture>
+					<BedroomFurniture data={this.props.datosServivor}></BedroomFurniture>
 
 				</Container>
 			</Layout>
