@@ -8,10 +8,11 @@ const reviewRouter = require('./routes/reviews');
 const productRouter = require('./routes/products');
 const categoryRouter = require('./routes/categories');
 
-const cors = corsMiddleware({  
-  origins: ['http://54.37.9.85', 'http://localhost:3000'],
-  allowHeaders: ["API-Token"],
-  exposeHeaders: ["API-Token-Expiry"]
+var cors = corsMiddleware({
+  preflightMaxAge: 5,
+  origins: ['*'],
+  allowHeaders:['X-App-Version'],
+  exposeHeaders:[]
 });
 
 const server = restify.createServer({
@@ -19,12 +20,15 @@ const server = restify.createServer({
   version: '1.0.0',
 });
 
-server.pre(cors.preflight);
-server.use(cors.actual);
 server.pre(function(req, res, next) {
   req.headers.accept = 'application/json';
   return next();
 });
+
+
+server.pre(cors.preflight);
+server.use(cors.actual);
+
 server.use(restify.plugins.acceptParser(server.acceptable));
 server.use(restify.plugins.queryParser());
 server.use(restify.plugins.bodyParser());

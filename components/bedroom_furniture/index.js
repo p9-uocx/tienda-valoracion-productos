@@ -20,10 +20,11 @@ export class BedroomFurniture extends PureComponent {
 
 	componentDidMount() {
 		fetch(`${process.env.DB_API_HOST}/category`)
-			.then((response) => response.json())
+			.then(response => response.text())
 			.then(categorias => this.setState({categorias}))
+			.then(categorias => console.log("Categorias:" + categorias))
 			.catch(error => {
-				console.log("Fetching Error...")
+				console.log("Error fetching..." + error.message)
 			})
 			
 	}
