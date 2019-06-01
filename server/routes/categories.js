@@ -28,7 +28,7 @@ router.get('/category/:id', (req, res) => {
       ),
     )
     .then(data => {
-      res.send(200, { data: { data } });
+      res.send(200, { data });
     })
     .catch(error => {
       res.send(500, { error });
@@ -37,11 +37,19 @@ router.get('/category/:id', (req, res) => {
 
 router.post('/category', (req, res) => {
   CategoryModel.createCategory(req.body)
-
-    .then(category => {
-      // data.insertId
-      // CatHasProdModel.createCatHasProd(category.insertId)
-      res.send(200, { category });
+    .then(category =>
+      req.body.product_id
+        ? CatHasProdModel.createCatHasProd({
+            categoryId: category.insertId,
+            productId: req.body.product_id,
+          }).then(catHasProd => ({
+            ...category,
+            product: catHasProd,
+          }))
+        : { ...category },
+    )
+    .then(data => {
+      res.send(200, { data: data });
     })
     .catch(error => {
       res.send(500, { error });
@@ -59,7 +67,14 @@ router.put('/category/:id', (req, res) => {
 });
 
 router.del('/category/:id', (req, res) => {
-  CategoryModel.deleteCategory(req.params.id)
+  CatHasProdModel.getCatHasProdByCategoryId(req.params.id)
+    .then(catHasProd =>
+      catHasProd.length
+        ? CatHasProdModel.deleteCatHasProdByCategoryId(req.params.id).then(catHasProd =>
+            CategoryModel.deleteCategory(req.params.id),
+          )
+        : CategoryModel.deleteCategory(req.params.id),
+    )
     .then(data => {
       res.send(200, { data });
     })

@@ -40,8 +40,19 @@ router.get('/product/:id', (req, res) => {
 
 router.post('/product', (req, res) => {
   ProductModel.createProduct(req.body)
+    .then(product =>
+      req.body.category_id
+        ? CatHasProdModel.createCatHasProd({
+            categoryId: req.body.category_id,
+            productId: product.insertId,
+          }).then(catHasProd => ({
+            ...product,
+            category: catHasProd,
+          }))
+        : { ...product },
+    )
     .then(data => {
-      res.send(200, { data });
+      res.send(200, { data: data });
     })
     .catch(error => {
       res.send(500, { error });
@@ -59,7 +70,14 @@ router.put('/product/:id', (req, res) => {
 });
 
 router.del('/product/:id', (req, res) => {
-  ProductModel.deleteProduct(req.params.id)
+  CatHasProdModel.getCatHasProdByProductId(req.params.id)
+    .then(catHasProd =>
+      catHasProd.length
+        ? CatHasProdModel.deleteCatHasProdByProductId(req.params.id).then(catHasProd =>
+            ProductModel.deleteProduct(req.params.id),
+          )
+        : ProductModel.deleteProduct(req.params.id),
+    )
     .then(data => {
       res.send(200, { data });
     })
