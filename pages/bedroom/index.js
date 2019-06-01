@@ -46,7 +46,7 @@ export default class BedroomFurniturePage extends PureComponent {
 						<Row>
 							<Col sm="auto">
 								<div>
-									<h3>Bedroom Furniture</h3>
+									<h4>Bedroom Furniture</h4>
 								</div>
 							</Col>
 							<Col id="hr">
