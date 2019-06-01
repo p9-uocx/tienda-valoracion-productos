@@ -25,15 +25,23 @@ import '../../components/layout/layout.scss';
 export default class Index extends PureComponent {
   // esto es de next.js, y esta funcion se ejecuta antes de hacer nada. Y vale para traer datos de backEnd por ejejmplo.
   static async getInitialProps({ req }) {
-    const res = await fetch(`${process.env.DB_API_HOST}/category`);
-    const data = await res.json();
+    const res = await fetch(`${process.env.DB_API_HOST}/category`);    
+    const categoryData = await res.json();
+    
+    const apiReqProduct = await fetch(`${process.env.DB_API_HOST}/product`);
+    const productData = await apiReqProduct.json();
 
-    return data;
+    const dataCombined = {category: categoryData.data, product: productData.data};
+    console.log(dataCombined);
+
+    return dataCombined;
+    
+    
   }
-
+    
   // este metodo tiene que estar siempre en React, es el encargado de pintar el html
   render() {
-    console.log(this.props.data);
+
     return (
       <div>
         {/* Usaremos este componente para cargar todas las cabeceras footer y cosas comunes del proyecto */}
@@ -51,7 +59,7 @@ export default class Index extends PureComponent {
               <Row>
                 <Col sm="auto">
                   <div>
-                    <h3>Deal of the Week</h3>
+                    <h4>Deal of the Week</h4>
                   </div>
                 </Col>
                 <Col id="hr">
@@ -81,7 +89,7 @@ export default class Index extends PureComponent {
               <Row>
                 <Col sm="auto">
                   <div>
-                    <h3>Featured Products</h3>
+                    <h4>Featured Products</h4>
                   </div>
                 </Col>
                 <Col id="hr">

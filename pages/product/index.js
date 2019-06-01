@@ -10,10 +10,9 @@ import StarRatingComponent from 'react-star-rating-component';
 import { Layout } from '../../components/layout';
 import { Policy } from '../../components';
 import { NavMenu } from '../../components/nav';
-
+import { ProductsReview } from '../../components/products_review';
 
 import './product.scss';
-import { ProductsReview } from '../../components/products_review';
 
 export default class Product extends PureComponent {
 

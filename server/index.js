@@ -1,3 +1,5 @@
+
+const corsMiddleware = require('restify-cors-middleware') 
 const restify = require('restify');
 // Importamos los distintos archivos con cada uno sus rutas REST, por ejemplo la siguiente rest se encarga de manejar usuarios (crear, borrar, listar, mostrar, ...)
 const userRouter = require('./routes/users');
@@ -6,10 +8,26 @@ const reviewRouter = require('./routes/reviews');
 const productRouter = require('./routes/products');
 const categoryRouter = require('./routes/categories');
 
+var cors = corsMiddleware({
+  preflightMaxAge: 5,
+  origins: ['*'],
+  allowHeaders:['X-App-Version'],
+  exposeHeaders:[]
+});
+
 const server = restify.createServer({
   name: 'myapp',
   version: '1.0.0',
 });
+
+server.pre(function(req, res, next) {
+  req.headers.accept = 'application/json';
+  return next();
+});
+
+
+server.pre(cors.preflight);
+server.use(cors.actual);
 
 server.use(restify.plugins.acceptParser(server.acceptable));
 server.use(restify.plugins.queryParser());
