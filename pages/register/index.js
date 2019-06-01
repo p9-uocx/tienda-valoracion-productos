@@ -5,12 +5,29 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Layout } from '../../components/layout';
 import { NavMenu } from '../../components/nav';
+import { Form, InputGroup } from "react-html5-form";
 
 import './register.scss'
 
 export default class Register extends PureComponent {
 
+
+  constructor(props) {
+    super(props);
+    this.state = { password: '', confirm_password: '' };
+  }
+
+  handleChange = ({ target }) => {
+    this.setState({ [target.name]: target.value })
+
+  }
+
   render() {
+
+     
+    console.log("password:" + this.state.password)
+    console.log("Confirm password:" + this.state.confirm_password)
+    
     return (
       <div>
         <Layout title="Register" {...this.props}>
@@ -45,14 +62,34 @@ export default class Register extends PureComponent {
                             <label htmlFor="mail">Email Address<span className="red"> *</span></label><br />
                             <input id="mail" required type="text" /><br />
                           </div>
+
                           <div>
                             <label htmlFor="password">Password<span className="red"> *</span></label><br />
-                            <input id="password" required type="password" />
+                            <input
+                              value={this.state.password}
+                              name="password"
+                              type="password"
+                              id="password"
+                              onChange={this.handleChange}
+                              required
+                            />
                           </div>
                           <div>
-                            <label htmlFor="password-confirmation">Confirm Password<span className="red"> *</span></label><br />
-                            <input id="password-confirmation" required type="password" />
+                            <label htmlFor="confirm_password">Confirm Password<span className="red"> *</span></label><br />
+                            <input
+                              value={this.state.confirm_password}
+                              name="confirm_password"
+                              type="password"
+                              id="confirm_password"
+                              onChange={this.handleChange}
+                              pattern={this.state.password}
+                              required
+                            />
                           </div>
+
+                          <button className="login-button" title="login" type="submit">
+                            <span>Login</span>
+                          </button>
                         </form>
 
                       </Col>
