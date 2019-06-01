@@ -17,10 +17,6 @@ exports.CatHasProdModel = new (class CatHasProdModel extends Mysql {
     return this.query('SELECT * FROM Categories_has_Products');
   }
 
-  // getCategoriesByRol(rolId) {
-  //   return this.query(`SELECT * FROM Categories WHERE rol=${rolId}`);
-  // }
-
   createCatHasProd({ category_id, product_id }) {
     if (!category_id || !product_id) return Promise.reject('CategoryHasProduct data is incomplete');
 

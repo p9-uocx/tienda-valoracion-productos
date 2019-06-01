@@ -17,12 +17,18 @@ router.get('/category', (req, res) => {
 
 router.get('/category/:id', (req, res) => {
   CategoryModel.getCategoryById(req.params.id)
-    .then(category => {
-      CatHasProdModel.getCatHasProdByCategoryId(category[0].id_category).then(catHasProd => {
-        ProductModel.getProductById(catHasProd[0].product_id).then(products => {
-          res.send(200, { data: { ...category[0], products } });
-        });
-      });
+    .then(category =>
+      CatHasProdModel.getCatHasProdByCategoryId(category[0].id_category).then(catHasProd =>
+        catHasProd.length
+          ? ProductModel.getProductById(catHasProd[0].product_id).then(products => ({
+              ...category[0],
+              products,
+            }))
+          : { ...category[0], products: [] },
+      ),
+    )
+    .then(data => {
+      res.send(200, { data: { data } });
     })
     .catch(error => {
       res.send(500, { error });
@@ -31,8 +37,11 @@ router.get('/category/:id', (req, res) => {
 
 router.post('/category', (req, res) => {
   CategoryModel.createCategory(req.body)
-    .then(data => {
-      res.send(200, { data });
+
+    .then(category => {
+      // data.insertId
+      // CatHasProdModel.createCatHasProd(category.insertId)
+      res.send(200, { category });
     })
     .catch(error => {
       res.send(500, { error });
