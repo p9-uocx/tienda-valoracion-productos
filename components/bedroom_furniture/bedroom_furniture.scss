@@ -1,0 +1,38 @@
+/****** PRODUCTS SECTION *********/
+.cursor-pointer {
+    cursor: pointer;
+  }
+  
+  #product-section {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .old-price-label {
+    color: #888888;
+    text-decoration: line-through;
+    font-size: 14px;
+  }
+  .old-price-label {
+    padding-left: 8px;
+  }
+  #section-container {
+    background-color: #445268;
+    padding: 20px;
+    color: #f6f6f6;
+    text-align: center;
+  }
+  #section-container p {
+    margin: 0;
+  }
+  
+  .border-right-product {
+    border-right: 1px solid #e2e2e2;
+  }
+  
+  .no-padding {
+    padding: 0;
+  }
+  
+  .padding-bottom-img {
+    padding-bottom: 30px;
+  }
