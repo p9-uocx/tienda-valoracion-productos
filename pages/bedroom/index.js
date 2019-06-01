@@ -12,16 +12,22 @@ import { ProductsB } from '@Components';
 export default class BedroomFurniturePage extends PureComponent {
 
 	static async getInitialProps({ req }) {
-		const res = await fetch(`${process.env.DB_API_HOST}/category`);
+		const res = await fetch(`${process.env.DB_API_HOST}/category/1`);
 		const categoryData = await res.json();
 
 		const apiReqProduct = await fetch(`${process.env.DB_API_HOST}/product`);
 		const productData = await apiReqProduct.json();
 
-		const dataCombined = { category: categoryData.data, product: productData.data };
-		console.log(dataCombined);
+		const apiReqReview = await fetch(`${process.env.DB_API_HOST}/review`);
+		const reviewData = await apiReqReview.json();
 
-		return { datosServivor: dataCombined }
+		const dataCombined = {
+			category: categoryData.data,
+			product: productData.data,
+			review: reviewData.data
+		};
+
+		return { datosServidor: dataCombined }
 
 
 	}
@@ -29,17 +35,18 @@ export default class BedroomFurniturePage extends PureComponent {
 
 	render() {
 
-		console.log(this.props.datosServivor)
-		
+		console.log(this.props.datosServidor)
+
 		return (
 			<Layout>
 				<Container>
+					<NavMenu></NavMenu>
 					{/* Deal Section */}
 					<section className="deal-title">
 						<Row>
 							<Col sm="auto">
 								<div>
-									<h3>Deal of the Week</h3>
+									<h3>Bedroom Furniture</h3>
 								</div>
 							</Col>
 							<Col id="hr">
@@ -47,7 +54,7 @@ export default class BedroomFurniturePage extends PureComponent {
 							</Col>
 						</Row>
 					</section>
-					<BedroomFurniture data={this.props.datosServivor}></BedroomFurniture>
+					<BedroomFurniture data={this.props.datosServidor}></BedroomFurniture>
 
 				</Container>
 			</Layout>

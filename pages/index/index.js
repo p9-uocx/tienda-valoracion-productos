@@ -34,9 +34,7 @@ export default class Index extends PureComponent {
     const dataCombined = {category: categoryData.data, product: productData.data};
     console.log(dataCombined);
 
-    return dataCombined;
-    
-    
+    return dataCombined;    
   }
     
   // este metodo tiene que estar siempre en React, es el encargado de pintar el html
