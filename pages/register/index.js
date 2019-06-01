@@ -21,6 +21,15 @@ export default class Register extends PureComponent {
   handleChange = ({ target }) => {
     this.setState({ [target.name]: target.value })
 
+    const answer = document.querySelector("[name=confirm_password]");
+    answer.addEventListener("input", (event) => {
+      if (answer.validity.patternMismatch) {
+        answer.setCustomValidity("Passwords must match! Try again");
+      } else {
+        answer.setCustomValidity("");
+      }
+    });
+
   }
 
   render() {
