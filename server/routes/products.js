@@ -20,10 +20,12 @@ router.get('/product/:id', (req, res) => {
   ProductModel.getProductById(req.params.id)
     .then(product =>
       CatHasProdModel.getCatHasProdByProductId(product[0].id_product).then(catHasProd =>
-        CategoryModel.getCategoryById(catHasProd[0].category_id).then(categories => ({
-          ...product[0],
-          categories,
-        })),
+        catHasProd.length
+          ? CategoryModel.getCategoryById(catHasProd[0].category_id).then(categories => ({
+              ...product[0],
+              categories,
+            }))
+          : { ...product[0], categories: [] },
       ),
     )
     .then(data =>
@@ -32,7 +34,7 @@ router.get('/product/:id', (req, res) => {
       }),
     )
     .catch(error => {
-      res.send(500, { error });
+      res.send(500, { error: error.message });
     });
 });
 
