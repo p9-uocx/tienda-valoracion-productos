@@ -30,7 +30,7 @@ export default class Login extends PureComponent {
 										</p>
 										<div>
 											<button className="register-button" title="register" type="submit">
-												<span>Create an Account</span>
+												<span className="no-link"><Link  href="/register">Create an Account</Link></span>
 											</button>
 										</div>
 									</div>
@@ -54,8 +54,7 @@ export default class Login extends PureComponent {
 										<div className="login-button-container">
 											<button className="login-button" title="login" type="submit">
 												<span>Login</span>
-											</button>
-											<a className="forgot-pass">Forgot your password?</a>
+											</button>											
 										</div>
 										<span className="red">* Required Fields</span>
 									</div>

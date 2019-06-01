@@ -93,3 +93,11 @@ input {
     font-size: 13px;
     padding-top: 15px;
 }
+
+.no-link > a {
+    color: #222222;
+}
+
+.no-link > a:hover {
+    text-decoration: none;
+}
