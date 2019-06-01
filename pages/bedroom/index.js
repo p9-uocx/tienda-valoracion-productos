@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-
+import fetch from 'isomorphic-unfetch';
 import Link from 'next/link';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';

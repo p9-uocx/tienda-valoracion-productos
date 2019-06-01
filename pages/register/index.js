@@ -3,9 +3,10 @@ import Link from 'next/link';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+
 import { Layout } from '../../components/layout';
 import { NavMenu } from '../../components/nav';
-import { Form, InputGroup } from "react-html5-form";
+
 
 import './register.scss'
 
@@ -24,10 +25,10 @@ export default class Register extends PureComponent {
 
   render() {
 
-     
+
     console.log("password:" + this.state.password)
     console.log("Confirm password:" + this.state.confirm_password)
-    
+
     return (
       <div>
         <Layout title="Register" {...this.props}>
@@ -40,10 +41,10 @@ export default class Register extends PureComponent {
                     <h5>CREATE NEW CUSTOMER ACCOUNT</h5>
                   </div>
                   <div className="register-user-content">
-                    <Row>
-                      <Col>
-                        <h6>PERSONAL INFORMATION</h6>
-                        <form className="login-form" action="" method="post">
+                    <form className="login-form" action="" method="post">
+                      <Row>
+                        <Col>
+                          <h6>PERSONAL INFORMATION</h6>
                           <div className="input-padding">
                             <label htmlFor="first-name">First Name<span className="red"> *</span></label><br />
                             <input id="first-name" required type="text" /><br />
@@ -52,18 +53,14 @@ export default class Register extends PureComponent {
                             <label htmlFor="last-name">Last Name<span className="red"> *</span></label><br />
                             <input id="last-name" required type="text" />
                           </div>
-                        </form>
-                      </Col>
-
-                      <Col>
-                        <h6>SIGN-IN INFORMATION</h6>
-                        <form className="login-form" action="" method="post">
+                        </Col>
+                        <Col>
+                          <h6>SIGN-IN INFORMATION</h6>
                           <div className="input-padding">
                             <label htmlFor="mail">Email Address<span className="red"> *</span></label><br />
                             <input id="mail" required type="text" /><br />
                           </div>
-
-                          <div>
+                          <div className="input-padding">
                             <label htmlFor="password">Password<span className="red"> *</span></label><br />
                             <input
                               value={this.state.password}
@@ -87,13 +84,16 @@ export default class Register extends PureComponent {
                             />
                           </div>
 
-                          <button className="login-button" title="login" type="submit">
-                            <span>Login</span>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col>
+                          <button className="create-button" title="login" type="submit">
+                            <span>Create Account</span>
                           </button>
-                        </form>
-
-                      </Col>
-                    </Row>
+                        </Col>
+                      </Row>
+                    </form>
                   </div>
                 </div>
               </Col>
