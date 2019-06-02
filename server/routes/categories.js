@@ -20,7 +20,13 @@ router.get('/category/:id', (req, res) => {
     .then(category =>
       CatHasProdModel.getCatHasProdByCategoryId(category[0].id_category).then(catHasProd =>
         catHasProd.length
-          ? ProductModel.getProductById(catHasProd[0].product_id).then(products => ({
+          ? Promise.all(
+              catHasProd.map(catHasProdElement =>
+                ProductModel.getProductById(catHasProdElement.product_id).then(
+                  product => product[0],
+                ),
+              ),
+            ).then(products => ({
               ...category[0],
               products,
             }))
@@ -57,7 +63,13 @@ router.post('/category', (req, res) => {
 });
 
 router.put('/category/:id', (req, res) => {
-  CategoryModel.updateCategory(req.params.id, req.body)
+  return (req.body.product_id
+    ? CatHasProdModel.createCatHasProd({
+        categoryId: req.params.id,
+        productId: req.body.product_id,
+      }).then(data => CategoryModel.updateCategory(req.params.id, req.body))
+    : CategoryModel.updateCategory(req.params.id, req.body)
+  )
     .then(data => {
       res.send(200, { data });
     })
@@ -70,7 +82,7 @@ router.del('/category/:id', (req, res) => {
   CatHasProdModel.getCatHasProdByCategoryId(req.params.id)
     .then(catHasProd =>
       catHasProd.length
-        ? CatHasProdModel.deleteCatHasProdByCategoryId(req.params.id).then(catHasProd =>
+        ? CatHasProdModel.deleteCatHasProdByCategoryId(req.params.id).then(() =>
             CategoryModel.deleteCategory(req.params.id),
           )
         : CategoryModel.deleteCategory(req.params.id),
