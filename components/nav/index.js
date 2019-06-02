@@ -16,7 +16,7 @@ export class NavMenu extends PureComponent {
 					<Nav.Link href="/bedroom">Bedroom Furniture</Nav.Link>
 				</Nav.Item>
 				<Nav.Item>
-					<Nav.Link href="/">Coffe Tables<i className="fa fa-angle-down" id="icon-angle-down" aria-hidden="true"></i></Nav.Link>
+					<Nav.Link href="/">Coffe Tables</Nav.Link>
 				</Nav.Item>
 				<Nav.Item>
 					<Nav.Link href="/">Sofas</Nav.Link>

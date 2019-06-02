@@ -25,18 +25,26 @@ import '../../components/layout/layout.scss';
 export default class Index extends PureComponent {
   // esto es de next.js, y esta funcion se ejecuta antes de hacer nada. Y vale para traer datos de backEnd por ejejmplo.
   static async getInitialProps({ req }) {
-    const res = await fetch(`${process.env.DB_API_HOST}/category`);    
+    const res = await fetch(`${process.env.DB_API_HOST}/category/1`);
     const categoryData = await res.json();
-    
+
     const apiReqProduct = await fetch(`${process.env.DB_API_HOST}/product`);
     const productData = await apiReqProduct.json();
 
-    const dataCombined = {category: categoryData.data, product: productData.data};
-    console.log(dataCombined);
+    const apiReqReview = await fetch(`${process.env.DB_API_HOST}/review`);
+    const reviewData = await apiReqReview.json();
 
-    return dataCombined;    
+    const dataCombined = {
+      category: categoryData.data,
+      product: productData.data,
+      review: reviewData.data
+    };
+
+    return { datosServidor: dataCombined }
+
+
   }
-    
+
   // este metodo tiene que estar siempre en React, es el encargado de pintar el html
   render() {
 
@@ -66,7 +74,7 @@ export default class Index extends PureComponent {
               </Row>
             </section>
             {/* Product Section */}
-            <ProductsA />
+            <ProductsA data={this.props.datosServidor} />
             {/*Seccion Separador*/}
             <section>
               <Row>

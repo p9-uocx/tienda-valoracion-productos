@@ -38,7 +38,7 @@ export default class BedroomFurniturePage extends PureComponent {
 		console.log(this.props.datosServidor)
 
 		return (
-			<Layout>
+			<Layout title="Bedroom Furniture" {...this.props}>
 				<Container>
 					<NavMenu></NavMenu>
 					{/* Deal Section */}
