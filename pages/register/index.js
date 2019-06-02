@@ -11,8 +11,6 @@ import { NavMenu } from '../../components/nav';
 import './register.scss'
 
 export default class Register extends PureComponent {
-
-
   constructor(props) {
     super(props);
     this.state = { password: '', confirm_password: '' };
@@ -33,11 +31,6 @@ export default class Register extends PureComponent {
   }
 
   render() {
-
-
-    console.log("password:" + this.state.password)
-    console.log("Confirm password:" + this.state.confirm_password)
-
     return (
       <div>
         <Layout title="Register" {...this.props}>
