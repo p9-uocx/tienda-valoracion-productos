@@ -4,4 +4,4 @@ export * from './policy_section';
 export * from './products_A';
 export * from './products_B';
 export * from './carousel';
-export * from './bedroom_furniture';
+export * from './product_loader';
