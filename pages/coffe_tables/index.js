@@ -8,6 +8,8 @@ import { Layout } from '../../components/layout';
 import { NavMenu } from '../../components/nav';
 import { ProductLoader } from '@Components';
 
+import './coffe_tables.scss'
+
 export default class CoffeTablesPage extends PureComponent {
 
 	static async getInitialProps({ req }) {
@@ -43,7 +45,7 @@ export default class CoffeTablesPage extends PureComponent {
 						<Row>
 							<Col sm="auto">
 								<div>
-									<h4>Bedroom Furniture</h4>
+									<h4>Coffe Tables</h4>
 								</div>
 							</Col>
 							<Col id="hr">
