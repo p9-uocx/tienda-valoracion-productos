@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.3
+-- version 4.6.6deb5
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost:8889
--- Tiempo de generación: 28-05-2019 a las 23:15:03
--- Versión del servidor: 5.6.35
--- Versión de PHP: 7.1.8
+-- Servidor: localhost:3306
+-- Tiempo de generación: 04-06-2019 a las 18:12:02
+-- Versión del servidor: 5.7.26-0ubuntu0.18.04.1
+-- Versión de PHP: 7.2.17-0ubuntu0.18.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -16,15 +16,9 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
--- Privilegios para `p9_uoc_user`@`%`
-GRANT USAGE ON *.* TO 'p9_uoc_user'@'%' IDENTIFIED BY PASSWORD '*FA372851786D3E6EFEEA781E4E4944231BA18538';
-GRANT ALL PRIVILEGES ON `p9_uoc`.* TO 'p9_uoc_user'@'%' WITH GRANT OPTION;
-
 --
 -- Base de datos: `p9_uoc`
 --
-CREATE DATABASE IF NOT EXISTS `p9_uoc` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `p9_uoc`;
 
 -- --------------------------------------------------------
 
@@ -41,6 +35,15 @@ CREATE TABLE `Categories` (
   `date_add` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `Categories`
+--
+
+INSERT INTO `Categories` (`id_category`, `name`, `excerpt`, `meta_title`, `meta_description`, `date_add`) VALUES
+(1, 'Bedroom Furniture', 'The best Bedroom Furniture', NULL, NULL, '2019-05-30 00:00:00'),
+(3, 'Coffe Tables', 'The best Coffe Tables', NULL, NULL, '2019-05-30 00:00:00'),
+(4, 'Sofas', 'The best Sofas', NULL, NULL, '2019-05-30 00:00:00');
+
 -- --------------------------------------------------------
 
 --
@@ -51,6 +54,32 @@ CREATE TABLE `Categories_has_Products` (
   `category_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `Categories_has_Products`
+--
+
+INSERT INTO `Categories_has_Products` (`category_id`, `product_id`) VALUES
+(1, 2),
+(4, 3),
+(1, 4),
+(1, 5),
+(1, 6),
+(3, 7),
+(3, 8),
+(3, 10),
+(3, 11),
+(3, 12),
+(3, 13),
+(3, 14),
+(3, 15),
+(3, 16),
+(4, 17),
+(4, 18),
+(4, 19),
+(4, 20),
+(4, 21),
+(4, 22);
 
 -- --------------------------------------------------------
 
@@ -72,6 +101,32 @@ CREATE TABLE `Products` (
   `date_add` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `Products`
+--
+
+INSERT INTO `Products` (`id_product`, `reference`, `title`, `description`, `price`, `img_url`, `excerpt`, `available`, `meta_title`, `meta_description`, `date_add`) VALUES
+(2, 197876, 'Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp', 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', 189.49, '/static/img/products/2_4.jpg', NULL, 1, NULL, NULL, '2019-05-20'),
+(3, 476543, 'Bauhaus Steel Tube Cantilever Sofa', 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', 380.99, '/static/img/products/5_5.jpg', NULL, 1, NULL, NULL, '2019-06-23'),
+(4, 789456, 'Noctis LONDON Double bed up with container', 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', 1250, '/static/img/products/bedroomFurniture/BOB_160_9.jpg', NULL, 1, NULL, NULL, '2019-06-26'),
+(5, 159357, 'Noctis DUCK H25 RING Padded double bed', 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', 881.25, '/static/img/products/bedroomFurniture/4q0zrdf2xfzd.jpg', NULL, 1, NULL, NULL, '2019-06-18'),
+(6, 486413, 'Letto matrimoniale NOCTIS london noctis top white green day', 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', 952.49, '/static/img/products/bedroomFurniture/123.jpg', NULL, 1, NULL, NULL, '2019-06-12'),
+(7, 486426, 'Forzza daniel side table matt finish wenge', 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', 199.99, 'static/img/products/9_4.jpg', NULL, 1, NULL, NULL, '2019-06-09'),
+(8, 987654, 'Yaheetech Lift up Top Coffee Table with Under Storage', 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', 355.59, 'static/img/products/coffeTables/13_13029819_13029819-1-180602151916.jpeg', NULL, 1, NULL, NULL, '2019-06-05'),
+(10, 159358, 'Forzza Daniel Small TV Unit (Matt Finish, Teak)', 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', 389.49, 'static/img/products/coffeTables/41gyNASmibL-400x400.jpg', NULL, 1, NULL, NULL, '2019-06-10'),
+(11, 123456, 'Zara Coffee Table with Tray Top', 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', 569.99, 'static/img/products/coffeTables/61yOhzsUHXL._SL1200_.jpg', NULL, 1, NULL, NULL, '2019-06-16'),
+(12, 123654, 'Jamiya Coffee Table', 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', 199.5, 'static/img/products/coffeTables/81K97w-YRfL._SX425_.jpg', NULL, 1, NULL, NULL, '2019-06-16'),
+(13, 759513, 'Rittenhouse Tufted Cocktail Ottoman', 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', 150.49, 'static/img/products/coffeTables/cf_5.jpg', NULL, 1, NULL, NULL, '2019-06-09'),
+(14, 132987, 'Nowak Coffee Table', 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', 378.99, 'static/img/products/coffeTables/cf_6.jpg', NULL, 1, NULL, NULL, '2019-06-05'),
+(15, 555486, 'Juliette Glass Top Coffee Table', 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', 678.45, 'static/img/products/coffeTables/cf_7.jpg', NULL, 1, NULL, NULL, '2019-06-05'),
+(16, 741852, 'Quartz Coffee Table', 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', 187.99, 'static/img/products/coffeTables/cf_8.jpg', NULL, 1, NULL, NULL, '2019-06-03'),
+(17, 654987, 'Oxford Pop-Up Platform Sleeper Sofa', 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', 825.99, 'static/img/products/sofas/0175610_PE328883_S5.webp', NULL, 1, NULL, NULL, '2019-06-13'),
+(18, 963852, 'Murphy Sofa', 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', 1450.99, 'static/img/products/sofas/618gTeX+DCL._SY355_.jpg', NULL, 1, NULL, NULL, '2019-06-16'),
+(19, 426888, 'York Custom Sofa', 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', 999.99, 'static/img/products/sofas/sofa-cama-2-plazas-en-tela_772677.jpg', NULL, 1, NULL, NULL, '2019-06-08'),
+(20, 999123, 'Macalester Sofa', 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', 950.99, 'static/img/products/sofas/sofa-cama-2-plazas-mod-sahara.jpg', NULL, 1, NULL, NULL, '2019-06-03'),
+(21, 784512, 'Braden Sofa', 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', 1110.5, 'static/img/products/sofas/0728518_PE736345_S5.webp', NULL, 1, NULL, NULL, '2019-06-08'),
+(22, 986532, 'Easton Sofa', 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.\r\n\r\n', 550.55, 'static/img/products/sofas/Bemz.webp', NULL, 1, NULL, NULL, '2019-06-05');
+
 -- --------------------------------------------------------
 
 --
@@ -87,6 +142,32 @@ CREATE TABLE `reviews` (
   `product_id` int(11) NOT NULL,
   `date_add` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `reviews`
+--
+
+INSERT INTO `reviews` (`title`, `descripction`, `images_url`, `rating`, `user_id`, `product_id`, `date_add`) VALUES
+(NULL, NULL, NULL, 4, 1, 2, '2019-05-20'),
+(NULL, NULL, NULL, 3, 1, 3, '2019-06-11'),
+(NULL, NULL, NULL, 4, 1, 4, '2019-06-26'),
+(NULL, NULL, NULL, 3, 1, 5, '2019-06-19'),
+(NULL, NULL, NULL, 5, 1, 6, '2019-06-26'),
+(NULL, NULL, NULL, 5, 1, 7, '2019-06-18'),
+(NULL, NULL, NULL, 4, 1, 8, '2019-06-21'),
+(NULL, NULL, NULL, 5, 1, 10, '2019-06-15'),
+(NULL, NULL, NULL, 4, 1, 11, '2019-06-12'),
+(NULL, NULL, NULL, 3, 1, 12, '2019-06-21'),
+(NULL, NULL, NULL, 4, 1, 13, '2019-06-12'),
+(NULL, NULL, NULL, 5, 1, 14, '2019-06-02'),
+(NULL, NULL, NULL, 2, 1, 15, '2019-06-08'),
+(NULL, NULL, NULL, 5, 1, 16, '2019-06-02'),
+(NULL, NULL, NULL, 3, 1, 17, '2019-06-14'),
+(NULL, NULL, NULL, 4, 1, 18, '2019-06-06'),
+(NULL, NULL, NULL, 5, 1, 19, '2019-06-03'),
+(NULL, NULL, NULL, 4, 1, 20, '2019-06-08'),
+(NULL, NULL, NULL, 5, 1, 21, '2019-06-04'),
+(NULL, NULL, NULL, 4, 1, 22, '2019-06-06');
 
 -- --------------------------------------------------------
 
@@ -115,6 +196,13 @@ CREATE TABLE `Roles` (
   `delete_role` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `Roles`
+--
+
+INSERT INTO `Roles` (`id_roles`, `name`, `edit_product`, `create_product`, `delete_product`, `edit_review`, `create_review`, `delete_review`, `dashboard_access`, `edit_category`, `create_category`, `delete_category`, `edit_user`, `create_user`, `delete_user`, `edit_role`, `create_role`, `delete_role`) VALUES
+(1, 'fullaccess', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -131,6 +219,13 @@ CREATE TABLE `Users` (
   `rol` int(11) NOT NULL,
   `date_add` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `Users`
+--
+
+INSERT INTO `Users` (`id_user`, `first_name`, `last_name`, `gender`, `email`, `password`, `rol`, `date_add`) VALUES
+(1, 'Javier', 'Delgado', 'male', 'mohatar@yahoo.com', 'zanfona', 1, '2019-05-20');
 
 --
 -- Índices para tablas volcadas
@@ -189,22 +284,22 @@ ALTER TABLE `Users`
 -- AUTO_INCREMENT de la tabla `Categories`
 --
 ALTER TABLE `Categories`
-  MODIFY `id_category` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_category` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `Products`
 --
 ALTER TABLE `Products`
-  MODIFY `id_product` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_product` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT de la tabla `Roles`
 --
 ALTER TABLE `Roles`
-  MODIFY `id_roles` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_roles` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `Users`
 --
 ALTER TABLE `Users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- Restricciones para tablas volcadas
 --
