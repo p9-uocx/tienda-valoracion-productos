@@ -42,12 +42,11 @@ export default class Index extends PureComponent {
 
     return { datosServidor: dataCombined }
 
-
   }
 
   // este metodo tiene que estar siempre en React, es el encargado de pintar el html
   render() {
-
+    console.log(this.props.datosServidor)
     return (
       <div>
         {/* Usaremos este componente para cargar todas las cabeceras footer y cosas comunes del proyecto */}

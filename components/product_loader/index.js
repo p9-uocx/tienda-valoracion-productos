@@ -6,56 +6,43 @@ import Image from 'react-bootstrap/Image';
 import StarRatingComponent from 'react-star-rating-component';
 
 
-import './bedroom_furniture.scss';
+import './product_loader.scss';
 
-export class BedroomFurniture extends PureComponent {
-
-
+export class ProductLoader extends PureComponent {
 	render() {
-
-		//console.log(this.props.data)
-
 		return (
-			
-
 			<section id="product-section">
 
-				{/*{this.props.data.category.map(function (elemento) {
-					return elemento.name;
-				})}*/}
-
-
 				<Row>
+					{this.props.data.category.products.map((value, index) => {
 
-					{this.props.data.product.map((value, index) => {
+						//console.log(this.props.data.category.products[index].price)
 
 						return (
 							<Col key={index} className="border-right-product" sm={3}>
 								<div className="cursor-pointer">
-									<Link href="/product">
-										<Image src={this.props.data.product[index].img_url} alt="product 1" fluid />
+									<Link href={`/product?id_product=${index}`} >
+										<Image src={this.props.data.category.products[index].img_url} alt="product 1" fluid />
 									</Link>
 								</div>
 								<div className="price-box">
-									<span className="price-label">${this.props.data.product[index].price}</span>
+									<span className="price-label">${this.props.data.category.products[index].price}</span>
 									<span className="old-price-label">$280.00</span>
 								</div>
 								<div className="rating-container">
 									<StarRatingComponent
 										name="rate1"
 										starCount={5}
-										value={this.props.data.review[index].rating}
+										value={this.props.data.products[index].reviews.rating}
 										emptyStarColor={'#CCCCCC'}
 									/>
 								</div>
-								<Link href="/product"><a>{this.props.data.product[index].title}</a></Link>
+								<Link href="/product"><a>{this.props.data.category.products[index].title}</a></Link>
 							</Col>
 						)
 					})}
 				</Row>
 			</section>
-
 		);
 	}
-
 }

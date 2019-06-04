@@ -8,12 +8,12 @@ import { Layout } from '../../components/layout';
 import { NavMenu } from '../../components/nav';
 import { ProductLoader } from '@Components';
 
-import './bedroom.scss';
+import './sofas.scss'
 
-export default class BedroomFurniturePage extends PureComponent {
+export default class SofasPage extends PureComponent {
 
 	static async getInitialProps({ req }) {
-    const res = await fetch(`${process.env.DB_API_HOST}/category/1`);
+    const res = await fetch(`${process.env.DB_API_HOST}/category/4`);
     const categoryData = await res.json();
 
     const apiReqReview = await fetch(`${process.env.DB_API_HOST}/review`);
@@ -37,7 +37,7 @@ export default class BedroomFurniturePage extends PureComponent {
 		console.log(this.props.api)		
 
 		return (
-			<Layout title="Bedroom Furniture" {...this.props}>
+			<Layout title="Sofas" {...this.props}>
 				<Container>
 					<NavMenu></NavMenu>
 					{/* Deal Section */}
@@ -45,7 +45,7 @@ export default class BedroomFurniturePage extends PureComponent {
 						<Row>
 							<Col sm="auto">
 								<div>
-									<h4>Bedroom Furniture</h4>
+									<h4>Sofas</h4>
 								</div>
 							</Col>
 							<Col id="hr">

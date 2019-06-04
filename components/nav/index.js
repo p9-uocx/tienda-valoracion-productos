@@ -16,10 +16,10 @@ export class NavMenu extends PureComponent {
 					<Nav.Link href="/bedroom">Bedroom Furniture</Nav.Link>
 				</Nav.Item>
 				<Nav.Item>
-					<Nav.Link href="/">Coffe Tables</Nav.Link>
+					<Nav.Link href="/coffe_tables">Coffe Tables</Nav.Link>
 				</Nav.Item>
 				<Nav.Item>
-					<Nav.Link href="/">Sofas</Nav.Link>
+					<Nav.Link href="/sofas">Sofas</Nav.Link>
 				</Nav.Item>
 				<Nav.Item>
 					<Nav.Link href="/">Contact</Nav.Link>
