@@ -21,7 +21,7 @@ export class ProductLoader extends PureComponent {
 						return (
 							<Col key={index} className="border-right-product" sm={3}>
 								<div className="cursor-pointer">
-									<Link href="/product">
+									<Link href={`/product?id_product=${index}`} >
 										<Image src={this.props.data.category.products[index].img_url} alt="product 1" fluid />
 									</Link>
 								</div>

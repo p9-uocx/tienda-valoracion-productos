@@ -13,6 +13,7 @@ import { NavMenu } from '../../components/nav';
 import { ProductsReview } from '../../components/products_review';
 
 import './product.scss';
+import { request } from 'http';
 
 export default class Product extends PureComponent {
 
@@ -27,8 +28,10 @@ export default class Product extends PureComponent {
 		};
 	}
 
-	render() {
+	
 
+	render() {
+				
 		const { rating } = this.state;
 
 		return (
