@@ -45,7 +45,7 @@ export default class SofasPage extends PureComponent {
 						<Row>
 							<Col sm="auto">
 								<div>
-									<h4>Coffe Tables</h4>
+									<h4>Sofas</h4>
 								</div>
 							</Col>
 							<Col id="hr">
