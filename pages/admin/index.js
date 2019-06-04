@@ -1,49 +1,25 @@
 // Hay que importar simepre la libreria de React para que pueda interpretar el html, el PoreCompoente es un tipo de compoente nuevo que puedes uasr o no
 import React, { PureComponent, Fragment } from 'react';
-import { hydrate } from 'react-dom';
 import fetch from 'isomorphic-unfetch';
 import Head from 'next/head';
 import Link from 'next/link';
 
-import { Admin, Resource } from 'react-admin';
-// import simpleRestProvider from 'ra-data-simple-rest';
-import { PostList, PostEdit, PostCreate, PostIcon } from '@Components';
-import simpleRestProvider from './rest';
+import {} from '@Components';
+import Drawer from '@material-ui/core/Drawer';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import IconButton from '@material-ui/core/IconButton';
+import Button from '@material-ui/core/Button';
+import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
+import MenuIcon from '@material-ui/icons/Menu';
 
 import './admin.scss';
 
-export default class Index extends PureComponent {
-  // static async getInitialProps({ req }) {
-  //   const res = await fetch(`${process.env.DB_API_HOST}/category/1`);
-  //   const categoryData = await res.json();
-
-  //   const apiReqReview = await fetch(`${process.env.DB_API_HOST}/review`);
-  //   const reviewData = await apiReqReview.json();
-
-  //   const categoryDataMap = categoryData.data.products.map(product => {
-  //     return reviewData.data.reduce((valorAnterior, review) => {
-  //       if (product.id_product === review.product_id) {
-  //         return { ...product, reviews: product.reviews ? [...product.reviews, review] : [review] };
-  //       } else {
-  //         return { ...product, reviews: [] };
-  //       }
-  //     }, {});
-  //   });
-
-  //   return { api: { ...categoryData.data, products: categoryDataMap } };
-  // }
-
-  componentDidMount() {
-    hydrate(
-      <Admin dataProvider={simpleRestProvider(process.env.DB_API_HOST)}>
-        <Resource name="user" list={PostList} edit={PostEdit} create={PostCreate} icon={PostIcon} />
-      </Admin>,
-      document.querySelector('#admin-root'),
-    );
-  }
-
+export default class Admin extends PureComponent {
   render() {
-    console.log(this.props.dataCombined);
+    console.log(this.props.url.query.service);
     return (
       <Fragment>
         <Head>
@@ -61,7 +37,30 @@ export default class Index extends PureComponent {
           <link rel="stylesheet" type="text/css" href="/static/flaticon-font/flaticon.css" />
           <script defer src="/static/fontawesome/js/all.js" />
         </Head>
-        <main id="admin-root" />
+
+        <AppBar position="fixed">
+          <Toolbar className="menu">
+            <Grid container container direction="row" justify="space-between">
+              <IconButton edge="start" color="inherit">
+                <MenuIcon />
+              </IconButton>
+              <Typography variant="h3">News</Typography>
+              <Button color="inherit">Login</Button>
+            </Grid>
+          </Toolbar>
+        </AppBar>
+
+        {/* <Drawer variant="permanent" open={false}>
+          asdasda
+        </Drawer> */}
+
+        <main className="admin-main">
+          <Container>
+            <Link as={`/admin/user`} href={{ pathname: '/admin', query: { service: 'user' } }}>
+              aqui
+            </Link>
+          </Container>
+        </main>
       </Fragment>
     );
   }

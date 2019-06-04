@@ -3,7 +3,5 @@ export * from './nav';
 export * from './policy_section';
 export * from './products_A';
 export * from './products_B';
-export * from './bedroom_furniture';
-export * from './posts';
 export * from './carousel';
 export * from './product_loader';
