@@ -25,18 +25,20 @@
     "> 1%"
   ],
   "dependencies": {
+    "@material-ui/core": "^4.0.0-rc.0",
+    "@material-ui/icons": "^4.0.1",
     "bootstrap": "^4.3.1",
     "dotenv": "^8.0.0",
     "i": "^0.3.6",
     "isomorphic-unfetch": "^3.0.0",
     "mysql": "^2.17.1",
     "next": "^8.0.3",
-    "npm": "^6.9.0",
     "react": "^16.8.4",
     "react-bootstrap": "^1.0.0-beta.8",
     "react-dom": "^16.8.4",
     "react-star-rating-component": "^1.4.1",
     "restify": "^8.1.0",
+    "restify-cors-middleware": "^1.1.1",
     "restify-router": "^0.5.1"
   },
   "devDependencies": {

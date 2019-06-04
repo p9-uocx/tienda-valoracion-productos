@@ -3,7 +3,6 @@ const { Mysql } = require('./config');
 exports.UserModel = new (class UserModel extends Mysql {
   getUserById(id) {
     if (!id || isNaN(id)) return Promise.reject('User id is not defined or is incorrect');
-
     return this.query(`SELECT * FROM Users WHERE id_user=${id}`);
   }
 
