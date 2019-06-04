@@ -20,17 +20,18 @@ export default class CoffeTablesPage extends PureComponent {
     const reviewData = await apiReqReview.json();
 
     const categoryDataMap = categoryData.data.products.map(product => {
-      return reviewData.data.reduce((valorAnterior, review) => {
-        if (product.id_product == review.product_id) {
-          return { ...product, reviews: product.reviews ? [...product.reviews, review] : [review] };
-        } else {
-          return { ...product, reviews: [] };
-        }
-      }, {});
-		});
-		
-    return { api: {category: categoryData.data, products: categoryDataMap } };
+      return {
+        ...product,
+        reviews: reviewData.data.reduce(
+          (array, review) => (product.id_product == review.product_id ? [...array, review] : array),
+          [],
+        ),
+      };
+    });
+
+    return { api: { ...categoryData.data, products: categoryDataMap } };
   }
+
 
 	render() {
 
