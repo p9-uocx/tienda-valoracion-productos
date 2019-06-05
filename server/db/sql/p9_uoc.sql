@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 04-06-2019 a las 18:12:02
+-- Tiempo de generación: 05-06-2019 a las 18:35:10
 -- Versión del servidor: 5.7.26-0ubuntu0.18.04.1
 -- Versión de PHP: 7.2.17-0ubuntu0.18.04.1
 
@@ -106,12 +106,12 @@ CREATE TABLE `Products` (
 --
 
 INSERT INTO `Products` (`id_product`, `reference`, `title`, `description`, `price`, `img_url`, `excerpt`, `available`, `meta_title`, `meta_description`, `date_add`) VALUES
-(2, 197876, 'Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp', 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', 189.49, '/static/img/products/2_4.jpg', NULL, 1, NULL, NULL, '2019-05-20'),
-(3, 476543, 'Bauhaus Steel Tube Cantilever Sofa', 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', 380.99, '/static/img/products/5_5.jpg', NULL, 1, NULL, NULL, '2019-06-23'),
+(2, 197876, 'Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp', 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', 189.49, 'static/img/products/bedroomFurniture/2_4.jpg', NULL, 1, NULL, NULL, '2019-05-20'),
+(3, 476543, 'Bauhaus Steel Tube Cantilever Sofa', 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', 380.99, 'static/img/products/sofas/5_5.jpg', NULL, 1, NULL, NULL, '2019-06-23'),
 (4, 789456, 'Noctis LONDON Double bed up with container', 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', 1250, '/static/img/products/bedroomFurniture/BOB_160_9.jpg', NULL, 1, NULL, NULL, '2019-06-26'),
 (5, 159357, 'Noctis DUCK H25 RING Padded double bed', 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', 881.25, '/static/img/products/bedroomFurniture/4q0zrdf2xfzd.jpg', NULL, 1, NULL, NULL, '2019-06-18'),
 (6, 486413, 'Letto matrimoniale NOCTIS london noctis top white green day', 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', 952.49, '/static/img/products/bedroomFurniture/123.jpg', NULL, 1, NULL, NULL, '2019-06-12'),
-(7, 486426, 'Forzza daniel side table matt finish wenge', 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', 199.99, 'static/img/products/9_4.jpg', NULL, 1, NULL, NULL, '2019-06-09'),
+(7, 486426, 'Forzza daniel side table matt finish wenge', 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', 199.99, 'static/img/products/coffeTables/9_4.jpg', NULL, 1, NULL, NULL, '2019-06-09'),
 (8, 987654, 'Yaheetech Lift up Top Coffee Table with Under Storage', 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', 355.59, 'static/img/products/coffeTables/13_13029819_13029819-1-180602151916.jpeg', NULL, 1, NULL, NULL, '2019-06-05'),
 (10, 159358, 'Forzza Daniel Small TV Unit (Matt Finish, Teak)', 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', 389.49, 'static/img/products/coffeTables/41gyNASmibL-400x400.jpg', NULL, 1, NULL, NULL, '2019-06-10'),
 (11, 123456, 'Zara Coffee Table with Tray Top', 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', 569.99, 'static/img/products/coffeTables/61yOhzsUHXL._SL1200_.jpg', NULL, 1, NULL, NULL, '2019-06-16'),
@@ -167,7 +167,8 @@ INSERT INTO `reviews` (`title`, `descripction`, `images_url`, `rating`, `user_id
 (NULL, NULL, NULL, 5, 1, 19, '2019-06-03'),
 (NULL, NULL, NULL, 4, 1, 20, '2019-06-08'),
 (NULL, NULL, NULL, 5, 1, 21, '2019-06-04'),
-(NULL, NULL, NULL, 4, 1, 22, '2019-06-06');
+(NULL, NULL, NULL, 4, 1, 22, '2019-06-06'),
+(NULL, NULL, NULL, 2, 2, 2, '2019-06-08');
 
 -- --------------------------------------------------------
 
@@ -225,7 +226,8 @@ CREATE TABLE `Users` (
 --
 
 INSERT INTO `Users` (`id_user`, `first_name`, `last_name`, `gender`, `email`, `password`, `rol`, `date_add`) VALUES
-(1, 'Javier', 'Delgado', 'male', 'mohatar@yahoo.com', 'zanfona', 1, '2019-05-20');
+(1, 'Javier', 'Delgado', 'male', 'mohatar@yahoo.com', 'zanfona', 1, '2019-05-20'),
+(2, 'Sergio', 'Garcia', 'male', 'sergio@gmail.com', 'zanfona', 1, '2019-06-02');
 
 --
 -- Índices para tablas volcadas
@@ -299,7 +301,7 @@ ALTER TABLE `Roles`
 -- AUTO_INCREMENT de la tabla `Users`
 --
 ALTER TABLE `Users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- Restricciones para tablas volcadas
 --

@@ -22,7 +22,7 @@ div.col-sm-4 {
 
 .review-content {
   padding-top: 35px;
-  text-align: justify;
+  //text-align: justify;
   border-bottom: 1px solid #dfdfdf;
 }
 .rating-container {
@@ -32,6 +32,12 @@ div.col-sm-4 {
 
 .review-details {
   padding-top: 15px;
+}
+
+.product-title {
+  font-size: 16px;
+  color: #2557aa;
+  font-weight: 600;
 }
 
 /**************************/

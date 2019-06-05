@@ -5,114 +5,102 @@ import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
 import StarRatingComponent from 'react-star-rating-component';
 
+
 export class ProductsB extends PureComponent {
-
-	constructor() {
-		super();
-
-		this.state = {
-			rating: 0
-		};
-	}
-
-	onStarClick(nextValue, prevValue, name) {
-		console.log('name: %s, nextValue: %s, prevValue: %s', name, nextValue, prevValue);
-		this.setState({ rating: nextValue });
-	}
-
 	render() {
 
-		const { rating5 } = this.state;
-		const { rating6 } = this.state;
-		const { rating7 } = this.state;
-		const { rating8 } = this.state;
+		const id_product_6 = this.props.data.product[6].id_product;
+		const id_product_8 = this.props.data.product[8].id_product;
+		const id_product_10 = this.props.data.product[10].id_product;
+		const id_product_12 = this.props.data.product[12].id_product;
+
 
 		return (
 			<section id="product-section">
 				<Row>
+					{/* Producto 0 */}
 					<Col className="border-right-product" sm={3}>
 						<div className="cursor-pointer">
-							<Link href="/product">
-								<Image src="/static/img/products/3_4.jpg" alt="product 1" fluid />
+						<Link as={`/product`} href={{ pathname: '/product', query: { product: id_product_6 } }}>
+								<Image src={this.props.data.product[6].img_url} alt="product 1" fluid />
 							</Link>
 						</div>
 						<div className="price-box">
-							<span className="price-label">$189.00</span>
+							<span className="price-label">${this.props.data.product[6].price}</span>
 							<span className="old-price-label">$280.00</span>
 						</div>
 						<div className="rating-container">
 							<StarRatingComponent
-								name="rate5"
+								name="rate1"
 								starCount={5}
-								value={rating5}
+								value={this.props.data.review[6].rating}
 								emptyStarColor={'#CCCCCC'}
-								onStarClick={this.onStarClick.bind(this)}
 							/>
 						</div>
-						<Link href="/product"><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
+						<Link href="/product"><a>{this.props.data.product[8].title}</a></Link>
 					</Col>
+					{/* Producto 1 */}
 					<Col className="border-right-product" sm={3}>
 						<div className="cursor-pointer">
-							<Link href="/product">
-								<Image src="/static/img/products/4_1_1.jpg" alt="product 6" fluid />
+						<Link as={`/product`} href={{ pathname: '/product', query: { product: id_product_8 } }}>
+								<Image src={this.props.data.product[8].img_url} alt="product 2" fluid />
 							</Link>
 						</div>
 						<div className="price-box">
-							<span className="price-label">$189.00</span>
+							<span className="price-label">${this.props.data.product[8].price}</span>
+							<span className="old-price-label">$480.00</span>
+						</div>
+						<div className="rating-container">
+							<StarRatingComponent
+								name="rate2"
+								starCount={5}
+								value={this.props.data.review[1].rating}
+								emptyStarColor={'#CCCCCC'}
+							/>
+						</div>
+						<Link href="/product"><a>{this.props.data.product[8].title}</a></Link>
+					</Col>
+					{/* Producto 2 */}
+					<Col className="border-right-product" sm={3}>
+						<div className="cursor-pointer">
+						<Link as={`/product`} href={{ pathname: '/product', query: { product: id_product_10 } }}>
+								<Image src={this.props.data.product[10].img_url} alt="product 3" fluid />
+							</Link>
+						</div>
+						<div className="price-box">
+							<span className="price-label">${this.props.data.product[10].price}</span>
 							<span className="old-price-label">$280.00</span>
 						</div>
 						<div className="rating-container">
 							<StarRatingComponent
-								name="rate6"
+								name="rate3"
 								starCount={5}
-								value={rating6}
+								value={this.props.data.review[10].rating}
 								emptyStarColor={'#CCCCCC'}
-								onStarClick={this.onStarClick.bind(this)}
 							/>
 						</div>
-						<Link href="/product"><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
+						<Link href="/product"><a>{this.props.data.product[10].title}</a></Link>
 					</Col>
-					<Col className="border-right-product" sm={3}>
-						<div className="cursor-pointer">
-							<Link href="/product">
-								<Image src="/static/img/products/7_1_1.jpg" alt="product 7" fluid />
-							</Link>
-						</div>
-						<div className="price-box">
-							<span className="price-label">$189.00</span>
-							<span className="old-price-label">$280.00</span>
-						</div>
-						<div className="rating-container">
-							<StarRatingComponent
-								name="rate7"
-								starCount={5}
-								value={rating7}
-								emptyStarColor={'#CCCCCC'}
-								onStarClick={this.onStarClick.bind(this)}
-							/>
-						</div>
-						<Link href="/product"><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
-					</Col>
+					{/* Producto 3 */}
 					<Col sm={3}>
 						<div className="cursor-pointer">
-							<Link href="/product">
-								<Image src="/static/img/products/8_1_1.jpg" alt="product 8" fluid />
+						<Link as={`/product`} href={{ pathname: '/product', query: { product: id_product_12 } }}>
+								<Image src={this.props.data.product[12].img_url} alt="product 4" fluid />
 							</Link>
 						</div>
 						<div className="price-box">
-							<span className="price-label">$189.00</span>
+							<span className="price-label">${this.props.data.product[12].price}</span>
 							<span className="old-price-label">$280.00</span>
 						</div>
 						<div className="rating-container">
 							<StarRatingComponent
-								name="rate8"
+								name="rate4"
 								starCount={5}
-								value={rating8}
+								value={this.props.data.review[12].rating}
 								emptyStarColor={'#CCCCCC'}
-								onStarClick={this.onStarClick.bind(this)}
 							/>
 						</div>
-						<Link href="/product"><a>Checked Wide Tie DetailTable Wonderful Furniture Rustic Amp</a></Link>
+						<Link href="/product"><a>{this.props.data.product[12].title}</a></Link>
 					</Col>
 				</Row>
 			</section>

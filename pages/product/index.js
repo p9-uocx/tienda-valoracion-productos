@@ -13,26 +13,39 @@ import { NavMenu } from '../../components/nav';
 import { ProductsReview } from '../../components/products_review';
 
 import './product.scss';
-import { request } from 'http';
 
 export default class Product extends PureComponent {
 
-	constructor() {
-		super();
+	static async getInitialProps({ req, query }) {
+		
+		const apiReqProduct = await fetch(`${process.env.DB_API_HOST}/product/` + query.product);
+		const productData = await apiReqProduct.json();
 
-		this.state = {
-			imgUrl: '/static/img/products/2_4.jpg',
-			title: 'Wonderful Furniture Rustic Amp',
-			rating: 3,
-			numReviews: 3
+    return { api: { productData: productData.data }, query: query };
+  }
+	
+
+state = {
+			imgUrl: this.props.api.productData.img_url,
+			title: this.props.api.productData.title,
+			numReviews: this.props.api.productData.reviews.length,
+			price: this.props.api.productData.price,
+			reference: this.props.api.productData.reference,
+			description: this.props.api.productData.description
 		};
-	}
-
 	
 
 	render() {
-				
-		const { rating } = this.state;
+	
+		console.log(this.props.query)
+		console.log(this.props.api.productData);
+			
+		const reviews  = this.props.api.productData.reviews;
+			
+		const reviewsTotalValue = reviews.reduce((value, review) => {
+			return value + review.rating;
+		}, 0)
+		const reviewsValue = reviewsTotalValue / reviews.length
 
 		return (
 			<div>
@@ -51,14 +64,14 @@ export default class Product extends PureComponent {
 									<StarRatingComponent
 										name="rate1"
 										starCount={5}
-										value={rating}
+										value={reviewsValue}
 										emptyStarColor={'#CCCCCC'} />
 									<span>{this.state.numReviews} review(s)</span>
 									<span>|</span>
 									<span>Add your review</span>
 								</div>
 								<div className="price-box product-price-box">
-									<span className="price-label product-price-label">$189.00</span>
+									<span className="price-label product-price-label">${this.state.price}</span>
 									<span className="old-price-label old-product-price">$280.00</span>
 								</div>
 								<div id="stock">
@@ -67,18 +80,14 @@ export default class Product extends PureComponent {
 										<span className="">In stock</span>
 									</div>
 									<div className="product attribute sku">
-										<span><strong>SKU: </strong>furniture05</span>
+										<span><strong>SKU: </strong>{this.state.reference }</span>
 									</div>
 								</div>
 								<div>
 									<hr id="hr-product" />
 								</div>
 								<div className="description-text">
-									<p>Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui,
-										 at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens
-										 interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum.
-										 Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis,
-										 labores officiis torquatos cum ei.
+									<p>{this.state.description}
 									 </p>
 								</div>
 								<div>
@@ -128,7 +137,7 @@ export default class Product extends PureComponent {
 											</p>
 										</Tab.Pane>
 										<Tab.Pane eventKey="second">
-											<ProductsReview></ProductsReview>
+											<ProductsReview data={this.props.api.productData}></ProductsReview>
 										</Tab.Pane>
 									</Tab.Content>
 								</Col>
