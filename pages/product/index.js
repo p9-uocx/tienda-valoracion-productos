@@ -137,7 +137,7 @@ state = {
 											</p>
 										</Tab.Pane>
 										<Tab.Pane eventKey="second">
-											<ProductsReview></ProductsReview>
+											<ProductsReview data={this.props.api.productData}></ProductsReview>
 										</Tab.Pane>
 									</Tab.Content>
 								</Col>

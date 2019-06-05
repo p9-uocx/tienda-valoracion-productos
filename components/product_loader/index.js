@@ -48,14 +48,12 @@ class Product extends PureComponent {
 export class ProductLoader extends PureComponent {
 	render() {
 
-		let id_category = { id_category: this.props.data.id_category }
-
 		return (
 
 			<section id="product-section">
 				<Row>
 					{this.props.data.products.map(product => {
-						return <Product key={product.id_product} data={product} {...id_category} />
+						return <Product key={product.id_product} data={product} />
 					})}
 				</Row>
 			</section>
