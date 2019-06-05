@@ -14,12 +14,37 @@ import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import MenuIcon from '@material-ui/icons/Menu';
+import Modal from '@material-ui/core/Modal';
 
 import './admin.scss';
 
+const listServiceSelector = {
+  product: ListPoduct,
+  category: ListCategory,
+  user: ListCategory,
+  review: ListCategory,
+};
+
+const modalServiceSelector = {
+  product: ListPoduct,
+  category: ListCategory,
+  user: ListCategory,
+  review: ListCategory,
+};
+
 export default class Admin extends PureComponent {
+  state = {
+    modal: '',
+  };
+
   render() {
-    console.log(this.props.url.query.service);
+    const {
+      url: { query },
+    } = this.props;
+    const { modal } = this.state;
+    const ListService = listServiceSelector[query.service];
+    const ModalService = modalServiceSelector[modal];
+
     return (
       <Fragment>
         <Head>
@@ -56,11 +81,29 @@ export default class Admin extends PureComponent {
 
         <main className="admin-main">
           <Container>
-            <Link as={`/admin/user`} href={{ pathname: '/admin', query: { service: 'user' } }}>
-              aqui
-            </Link>
+            <div>
+              <Link
+                as={`/admin/user`}
+                href={{ pathname: '/admin', query: { service: 'user', action: 'list' } }}>
+                <a>Usuarios</a>
+              </Link>
+              <Link
+                as={`/admin/user`}
+                href={{ pathname: '/admin', query: { service: 'product', action: 'list' } }}>
+                <a>Productos</a>
+              </Link>
+              <Link
+                as={`/admin/user`}
+                href={{ pathname: '/admin', query: { service: 'category', action: 'list' } }}>
+                <a>Categorias</a>
+              </Link>
+            </div>
+            <div>{ListService && <ListService />}</div>
           </Container>
         </main>
+        <Modal open={!!modal}>
+          <ModalService />
+        </Modal>
       </Fragment>
     );
   }

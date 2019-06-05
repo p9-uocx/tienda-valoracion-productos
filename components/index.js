@@ -5,3 +5,8 @@ export * from './products_A';
 export * from './products_B';
 export * from './carousel';
 export * from './product_loader';
+export * from './admin-list-category';
+export * from './admin-list-product';
+export * from './admin-list-review';
+export * from './admin-list-role';
+export * from './admin-list-user';
