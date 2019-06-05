@@ -8,13 +8,20 @@ import StarRatingComponent from 'react-star-rating-component';
 
 export class ProductsB extends PureComponent {
 	render() {
+
+		const id_product_6 = this.props.data.product[6].id_product;
+		const id_product_8 = this.props.data.product[8].id_product;
+		const id_product_10 = this.props.data.product[10].id_product;
+		const id_product_12 = this.props.data.product[12].id_product;
+
+
 		return (
 			<section id="product-section">
 				<Row>
 					{/* Producto 0 */}
 					<Col className="border-right-product" sm={3}>
 						<div className="cursor-pointer">
-							<Link href="/product">
+						<Link as={`/product`} href={{ pathname: '/product', query: { product: id_product_6 } }}>
 								<Image src={this.props.data.product[6].img_url} alt="product 1" fluid />
 							</Link>
 						</div>
@@ -35,7 +42,7 @@ export class ProductsB extends PureComponent {
 					{/* Producto 1 */}
 					<Col className="border-right-product" sm={3}>
 						<div className="cursor-pointer">
-							<Link href="/product">
+						<Link as={`/product`} href={{ pathname: '/product', query: { product: id_product_8 } }}>
 								<Image src={this.props.data.product[8].img_url} alt="product 2" fluid />
 							</Link>
 						</div>
@@ -56,7 +63,7 @@ export class ProductsB extends PureComponent {
 					{/* Producto 2 */}
 					<Col className="border-right-product" sm={3}>
 						<div className="cursor-pointer">
-							<Link href="/product">
+						<Link as={`/product`} href={{ pathname: '/product', query: { product: id_product_10 } }}>
 								<Image src={this.props.data.product[10].img_url} alt="product 3" fluid />
 							</Link>
 						</div>
@@ -77,7 +84,7 @@ export class ProductsB extends PureComponent {
 					{/* Producto 3 */}
 					<Col sm={3}>
 						<div className="cursor-pointer">
-							<Link href="/product">
+						<Link as={`/product`} href={{ pathname: '/product', query: { product: id_product_12 } }}>
 								<Image src={this.props.data.product[12].img_url} alt="product 4" fluid />
 							</Link>
 						</div>
