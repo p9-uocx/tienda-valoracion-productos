@@ -21,17 +21,6 @@ export default class Product extends PureComponent {
 		const apiReqProduct = await fetch(`${process.env.DB_API_HOST}/product/` + query.product);
 		const productData = await apiReqProduct.json();
 
-/*
-    const categoryDataMap = categoryData.data.products.map(product => {
-      return {
-        ...product,
-        reviews: reviewData.data.reduce(
-          (array, review) => (product.id_product == review.product_id ? [...array, review] : array),
-          [],
-        ),
-      };
-    });
-*/
     return { api: { productData: productData.data }, query: query };
   }
 	

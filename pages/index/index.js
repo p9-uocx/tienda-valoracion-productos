@@ -103,7 +103,7 @@ export default class Index extends PureComponent {
               </Row>
             </section>
             {/* Product Section */}
-            <ProductsB />
+            <ProductsB data={this.props.datosServidor}/>
             {/* IMAGE SECTION */}
             <section className="padding-bottom-img">
               <div>
