@@ -4,7 +4,7 @@ import fetch from 'isomorphic-unfetch';
 import Head from 'next/head';
 import Link from 'next/link';
 
-import {} from '@Components';
+import { ListProduct, ListCategory } from '@Components';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -19,14 +19,14 @@ import Modal from '@material-ui/core/Modal';
 import './admin.scss';
 
 const listServiceSelector = {
-  product: ListPoduct,
+  product: ListProduct,
   category: ListCategory,
   user: ListCategory,
   review: ListCategory,
 };
 
 const modalServiceSelector = {
-  product: ListPoduct,
+  product: ListProduct,
   category: ListCategory,
   user: ListCategory,
   review: ListCategory,
@@ -63,7 +63,7 @@ export default class Admin extends PureComponent {
           <script defer src="/static/fontawesome/js/all.js" />
         </Head>
 
-        <AppBar position="fixed">
+        <AppBar position="fixed" className="adsasda">
           <Toolbar className="menu">
             <Grid container container direction="row" justify="space-between">
               <IconButton edge="start" color="inherit">
@@ -82,27 +82,23 @@ export default class Admin extends PureComponent {
         <main className="admin-main">
           <Container>
             <div>
-              <Link
-                as={`/admin/user`}
-                href={{ pathname: '/admin', query: { service: 'user', action: 'list' } }}>
+              <Link href={{ pathname: '/admin', query: { service: 'user', action: 'list' } }}>
                 <a>Usuarios</a>
               </Link>
-              <Link
-                as={`/admin/user`}
-                href={{ pathname: '/admin', query: { service: 'product', action: 'list' } }}>
+              <Link href={{ pathname: '/admin', query: { service: 'product', action: 'list' } }}>
                 <a>Productos</a>
               </Link>
-              <Link
-                as={`/admin/user`}
-                href={{ pathname: '/admin', query: { service: 'category', action: 'list' } }}>
+              <Link href={{ pathname: '/admin', query: { service: 'category', action: 'list' } }}>
                 <a>Categorias</a>
               </Link>
             </div>
-            <div>{ListService && <ListService />}</div>
+            <div>
+              <ListProduct />
+            </div>
           </Container>
         </main>
-        <Modal open={!!modal}>
-          <ModalService />
+        <Modal open={false}>
+          <ListProduct />
         </Modal>
       </Fragment>
     );
