@@ -12,7 +12,7 @@ import Typography from '@material-ui/core/Typography';
 import FolderIcon from '@material-ui/icons/Folder';
 import DeleteIcon from '@material-ui/icons/Delete';
 import AccountCircleTwoTone from '@material-ui/icons/AccountCircleTwoTone'
-
+import Create from '@material-ui/icons/Create';
 
 import './admin-list-user.scss';
 
@@ -70,11 +70,14 @@ export class ListUser extends PureComponent {
                       <span>Rol: {elem.rol}</span>
                     </div>
                   }
-                  
+
                 />
                 <ListItemSecondaryAction>
                   <IconButton edge="end" aria-label="Delete">
-                    <DeleteIcon />
+                    <Create></Create>                    
+                  </IconButton>
+                  <IconButton edge="end" aria-label="Delete">
+                    <DeleteIcon></DeleteIcon>                    
                   </IconButton>
                 </ListItemSecondaryAction>
               </ListItem>
