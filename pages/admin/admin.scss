@@ -1,3 +1,14 @@
 .admin-main {
   margin-top: 100px;
 }
+
+.app-admin-bar {
+  background-color: #445268 !important;
+  height: 90px;
+}
+
+@media (min-width: 600px) {
+  .MuiToolbar-regular {
+    min-height: 0px !important;
+  }
+}

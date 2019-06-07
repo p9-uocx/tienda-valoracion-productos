@@ -63,7 +63,7 @@ export default class Admin extends PureComponent {
           <script defer src="/static/fontawesome/js/all.js" />
         </Head>
 
-        <AppBar position="fixed" className="adsasda">
+        <AppBar position="fixed" className="app-admin-bar">
           <Toolbar className="menu">
             <Grid container container direction="row" justify="space-between">
               <IconButton edge="start" color="inherit">
