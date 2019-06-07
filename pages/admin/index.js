@@ -74,8 +74,8 @@ export default class Admin extends PureComponent {
               <div>
                 <IconButton edge="end" color="inherit">
                   <PowerSettingsNew />
+                  <Button color="inherit">Logout</Button>
                 </IconButton>
-                <Button color="inherit">Logout</Button>
               </div>
             </Grid>
 
