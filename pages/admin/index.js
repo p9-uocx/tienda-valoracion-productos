@@ -4,7 +4,7 @@ import fetch from 'isomorphic-unfetch';
 import Head from 'next/head';
 import Link from 'next/link';
 
-import { ListProduct, ListCategory } from '@Components';
+import { ListProduct, ListCategory, ListReview, ListUser } from '@Components';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -15,6 +15,7 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import MenuIcon from '@material-ui/icons/Menu';
 import Modal from '@material-ui/core/Modal';
+import PowerSettingsNew from '@material-ui/icons/PowerSettingsNew';
 
 import './admin.scss';
 
@@ -69,9 +70,15 @@ export default class Admin extends PureComponent {
               <IconButton edge="start" color="inherit">
                 <MenuIcon />
               </IconButton>
-              <Typography variant="h3">News</Typography>
-              <Button color="inherit">Login</Button>
+              <Typography variant="h4">Admin Page</Typography>
+              <div>
+                <IconButton edge="end" color="inherit">
+                  <PowerSettingsNew />
+                </IconButton>
+                <Button color="inherit">Logout</Button>
+              </div>
             </Grid>
+
           </Toolbar>
         </AppBar>
 
@@ -93,12 +100,12 @@ export default class Admin extends PureComponent {
               </Link>
             </div>
             <div>
-              <ListProduct />
+              <ListUser></ListUser>
             </div>
           </Container>
         </main>
         <Modal open={false}>
-          <ListProduct />
+          <ListReview />
         </Modal>
       </Fragment>
     );
