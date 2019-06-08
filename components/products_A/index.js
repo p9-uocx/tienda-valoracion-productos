@@ -8,38 +8,39 @@ import StarRatingComponent from 'react-star-rating-component';
 export class ProductsA extends PureComponent {
   render() {
 
-    var productSlices = this.props.data.products.slice(0, 4);
-    console.log(productSlices);
-
+    const productSlices = this.props.data.products.slice(0, 4);
+    
     return (
       <section id="product-section">
         <Row>
-          {productSlices.map(product => {
+          {productSlices.map((product, index) => {
 
-            console.log(product.img_url);
+            console.log(product.reviews[index])
 
-            <Col className="border-right-product" sm={3}>
-              <div className="cursor-pointer">
+            return (
+              <Col className="border-right-product" sm={3}>
+                <div className="cursor-pointer">
+                  <Link href={{ pathname: '/product', query: { product: product.id_product } }}>
+                    <Image src={product.img_url} alt="product 1" fluid />
+                  </Link>
+                </div>
+                <div className="price-box">
+                  <span className="price-label">${product.price}</span>
+                  <span className="old-price-label">$280.00</span>
+                </div>
+                <div className="rating-container">
+                  <StarRatingComponent
+                    name="rate1"
+                    starCount={5}
+                    value={product.reviews.rating}
+                    emptyStarColor={'#CCCCCC'}
+                  />
+                </div>
                 <Link href={{ pathname: '/product', query: { product: product.id_product } }}>
-                  <Image src={product.img_url} alt="product 1" fluid />
+                  <a>{product.title}</a>
                 </Link>
-              </div>
-              <div className="price-box">
-                <span className="price-label">${product.price}</span>
-                <span className="old-price-label">$280.00</span>
-              </div>
-              <div className="rating-container">
-                <StarRatingComponent
-                  name="rate1"
-                  starCount={5}
-                  value={product.reviews.rating}
-                  emptyStarColor={'#CCCCCC'}
-                />
-              </div>
-              <Link href={{ pathname: '/product', query: { product: product.id_product } }}>
-                <a>{product.title}</a>
-              </Link>
-            </Col>
+              </Col>
+            )
           })}
         </Row>
       </section>

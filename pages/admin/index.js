@@ -17,6 +17,12 @@ import Grid from '@material-ui/core/Grid';
 import MenuIcon from '@material-ui/icons/Menu';
 import Modal from '@material-ui/core/Modal';
 import PowerSettingsNew from '@material-ui/icons/PowerSettingsNew';
+import AccountCircle from '@material-ui/icons/AccountCircle';
+import Category from '@material-ui/icons/Category';
+import LocalActivity from '@material-ui/icons/LocalActivity';
+import CheckCircle from '@material-ui/icons/CheckCircle';
+import PanTool from '@material-ui/icons/PanTool';
+import Dashboard from '@material-ui/icons/Dashboard';
 
 import './admin.scss';
 
@@ -75,26 +81,41 @@ export default class Admin extends PureComponent {
             <Grid container direction="column" justify="flex-start" alignItems="stretch">
               <Link href={{ pathname: '/admin', query: { service: 'user', action: 'list' } }}>
                 <Button color="primary" className="link-menu">
+                  <IconButton color="inherit" onClick={this.openMenu}>
+                    <AccountCircle className="padding-right-icon" />
+                  </IconButton>
                   Usuarios
                 </Button>
               </Link>
               <Link href={{ pathname: '/admin', query: { service: 'product', action: 'list' } }}>
                 <Button color="primary" className="link-menu">
+                  <IconButton color="inherit" onClick={this.openMenu}>
+                    <Dashboard className="padding-right-icon" />
+                  </IconButton>
                   Productos
                 </Button>
               </Link>
               <Link href={{ pathname: '/admin', query: { service: 'category', action: 'list' } }}>
                 <Button color="primary" className="link-menu">
+                  <IconButton color="inherit" onClick={this.openMenu}>
+                    <Category className="padding-right-icon" />
+                  </IconButton>
                   Categorias
                 </Button>
               </Link>
               <Link href={{ pathname: '/admin', query: { service: 'category', action: 'list' } }}>
                 <Button color="primary" className="link-menu">
+                  <IconButton color="inherit" onClick={this.openMenu}>
+                    <CheckCircle className="padding-right-icon" />
+                  </IconButton>
                   Roles
                 </Button>
               </Link>
               <Link href={{ pathname: '/admin', query: { service: 'category', action: 'list' } }}>
                 <Button color="primary" className="link-menu">
+                  <IconButton color="inherit" onClick={this.openMenu}>
+                    <LocalActivity className="padding-right-icon" />
+                  </IconButton>
                   Reviews
                 </Button>
               </Link>
@@ -107,10 +128,11 @@ export default class Admin extends PureComponent {
                 <IconButton color="inherit" onClick={this.openMenu}>
                   <MenuIcon />
                 </IconButton>
-                <Typography variant="h3">News</Typography>
+                <Typography variant="h4">News</Typography>
 
                 <IconButton color="inherit">
                   <PowerSettingsNew />
+                  LOGOUT
                 </IconButton>
               </Grid>
             </Toolbar>
