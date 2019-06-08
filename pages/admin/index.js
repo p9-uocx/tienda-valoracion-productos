@@ -1,10 +1,8 @@
 // Hay que importar simepre la libreria de React para que pueda interpretar el html, el PoreCompoente es un tipo de compoente nuevo que puedes uasr o no
 import React, { PureComponent, Fragment } from 'react';
-import fetch from 'isomorphic-unfetch';
 import Head from 'next/head';
 import Link from 'next/link';
 import classNames from 'classnames';
-
 import { ListProduct, ListCategory, ListReview, FetchAdmin } from '@Components';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -17,8 +15,9 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import Category from '@material-ui/icons/Category';
 import LocalActivity from '@material-ui/icons/LocalActivity';
 import CheckCircle from '@material-ui/icons/CheckCircle';
-import PanTool from '@material-ui/icons/PanTool';
 import Dashboard from '@material-ui/icons/Dashboard';
+import Image from 'react-bootstrap/Image';
+import Container from 'react-bootstrap/Container';
 
 import './admin.scss';
 
@@ -120,14 +119,14 @@ export default class Admin extends PureComponent {
           <header className="header-contanier">
             <Toolbar>
               <Grid container container direction="row" justify="space-between">
-                <IconButton color="inherit" onClick={this.openMenu}>
-                  <MenuIcon />
+                <IconButton onClick={this.openMenu}>
+                  <MenuIcon className="fill-white" />
                 </IconButton>
-                <Typography variant="h4">News</Typography>
+                <Typography className="color-white" variant="h4">Admin Page</Typography>
 
-                <IconButton color="inherit">
-                  <PowerSettingsNew />
-                  LOGOUT
+                <IconButton>
+                  <PowerSettingsNew className="fill-white" />
+                  <span className="color-white logout">LOGOUT</span>
                 </IconButton>
               </Grid>
             </Toolbar>
@@ -137,8 +136,15 @@ export default class Admin extends PureComponent {
             <FetchAdmin query={query} />
           </main>
 
-          <footer className="footer-container">asd</footer>
         </section>
+
+        <div className="footer-div">
+          <Container>
+            <span>Copyright © 2019 Expert Inc. All rights reserved.</span>
+            <Image fluid id="logo-footer" src="/static/img/header/logo2-1.png" />
+          </Container>
+        </div>
+
       </Fragment>
     );
   }

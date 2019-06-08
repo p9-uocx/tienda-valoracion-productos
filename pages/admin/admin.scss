@@ -12,7 +12,6 @@
     outline: 0;
   }
 
-  position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
@@ -26,6 +25,7 @@
     'footer footer';
 
   .nav-contanier {
+    min-height: 91vh;
     grid-area: nav;
     max-width: 250px;
     overflow: hidden;
@@ -78,4 +78,24 @@
   .modal-header {
     text-align: center;
   }
+}
+.fill-white {
+  fill: white !important;
+}
+
+.color-white {
+  color: white !important;
+}
+
+.logout {
+  font-size: 15px;
+}
+
+.footer-div {
+  //position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: #ffffff;
+  background-color: #445268;
+  padding: 35px;
 }
