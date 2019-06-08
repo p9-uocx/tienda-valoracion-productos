@@ -25,7 +25,7 @@
     'footer footer';
 
   .nav-contanier {
-    min-height: 91vh;
+    min-height: 90.1vh;
     grid-area: nav;
     max-width: 250px;
     overflow: hidden;
@@ -51,6 +51,7 @@
 
   .main-container {
     grid-area: main;
+    padding-top: 30px;
   }
 
   .footer-container {
