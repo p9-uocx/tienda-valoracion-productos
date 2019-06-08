@@ -5,7 +5,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import classNames from 'classnames';
 
-import { ListProduct, ListCategory } from '@Components';
+import { ListProduct, ListCategory, ListReview, ListUser } from '@Components';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -16,6 +16,7 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import MenuIcon from '@material-ui/icons/Menu';
 import Modal from '@material-ui/core/Modal';
+import PowerSettingsNew from '@material-ui/icons/PowerSettingsNew';
 
 import './admin.scss';
 
@@ -115,6 +116,8 @@ export default class Admin extends PureComponent {
           <main className="main-container">
             <div>
               <ListProduct />
+              <ListUser />
+              <ListReview />
             </div>
           </main>
 
@@ -122,7 +125,7 @@ export default class Admin extends PureComponent {
         </section>
 
         <Modal open={false}>
-          <ListProduct />
+          <ListReview />
         </Modal>
       </Fragment>
     );

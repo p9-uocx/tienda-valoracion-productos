@@ -20,7 +20,7 @@ class Product extends PureComponent {
 		return (
 			<Col className="border-right-product" sm={3}>
 				<div className="cursor-pointer">
-					<Link as={`/product`} href={{ pathname: '/product', query: { product: id_product } }}>
+					<Link href={{ pathname: '/product', query: { product: id_product } }}>
 						<Image src={img_url} alt="product 1" fluid />
 					</Link>
 				</div>

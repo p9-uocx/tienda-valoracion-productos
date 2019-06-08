@@ -34,16 +34,14 @@ export class ProductsA extends PureComponent {
                 emptyStarColor={'#CCCCCC'}
               />
             </div>
-            <Link href="/product">
+            <Link href={{ pathname: '/product', query: { product: id_product_0 } }}>
               <a>{this.props.data.product[0].title}</a>
             </Link>
           </Col>
           {/* Producto 1 */}
           <Col className="border-right-product" sm={3}>
             <div className="cursor-pointer">
-              <Link
-                as={`/product`}
-                href={{ pathname: '/product', query: { product: id_product_1 } }}>
+              <Link href={{ pathname: '/product', query: { product: id_product_1 } }}>
                 <Image src={this.props.data.product[1].img_url} alt="product 2" fluid />
               </Link>
             </div>
@@ -59,16 +57,14 @@ export class ProductsA extends PureComponent {
                 emptyStarColor={'#CCCCCC'}
               />
             </div>
-            <Link href="/product">
+            <Link href={{ pathname: '/product', query: { product: id_product_1 } }}>
               <a>{this.props.data.product[1].title}</a>
             </Link>
           </Col>
           {/* Producto 2 */}
           <Col className="border-right-product" sm={3}>
             <div className="cursor-pointer">
-              <Link
-                as={`/product`}
-                href={{ pathname: '/product', query: { product: id_product_2 } }}>
+              <Link href={{ pathname: '/product', query: { product: id_product_2 } }}>
                 <Image src={this.props.data.product[2].img_url} alt="product 3" fluid />
               </Link>
             </div>
@@ -84,16 +80,14 @@ export class ProductsA extends PureComponent {
                 emptyStarColor={'#CCCCCC'}
               />
             </div>
-            <Link href="/product">
+            <Link href={{ pathname: '/product', query: { product: id_product_2 } }}>
               <a>{this.props.data.product[2].title}</a>
             </Link>
           </Col>
           {/* Producto 3 */}
           <Col sm={3}>
             <div className="cursor-pointer">
-              <Link
-                as={`/product`}
-                href={{ pathname: '/product', query: { product: id_product_5 } }}>
+              <Link href={{ pathname: '/product', query: { product: id_product_5 } }}>
                 <Image src={this.props.data.product[5].img_url} alt="product 4" fluid />
               </Link>
             </div>
@@ -109,7 +103,7 @@ export class ProductsA extends PureComponent {
                 emptyStarColor={'#CCCCCC'}
               />
             </div>
-            <Link href="/product">
+            <Link href={{ pathname: '/product', query: { product: id_product_5 } }}>
               <a>{this.props.data.product[5].title}</a>
             </Link>
           </Col>
