@@ -211,10 +211,9 @@ export class ListReview extends PureComponent {
     return (
       <div>
         <Typography variant="h6">
-          List of products
+          List of Reviews
         </Typography>
         <GridList cols={5} cellHeight={"auto"}>
-
           {this.props.data.map(elem => (
             <Card className="margin-card">
               <CardActionArea>
