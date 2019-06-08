@@ -137,12 +137,14 @@ export default class Admin extends PureComponent {
           </main>
 
         </section>
-          <footer>
-            <Container>
-              <span>Copyright © 2019 Expert Inc. All rights reserved.</span>
-              <Image fluid id="logo-footer" src="/static/img/header/logo2-1.png" />
-            </Container>
-          </footer>
+
+        <div className="footer-div">
+          <Container>
+            <span>Copyright © 2019 Expert Inc. All rights reserved.</span>
+            <Image fluid id="logo-footer" src="/static/img/header/logo2-1.png" />
+          </Container>
+        </div>
+
       </Fragment>
     );
   }

@@ -12,7 +12,7 @@
     outline: 0;
   }
 
-  position: absolute;
+
   top: 0;
   left: 0;
   bottom: 0;
@@ -21,13 +21,12 @@
   grid-template-columns: auto 1fr auto;
   grid-template-rows: auto 1fr;
   grid-template-areas:
-    'nav header'
-    'nav main'
-    'footer footer';
-
-  
+    "nav header"
+    "nav main"
+    "footer footer";
 
   .nav-contanier {
+    min-height: 91vh;
     grid-area: nav;
     max-width: 250px;
     overflow: hidden;
@@ -84,3 +83,13 @@
 .logout {
   font-size: 15px;
 }
+
+.footer-div {
+  //position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: #ffffff;
+  background-color: #445268;
+  padding: 35px;
+}
+
