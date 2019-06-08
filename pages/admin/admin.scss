@@ -25,9 +25,7 @@
     'nav main'
     'footer footer';
 
-  .footer-container {
-    background-color: #445268;
-  }
+  
 
   .nav-contanier {
     grid-area: nav;
@@ -73,4 +71,8 @@
 
 .padding-right-icon {
   padding-right: 5px;
+}
+
+.footer-container {
+  background-color: #445268;
 }
