@@ -8,6 +8,7 @@
   background: rgba(0, 0, 0, 0.4) !important;
 }
 .display-flex {
+  padding-right: 6px;
   display: flex;
 }
 
@@ -15,5 +16,5 @@
   color: white;
 }
 .MuiIconButton-root {
-  padding: 6px !important;
+  padding: 6px 0px 6px 6px !important;
 }
