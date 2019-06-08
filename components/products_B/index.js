@@ -5,106 +5,43 @@ import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
 import StarRatingComponent from 'react-star-rating-component';
 
-
 export class ProductsB extends PureComponent {
-	render() {
+  render() {
 
-		const id_product_6 = this.props.data.product[6].id_product;
-		const id_product_8 = this.props.data.product[8].id_product;
-		const id_product_10 = this.props.data.product[10].id_product;
-		const id_product_12 = this.props.data.product[12].id_product;
+    const productSlices = this.props.data.products.slice(4, 8);
+        
+    return (
+      <section id="product-section">
+        <Row>
+          {productSlices.map((product, index) => {
 
-
-		return (
-			<section id="product-section">
-				<Row>
-					{/* Producto 0 */}
-					<Col className="border-right-product" sm={3}>
-						<div className="cursor-pointer">
-						<Link as={`/product`} href={{ pathname: '/product', query: { product: id_product_6 } }}>
-								<Image src={this.props.data.product[6].img_url} alt="product 1" fluid />
-							</Link>
-						</div>
-						<div className="price-box">
-							<span className="price-label">${this.props.data.product[6].price}</span>
-							<span className="old-price-label">$280.00</span>
-						</div>
-						<div className="rating-container">
-							<StarRatingComponent
-								name="rate1"
-								starCount={5}
-								value={this.props.data.review[6].rating}
-								emptyStarColor={'#CCCCCC'}
-							/>
-						</div>
-						<Link href="/product"><a>{this.props.data.product[8].title}</a></Link>
-					</Col>
-					{/* Producto 1 */}
-					<Col className="border-right-product" sm={3}>
-						<div className="cursor-pointer">
-						<Link as={`/product`} href={{ pathname: '/product', query: { product: id_product_8 } }}>
-								<Image src={this.props.data.product[8].img_url} alt="product 2" fluid />
-							</Link>
-						</div>
-						<div className="price-box">
-							<span className="price-label">${this.props.data.product[8].price}</span>
-							<span className="old-price-label">$480.00</span>
-						</div>
-						<div className="rating-container">
-							<StarRatingComponent
-								name="rate2"
-								starCount={5}
-								value={this.props.data.review[1].rating}
-								emptyStarColor={'#CCCCCC'}
-							/>
-						</div>
-						<Link href="/product"><a>{this.props.data.product[8].title}</a></Link>
-					</Col>
-					{/* Producto 2 */}
-					<Col className="border-right-product" sm={3}>
-						<div className="cursor-pointer">
-						<Link as={`/product`} href={{ pathname: '/product', query: { product: id_product_10 } }}>
-								<Image src={this.props.data.product[10].img_url} alt="product 3" fluid />
-							</Link>
-						</div>
-						<div className="price-box">
-							<span className="price-label">${this.props.data.product[10].price}</span>
-							<span className="old-price-label">$280.00</span>
-						</div>
-						<div className="rating-container">
-							<StarRatingComponent
-								name="rate3"
-								starCount={5}
-								value={this.props.data.review[10].rating}
-								emptyStarColor={'#CCCCCC'}
-							/>
-						</div>
-						<Link href="/product"><a>{this.props.data.product[10].title}</a></Link>
-					</Col>
-					{/* Producto 3 */}
-					<Col sm={3}>
-						<div className="cursor-pointer">
-						<Link as={`/product`} href={{ pathname: '/product', query: { product: id_product_12 } }}>
-								<Image src={this.props.data.product[12].img_url} alt="product 4" fluid />
-							</Link>
-						</div>
-						<div className="price-box">
-							<span className="price-label">${this.props.data.product[12].price}</span>
-							<span className="old-price-label">$280.00</span>
-						</div>
-						<div className="rating-container">
-							<StarRatingComponent
-								name="rate4"
-								starCount={5}
-								value={this.props.data.review[12].rating}
-								emptyStarColor={'#CCCCCC'}
-							/>
-						</div>
-						<Link href="/product"><a>{this.props.data.product[12].title}</a></Link>
-					</Col>
-				</Row>
-			</section>
-		);
-	}
-
+            return (
+              <Col className="border-right-product" sm={3}>
+                <div className="cursor-pointer">
+                  <Link href={{ pathname: '/product', query: { product: product.id_product } }}>
+                    <Image src={product.img_url} alt="product 1" fluid />
+                  </Link>
+                </div>
+                <div className="price-box">
+                  <span className="price-label">${product.price}</span>
+                  <span className="old-price-label">$280.00</span>
+                </div>
+                <div className="rating-container">
+                  <StarRatingComponent
+                    name="rate1"
+                    starCount={5}
+                    value={product.reviews.rating}
+                    emptyStarColor={'#CCCCCC'}
+                  />
+                </div>
+                <Link href={{ pathname: '/product', query: { product: product.id_product } }}>
+                  <a>{product.title}</a>
+                </Link>
+              </Col>
+            )
+          })}
+        </Row>
+      </section>
+    );
+  }
 }

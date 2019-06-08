@@ -140,7 +140,7 @@ export default class Admin extends PureComponent {
 
         <div className="footer-div">
           <Container>
-            <span>Copyright © 2019 Expert Inc. All rights reserved.</span>
+          <span>Copyright © 2019 Expert Inc. Developed with <span className="red">&#10084;</span> by JASE Team.</span>
             <Image fluid id="logo-footer" src="/static/img/header/logo2-1.png" />
           </Container>
         </div>
