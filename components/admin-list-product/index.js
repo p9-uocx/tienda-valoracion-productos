@@ -8,6 +8,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import IconButton from '@material-ui/core/IconButton';
 import Create from '@material-ui/icons/Create';
 import DeleteIcon from '@material-ui/icons/Delete';
+import AddCircle from '@material-ui/icons/AddCircle';
 import GridList from '@material-ui/core/GridList';
 
 import './admin-list-product.scss';
@@ -305,7 +306,27 @@ export class ListProduct extends PureComponent {
       <div>
         <Typography variant="h6">List of products</Typography>
         <GridList cols={5} cellHeight={'auto'}>
+          <Card className="margin-card">
+            <CardActionArea>
+              <CardMedia
+                className="heigth-media"
+                image="/static/img/baseline_add_circle_black_48.png"
+                title={'Add Product'}
+              />
+              <CardContent>
+
+              </CardContent>
+              <CardActions align="center">
+                <Typography color="textSecondary" gutterBottom variant="subtitle1" component="h6">
+                  {'Add New Product'}
+                </Typography>
+
+              </CardActions>
+            </CardActionArea>
+          </Card>
+
           {this.props.data.map(elem => (
+
             <Card className="margin-card">
               <CardActionArea>
                 <CardMedia
@@ -322,12 +343,12 @@ export class ListProduct extends PureComponent {
                   </Typography>
                 </CardContent>
               </CardActionArea>
-              <CardActions className="float-right-icons">
+              <CardActions>
                 <IconButton
                   edge="end"
                   aria-label="Delete"
                   onClick={this.props.onEditClick(elem.id_product)}>
-                  <Create edgeMode="end" className="margin-right" />
+                  <Create edgeMode="end" />
                 </IconButton>
                 <IconButton
                   edge="end"

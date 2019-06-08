@@ -22,7 +22,10 @@
 .heigth-media {
   height: 220px;
 }
-.float-right-icons{
-  float: right;
-  margin-right: 20px;
+
+.MuiCardActions-root:not(h6) {
+  display: block;
+}
+.font-size-textIcon {
+  font-size: 15px;
 }
