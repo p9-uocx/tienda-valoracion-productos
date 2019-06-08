@@ -1,14 +1,14 @@
 import React, { PureComponent } from 'react';
 import Typography from '@material-ui/core/Typography';
-import Image from 'react-bootstrap/Image';
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
-import GridListTileBar from '@material-ui/core/GridListTileBar';
-import ListSubheader from '@material-ui/core/ListSubheader';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
 import IconButton from '@material-ui/core/IconButton';
-import SvgIcon from '@material-ui/core/SvgIcon';
-import DeleteIcon from '@material-ui/icons/Delete';
 import Create from '@material-ui/icons/Create';
+import DeleteIcon from '@material-ui/icons/Delete';
+import GridList from '@material-ui/core/GridList';
 
 import './admin-list-product.scss';
 
@@ -289,34 +289,39 @@ export class ListProduct extends PureComponent {
         <Typography variant="h6">
           List of products
         </Typography>
-        <GridList spacing={30} cols={4} cellHeight={"auto"}>
+        <GridList cols={5} cellHeight={"auto"}>
           {this.props.data.map(elem => (
-            <GridListTile key={elem.img_url}>
-              <Image fluid src={elem.img_url}></Image>
-              <GridListTileBar className="custom-tile-bar"
-                title={elem.title}
-                subtitle={
-                  <div className="info-block-elem">
-                    <span >Date Added: {elem.date_add}</span>
-                    <span>Reference: {elem.reference}</span>
-                  </div>
 
-                }
-                actionIcon={
-                  <div className="display-flex">
-                    <IconButton>
-                      <Create className="white-color"></Create>
-                    </IconButton>
-                    <IconButton>
-                      <DeleteIcon className="white-color"></DeleteIcon>
-                    </IconButton>
-                  </div>
-                }
-              />
-            </GridListTile>
+            <Card className="margin-card">
+              <CardActionArea>
+                <CardMedia className="heigth-media"
+                  image={elem.img_url}
+                  title={'Product ID: ' + elem.id_product}
+                />
+                <CardContent>
+                  <Typography color="textSecondary" gutterBottom variant="subtitle1" component="h6">
+                    {'Product ID: ' + elem.id_product}
+                  </Typography>
+                  <Typography color="textSecondary" gutterBottom variant="subtitle2" component="h6">
+                    {'Reference: ' + elem.reference}
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+              <CardActions className="float-right-icons">
+                <IconButton edge="end" aria-label="Delete">
+                  <Create edgeMode="end" className="margin-right"></Create>
+                </IconButton>
+                <IconButton edge="end" aria-label="Delete">
+                  <DeleteIcon></DeleteIcon>
+                </IconButton>
+              </CardActions>
+            </Card>
+
+
+
+
           ))}
         </GridList>
-
       </div>
     );
   }
