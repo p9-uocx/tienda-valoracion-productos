@@ -104,21 +104,24 @@ export default class Admin extends PureComponent {
           <header className="header-contanier">
             <Toolbar>
               <Grid container container direction="row" justify="space-between">
-                <IconButton edge="start" color="inherit" onClick={this.openMenu}>
+                <IconButton color="inherit" onClick={this.openMenu}>
                   <MenuIcon />
                 </IconButton>
                 <Typography variant="h3">News</Typography>
-                <MenuIcon />
+
+                <IconButton color="inherit">
+                  <PowerSettingsNew />
+                </IconButton>
               </Grid>
             </Toolbar>
           </header>
 
           <main className="main-container">
-            <div>
+            <Container>
               <ListProduct />
               <ListUser />
               <ListReview />
-            </div>
+            </Container>
           </main>
 
           <footer className="footer-container">asd</footer>
