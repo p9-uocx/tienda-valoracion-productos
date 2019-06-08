@@ -10,4 +10,5 @@ export * from './admin-list-product';
 export * from './admin-list-review';
 export * from './admin-list-role';
 export * from './admin-list-user';
+export * from './admin-modal-notification';
 export * from './fetch-admin';

@@ -1,12 +1,19 @@
 // Hay que importar simepre la libreria de React para que pueda interpretar el html, el PoreCompoente es un tipo de compoente nuevo que puedes uasr o no
 import React, { PureComponent, Fragment } from 'react';
 import fetch from 'isomorphic-unfetch';
-import Link from 'next/link';
-import classNames from 'classnames';
 
-import { ListProduct, ListCategory, ListReview, ListRole, ListUser } from '@Components';
+import {
+  ModalNotification,
+  ListProduct,
+  ListCategory,
+  ListReview,
+  ListRole,
+  ListUser,
+} from '@Components';
 import Container from '@material-ui/core/Container';
 import Modal from '@material-ui/core/Modal';
+
+console.log(ModalNotification);
 
 const listServiceSelector = {
   product: ListProduct,
@@ -17,13 +24,15 @@ const listServiceSelector = {
 };
 
 const modalServiceSelector = {
+  notification: ModalNotification,
   productCreate: ListProduct,
   productEdit: ListProduct,
   category: ListProduct,
   user: ListProduct,
-  notification: ListProduct,
 };
 
+console.log(modalServiceSelector);
+console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
 export class FetchAdmin extends PureComponent {
   state = {
     listData: [],
@@ -53,10 +62,15 @@ export class FetchAdmin extends PureComponent {
   };
 
   fetchDeleteItem = (service, id) => {
-    fetch(`${process.env.DB_API_HOST}/${service}/${id}`)
+    fetch(`${process.env.DB_API_HOST}/${service}/${id}`, {
+      method: 'DELETE',
+      headers: new Headers(),
+      mode: 'cors',
+      cache: 'default',
+    })
       .then(res => res.json())
       .then(res => {
-        this.setState({ modal: 'notification', modaData: res });
+        this.setState({ modal: 'notification', modalData: res });
       });
   };
 
@@ -72,7 +86,7 @@ export class FetchAdmin extends PureComponent {
     fetch(`${process.env.DB_API_HOST}/${service}/${id}`)
       .then(res => res.json())
       .then(res => {
-        this.setState({ modal: 'notification', modaData: res });
+        this.setState({ modal: 'notification', modalData: res });
       });
   };
 
@@ -80,27 +94,31 @@ export class FetchAdmin extends PureComponent {
     fetch(`${process.env.DB_API_HOST}/${service}`)
       .then(res => res.json())
       .then(res => {
-        this.setState({ modal: 'notification', modaData: res });
+        this.setState({ modal: 'notification', modalData: res });
       });
   };
 
-  onDeleteClick = id => {
+  onDeleteClick = id => () => {
     this.fetchDeleteItem(this.props.query.service, id);
   };
-  onEditClick = id => {
+  onEditClick = id => () => {
+    debugger;
     this.fetchDataItem(this.props.query.service, id);
   };
   onCreateClick = () => {
+    debugger;
     this.setState({ modal: `${this.props.query.service}Create` });
   };
   onEditSave = (id, postData) => {
+    debugger;
     this.fetchEditItem(this.props.query.service, id, postData);
   };
   onCreateSave = postData => {
+    debugger;
     this.fetchCreateItem(this.props.query.service, postData);
   };
   onCloseClick = () => {
-    this.setState({ modal: null });
+    this.setState({ modal: null, modalData: null });
   };
 
   render() {
@@ -117,7 +135,12 @@ export class FetchAdmin extends PureComponent {
             onEditClick={this.onEditClick}
           />
         )}
-        <Modal open={Boolean(modal)}>{ModalService && <ModalService data={modalData} />}</Modal>
+        <Modal open={Boolean(modal)}>
+          <div>
+            <p>asdasd</p>
+            {ModalService && <ModalService data={modalData} onCloseClick={this.onCloseClick} />}
+          </div>
+        </Modal>
       </Container>
     );
   }

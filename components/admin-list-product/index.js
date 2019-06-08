@@ -323,10 +323,16 @@ export class ListProduct extends PureComponent {
                 </CardContent>
               </CardActionArea>
               <CardActions className="float-right-icons">
-                <IconButton edge="end" aria-label="Delete" onClick={this.props.onEditClick}>
+                <IconButton
+                  edge="end"
+                  aria-label="Delete"
+                  onClick={this.props.onEditClick(elem.id_product)}>
                   <Create edgeMode="end" className="margin-right" />
                 </IconButton>
-                <IconButton edge="end" aria-label="Delete" onClick={this.props.onDeleteClick}>
+                <IconButton
+                  edge="end"
+                  aria-label="Delete"
+                  onClick={this.props.onDeleteClick(elem.id_product)}>
                   <DeleteIcon />
                 </IconButton>
               </CardActions>
