@@ -4,15 +4,16 @@ import fetch from 'isomorphic-unfetch';
 import Link from 'next/link';
 import classNames from 'classnames';
 
-import { ListProduct, ListCategory, ListReview, ListUser } from '@Components';
+import { ListProduct, ListCategory, ListReview, ListRole, ListUser } from '@Components';
 import Container from '@material-ui/core/Container';
 import Modal from '@material-ui/core/Modal';
 
 const listServiceSelector = {
   product: ListProduct,
-  category: ListProduct,
-  user: ListProduct,
-  review: ListProduct,
+  category: ListCategory,
+  user: ListUser,
+  review: ListReview,
+  role: ListRole,
 };
 
 const modalServiceSelector = {
