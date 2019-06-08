@@ -46,8 +46,8 @@ export class ListCategory extends PureComponent {
   render() {
     return <div>
       <Grid item md={12}>
-        <Typography variant="h6" >
-          List of users
+        <Typography color="" variant="h6" >
+          List of Categories
           </Typography>
         <div >
           <List>
