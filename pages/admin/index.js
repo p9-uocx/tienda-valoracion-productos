@@ -123,7 +123,6 @@ export default class Admin extends PureComponent {
                   <MenuIcon className="fill-white" />
                 </IconButton>
                 <Typography className="color-white" variant="h4">Admin Page</Typography>
-
                 <IconButton>
                   <PowerSettingsNew className="fill-white" />
                   <span className="color-white logout">LOGOUT</span>
