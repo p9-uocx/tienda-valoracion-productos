@@ -15,8 +15,6 @@ const server = restify.createServer({
 
 const cors = corsMiddleware({
   origins: ['*'],
-  allowHeaders: [],
-  exposeHeaders: ['Content-Range'],
 });
 
 server.pre(cors.preflight);
@@ -24,12 +22,6 @@ server.use(restify.plugins.acceptParser(server.acceptable));
 server.use(restify.plugins.queryParser());
 server.use(restify.plugins.bodyParser());
 server.use(cors.actual);
-
-server.use((req, res, next) => {
-  // res.header('Access-Control-Expose-Headers', 'Content-Range');
-  res.header('Content-Range', 'posts 0-24/319');
-  next();
-});
 
 // una vez importado tenemos que añadirlos al server
 userRouter.applyRoutes(server);

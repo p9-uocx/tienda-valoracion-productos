@@ -5,17 +5,13 @@ import Head from 'next/head';
 import Link from 'next/link';
 import classNames from 'classnames';
 
-import { ListProduct, ListCategory, ListReview, ListUser } from '@Components';
-import Drawer from '@material-ui/core/Drawer';
-import AppBar from '@material-ui/core/AppBar';
+import { ListProduct, ListCategory, ListReview, FetchAdmin } from '@Components';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
-import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import MenuIcon from '@material-ui/icons/Menu';
-import Modal from '@material-ui/core/Modal';
 import PowerSettingsNew from '@material-ui/icons/PowerSettingsNew';
 
 import './admin.scss';
@@ -36,7 +32,6 @@ const modalServiceSelector = {
 
 export default class Admin extends PureComponent {
   state = {
-    modal: true,
     menu: true,
   };
 
@@ -73,27 +68,27 @@ export default class Admin extends PureComponent {
         <section className="admin-container">
           <nav className={classNames('nav-contanier', { open: this.state.menu })}>
             <Grid container direction="column" justify="flex-start" alignItems="stretch">
-              <Link href={{ pathname: '/admin', query: { service: 'user', action: 'list' } }}>
+              <Link href={{ pathname: '/admin', query: { service: 'user' } }}>
                 <Button color="primary" className="link-menu">
                   Usuarios
                 </Button>
               </Link>
-              <Link href={{ pathname: '/admin', query: { service: 'product', action: 'list' } }}>
+              <Link href={{ pathname: '/admin', query: { service: 'product' } }}>
                 <Button color="primary" className="link-menu">
                   Productos
                 </Button>
               </Link>
-              <Link href={{ pathname: '/admin', query: { service: 'category', action: 'list' } }}>
+              <Link href={{ pathname: '/admin', query: { service: 'category' } }}>
                 <Button color="primary" className="link-menu">
                   Categorias
                 </Button>
               </Link>
-              <Link href={{ pathname: '/admin', query: { service: 'category', action: 'list' } }}>
+              <Link href={{ pathname: '/admin', query: { service: 'category' } }}>
                 <Button color="primary" className="link-menu">
                   Roles
                 </Button>
               </Link>
-              <Link href={{ pathname: '/admin', query: { service: 'category', action: 'list' } }}>
+              <Link href={{ pathname: '/admin', query: { service: 'category' } }}>
                 <Button color="primary" className="link-menu">
                   Reviews
                 </Button>
@@ -117,19 +112,11 @@ export default class Admin extends PureComponent {
           </header>
 
           <main className="main-container">
-            <Container>
-              <ListProduct />
-              <ListUser />
-              <ListReview />
-            </Container>
+            <FetchAdmin query={query} />
           </main>
 
           <footer className="footer-container">asd</footer>
         </section>
-
-        <Modal open={false}>
-          <ListReview />
-        </Modal>
       </Fragment>
     );
   }
