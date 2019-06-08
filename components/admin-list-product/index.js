@@ -14,7 +14,6 @@ import './admin-list-product.scss';
 
 export class ListProduct extends PureComponent {
 
-
   static defaultProps = {
     data: [
       {

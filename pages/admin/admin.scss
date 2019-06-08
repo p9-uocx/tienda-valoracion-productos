@@ -25,6 +25,10 @@
     'nav main'
     'footer footer';
 
+  .footer-container {
+    background-color: #445268;
+  }
+
   .nav-contanier {
     grid-area: nav;
     max-width: 250px;
