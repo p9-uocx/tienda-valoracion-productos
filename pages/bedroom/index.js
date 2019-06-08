@@ -34,6 +34,8 @@ export default class BedroomFurniturePage extends PureComponent {
 
 	render() {
 
+		console.log(this.props.api);
+
 		return (
 			<Layout title="Bedroom Furniture" {...this.props}>
 				<Container>

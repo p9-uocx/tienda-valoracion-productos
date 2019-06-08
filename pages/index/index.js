@@ -28,25 +28,24 @@ export default class Index extends PureComponent {
     const res = await fetch(`${process.env.DB_API_HOST}/category/1`);
     const categoryData = await res.json();
 
-    const apiReqProduct = await fetch(`${process.env.DB_API_HOST}/product`);
-    const productData = await apiReqProduct.json();
-
     const apiReqReview = await fetch(`${process.env.DB_API_HOST}/review`);
     const reviewData = await apiReqReview.json();
 
-    const dataCombined = {
-      category: categoryData.data,
-      product: productData.data,
-      review: reviewData.data
-    };
+    const categoryDataMap = categoryData.data.products.map(product => {
+      return {
+        ...product,
+        reviews: reviewData.data.reduce(
+          (array, review) => (product.id_product == review.product_id ? [...array, review] : array),
+          [],
+        ),
+      };
+    });
 
-    return { datosServidor: dataCombined }
-
+    return { api: { ...categoryData.data, products: categoryDataMap } };
   }
 
   // este metodo tiene que estar siempre en React, es el encargado de pintar el html
   render() {
-    console.log(this.props.datosServidor)
     return (
       <div>
         {/* Usaremos este componente para cargar todas las cabeceras footer y cosas comunes del proyecto */}
@@ -73,7 +72,7 @@ export default class Index extends PureComponent {
               </Row>
             </section>
             {/* Product Section */}
-            <ProductsA data={this.props.datosServidor} />
+            <ProductsA data={this.props.api} />
             {/*Seccion Separador*/}
             <section>
               <Row>
@@ -102,8 +101,8 @@ export default class Index extends PureComponent {
                 </Col>
               </Row>
             </section>
-            {/* Product Section */}
-            <ProductsB data={this.props.datosServidor}/>
+            {/* Product Section 
+            <ProductsB data={this.props.api}/>
             {/* IMAGE SECTION */}
             <section className="padding-bottom-img">
               <div>
