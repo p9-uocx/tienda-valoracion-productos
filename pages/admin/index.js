@@ -3,6 +3,7 @@ import React, { PureComponent, Fragment } from 'react';
 import fetch from 'isomorphic-unfetch';
 import Head from 'next/head';
 import Link from 'next/link';
+import classNames from 'classnames';
 
 import { ListProduct, ListCategory, ListReview, ListUser } from '@Components';
 import Drawer from '@material-ui/core/Drawer';
@@ -35,7 +36,12 @@ const modalServiceSelector = {
 
 export default class Admin extends PureComponent {
   state = {
-    modal: '',
+    modal: true,
+    menu: true,
+  };
+
+  openMenu = () => {
+    this.setState({ menu: !this.state.menu });
   };
 
   render() {
@@ -64,48 +70,60 @@ export default class Admin extends PureComponent {
           <script defer src="/static/fontawesome/js/all.js" />
         </Head>
 
-        <AppBar position="fixed" className="app-admin-bar">
-          <Toolbar className="menu">
-            <Grid container container direction="row" justify="space-between">
-              <IconButton edge="start" color="inherit">
-                <MenuIcon />
-              </IconButton>
-              <Typography variant="h4">Admin Page</Typography>
-              <div>
-                <IconButton edge="end" color="inherit">
-                  <PowerSettingsNew />
-                  <Button color="inherit">Logout</Button>
-                </IconButton>
-              </div>
-            </Grid>
-
-          </Toolbar>
-        </AppBar>
-
-        {/* <Drawer variant="permanent" open={false}>
-          asdasda
-        </Drawer> */}
-
-        <main className="admin-main">
-          <Container>
-            <div>
+        <section className="admin-container">
+          <nav className={classNames('nav-contanier', { open: this.state.menu })}>
+            <Grid container direction="column" justify="flex-start" alignItems="stretch">
               <Link href={{ pathname: '/admin', query: { service: 'user', action: 'list' } }}>
-                <a>Usuarios</a>
+                <Button color="primary" className="link-menu">
+                  Usuarios
+                </Button>
               </Link>
               <Link href={{ pathname: '/admin', query: { service: 'product', action: 'list' } }}>
-                <a>Productos</a>
+                <Button color="primary" className="link-menu">
+                  Productos
+                </Button>
               </Link>
               <Link href={{ pathname: '/admin', query: { service: 'category', action: 'list' } }}>
-                <a>Categorias</a>
+                <Button color="primary" className="link-menu">
+                  Categorias
+                </Button>
               </Link>
-            </div>
+              <Link href={{ pathname: '/admin', query: { service: 'category', action: 'list' } }}>
+                <Button color="primary" className="link-menu">
+                  Roles
+                </Button>
+              </Link>
+              <Link href={{ pathname: '/admin', query: { service: 'category', action: 'list' } }}>
+                <Button color="primary" className="link-menu">
+                  Reviews
+                </Button>
+              </Link>
+            </Grid>
+          </nav>
+
+          <header className="header-contanier">
+            <Toolbar>
+              <Grid container container direction="row" justify="space-between">
+                <IconButton edge="start" color="inherit" onClick={this.openMenu}>
+                  <MenuIcon />
+                </IconButton>
+                <Typography variant="h3">News</Typography>
+                <MenuIcon />
+              </Grid>
+            </Toolbar>
+          </header>
+
+          <main className="main-container">
             <div>
-              <ListProduct/>
-              <ListUser/>
-              <ListReview/>
+              <ListProduct />
+              <ListUser />
+              <ListReview />
             </div>
-          </Container>
-        </main>
+          </main>
+
+          <footer className="footer-container">asd</footer>
+        </section>
+
         <Modal open={false}>
           <ListReview />
         </Modal>
