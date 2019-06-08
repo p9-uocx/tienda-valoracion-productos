@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-
+import Typography from '@material-ui/core/Typography';
 import Image from 'react-bootstrap/Image';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
@@ -292,7 +292,9 @@ export class ListProduct extends PureComponent {
 
     return (
       <div>
-
+        <Typography variant="h6">
+          List of products
+        </Typography>
         <GridList spacing={30} cols={4} cellHeight={"auto"}>
           {this.props.data.map(elem => (
             <GridListTile key={elem.img_url}>
@@ -300,15 +302,15 @@ export class ListProduct extends PureComponent {
               <GridListTileBar className="custom-tile-bar"
                 title={elem.title}
                 subtitle={
-                <div className="info-block-elem">
-                  <span >Date Added: {elem.date_add}</span>
-                  <span>Reference: {elem.reference}</span>
-                </div>
-                
-              }
+                  <div className="info-block-elem">
+                    <span >Date Added: {elem.date_add}</span>
+                    <span>Reference: {elem.reference}</span>
+                  </div>
+
+                }
                 actionIcon={
                   <IconButton>
-                    <HomeIcon/>
+                    <HomeIcon />
                   </IconButton>
                 }
               />
