@@ -6,6 +6,8 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import GridList from '@material-ui/core/GridList';
+import StarRatingComponent from 'react-star-rating-component';
 
 import './admin-list-review.scss';
 
@@ -206,6 +208,48 @@ export class ListReview extends PureComponent {
   };
 
   render() {
-    return <div>ListUser</div>;
+    return (
+      <div>
+        <Typography variant="h6">
+          List of products
+        </Typography>
+        <GridList cols={5} cellHeight={"auto"}>
+
+          {this.props.data.map(elem => (
+            <Card className="margin-card">
+              <CardActionArea>
+                <CardMedia
+                  image="/static/images/cards/contemplative-reptile.jpg"
+                  title="Contemplative Reptile"
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="h2">
+                    Lizard
+                  </Typography>
+                  <StarRatingComponent
+                    name="rate1"
+                    starCount={5}
+                    value={elem.rating}
+                    emptyStarColor={'#CCCCCC'}
+                  />
+                  <Typography variant="body2" color="textSecondary" component="p">
+                    Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+                    across all continents except Antarctica
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+              <CardActions>
+                <Button size="small" color="primary">
+                  Share
+        </Button>
+                <Button size="small" color="primary">
+                  Learn More
+        </Button>
+              </CardActions>
+            </Card>
+          ))}
+        </GridList>
+      </div>
+    );
   }
 }

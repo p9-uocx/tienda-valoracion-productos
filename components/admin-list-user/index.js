@@ -75,7 +75,7 @@ export class ListUser extends PureComponent {
                 />
                 <ListItemSecondaryAction>
                   <IconButton edge="end" aria-label="Delete">
-                    <Create></Create>
+                    <Create className="margin-right"></Create>
                   </IconButton>
                   <IconButton edge="end" aria-label="Delete">
                     <DeleteIcon></DeleteIcon>

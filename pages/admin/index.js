@@ -100,8 +100,9 @@ export default class Admin extends PureComponent {
               </Link>
             </div>
             <div>
-              <ListProduct></ListProduct>
-              <ListUser></ListUser>
+              <ListProduct/>
+              <ListUser/>
+              <ListReview/>
             </div>
           </Container>
         </main>
