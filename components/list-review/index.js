@@ -1,13 +1,17 @@
 import React, { PureComponent } from 'react';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemAvatar from '@material-ui/core/ListItemAvatar';
+import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
+import ListItemText from '@material-ui/core/ListItemText';
 import Typography from '@material-ui/core/Typography';
-import GridList from '@material-ui/core/GridList';
+import Grid from '@material-ui/core/Grid';
 import StarRatingComponent from 'react-star-rating-component';
+import CheckCircle from '@material-ui/icons/CheckCircle';
+import Avatar from '@material-ui/core/Avatar';
+import IconButton from '@material-ui/core/IconButton';
+import DeleteIcon from '@material-ui/icons/Delete';
+import Create from '@material-ui/icons/Create';
 
 import './admin-list-review.scss';
 
@@ -210,44 +214,68 @@ export class ListReview extends PureComponent {
   render() {
     return (
       <div>
-        <Typography variant="h6">
-          List of Reviews
-        </Typography>
-        <GridList cols={5} cellHeight={"auto"}>
-          {this.props.data.map(elem => (
-            <Card className="margin-card">
-              <CardActionArea>
-                <CardMedia
-                  image="/static/images/cards/contemplative-reptile.jpg"
-                  title="Contemplative Reptile"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="h2">
-                    Lizard
-                  </Typography>
-                  <StarRatingComponent
-                    name="rate1"
-                    starCount={5}
-                    value={elem.rating}
-                    emptyStarColor={'#CCCCCC'}
+        <Grid item md={12}>
+          <Typography color="" variant="h6">
+            List of Reviews
+          </Typography>
+          <div>
+            <List>
+              {this.props.data.map(elem => (
+                <ListItem className="bottom-border">
+                  <ListItemAvatar>
+                    <Avatar>
+                      <CheckCircle />
+                    </Avatar>
+                  </ListItemAvatar>
+                  <ListItemText
+                    primary={
+                      <div>
+                        <div className="user-list">
+                          <span>
+                            User ID: <b>{elem.user_id}</b>
+                          </span>
+                          <span>
+                            {' '}
+                            - Product ID: <b>{elem.product_id}</b>
+                          </span>
+                        </div>
+                        <div className="user-list">
+                          <span>
+                            {' '}
+                            Review Date: <b>{elem.date_add}</b>
+                          </span>
+                          <span>
+                            {' '}
+                            - Rating: ({elem.rating})
+                            <StarRatingComponent className="rating-position"
+                              starCount={5}
+                              value={elem.rating}
+                              emptyStarColor={'#CCCCCC'}
+                            />
+                          </span>
+                        </div>
+                      </div>
+                    }
                   />
-                  <Typography variant="body2" color="textSecondary" component="p">
-                    Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                    across all continents except Antarctica
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-              <CardActions>
-                <Button size="small" color="primary">
-                  Share
-        </Button>
-                <Button size="small" color="primary">
-                  Learn More
-        </Button>
-              </CardActions>
-            </Card>
-          ))}
-        </GridList>
+                  <ListItemSecondaryAction>
+                    <IconButton
+                      edge="end"
+                      aria-label="Delete"
+                      onClick={this.props.onEditClick(elem.id_category)}>
+                      <Create className="margin-right" />
+                    </IconButton>
+                    <IconButton
+                      edge="end"
+                      aria-label="Delete"
+                      onClick={this.props.onDeleteClick(elem.id_category)}>
+                      <DeleteIcon />
+                    </IconButton>
+                  </ListItemSecondaryAction>
+                </ListItem>
+              ))}
+            </List>
+          </div>
+        </Grid>
       </div>
     );
   }

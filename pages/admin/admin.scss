@@ -36,7 +36,7 @@
       max-width: 0px;
     }
 
-    .link-menu {
+    &.link-menu {
       margin: 10px;
     }
 
@@ -100,7 +100,6 @@
 }
 
 .footer-div {
-  //position: absolute;
   bottom: 0;
   width: 100%;
   color: #ffffff;

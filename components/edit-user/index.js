@@ -22,7 +22,7 @@ export const AdminEditUser = ({ data = {}, onCloseClick }) => {
       />
       <CardContent>
         <Typography variant="body1" color="textSecondary" component="p">
-          adasda
+          asadada
         </Typography>
       </CardContent>
     </Card>

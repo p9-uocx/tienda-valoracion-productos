@@ -11,6 +11,7 @@ import Typography from '@material-ui/core/Typography';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Category from '@material-ui/icons/Category';
 import Create from '@material-ui/icons/Create';
+import AddCircle from '@material-ui/icons/AddCircle';
 
 export class ListCategory extends PureComponent {
   static defaultProps = {
