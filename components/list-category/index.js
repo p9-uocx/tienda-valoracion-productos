@@ -11,6 +11,7 @@ import Typography from '@material-ui/core/Typography';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Category from '@material-ui/icons/Category';
 import Create from '@material-ui/icons/Create';
+import AddCircle from '@material-ui/icons/AddCircle';
 
 export class ListCategory extends PureComponent {
   static defaultProps = {
@@ -51,6 +52,25 @@ export class ListCategory extends PureComponent {
           </Typography>
           <div>
             <List>
+              <ListItem className="bottom-border">
+                <ListItemAvatar>
+                  <Avatar>
+                    <AddCircle />
+                  </Avatar>
+                </ListItemAvatar>
+                <ListItemText
+                  primary={
+                    <div className="user-list">
+                      <span><b>Add New Category</b></span>
+                    </div>
+                  }
+                />
+                <ListItemSecondaryAction>
+                  <IconButton edge="end" aria-label="Delete">
+                    <AddCircle className="margin-right"></AddCircle>
+                  </IconButton>
+                </ListItemSecondaryAction>
+              </ListItem>
               {this.props.data.map(elem => (
                 <ListItem className="bottom-border">
                   <ListItemAvatar>
