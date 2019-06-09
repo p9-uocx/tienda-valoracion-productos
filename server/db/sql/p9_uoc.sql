@@ -148,27 +148,28 @@ CREATE TABLE `reviews` (
 --
 
 INSERT INTO `reviews` (`title`, `descripction`, `images_url`, `rating`, `user_id`, `product_id`, `date_add`) VALUES
-(NULL, NULL, NULL, 4, 1, 2, '2019-05-20'),
-(NULL, NULL, NULL, 3, 1, 3, '2019-06-11'),
-(NULL, NULL, NULL, 4, 1, 4, '2019-06-26'),
-(NULL, NULL, NULL, 3, 1, 5, '2019-06-19'),
-(NULL, NULL, NULL, 5, 1, 6, '2019-06-26'),
-(NULL, NULL, NULL, 5, 1, 7, '2019-06-18'),
-(NULL, NULL, NULL, 4, 1, 8, '2019-06-21'),
-(NULL, NULL, NULL, 5, 1, 10, '2019-06-15'),
-(NULL, NULL, NULL, 4, 1, 11, '2019-06-12'),
-(NULL, NULL, NULL, 3, 1, 12, '2019-06-21'),
-(NULL, NULL, NULL, 4, 1, 13, '2019-06-12'),
-(NULL, NULL, NULL, 5, 1, 14, '2019-06-02'),
-(NULL, NULL, NULL, 2, 1, 15, '2019-06-08'),
-(NULL, NULL, NULL, 5, 1, 16, '2019-06-02'),
-(NULL, NULL, NULL, 3, 1, 17, '2019-06-14'),
-(NULL, NULL, NULL, 4, 1, 18, '2019-06-06'),
-(NULL, NULL, NULL, 5, 1, 19, '2019-06-03'),
-(NULL, NULL, NULL, 4, 1, 20, '2019-06-08'),
-(NULL, NULL, NULL, 5, 1, 21, '2019-06-04'),
-(NULL, NULL, NULL, 4, 1, 22, '2019-06-06'),
-(NULL, NULL, NULL, 2, 2, 2, '2019-06-08');
+(NULL, NULL, NULL, 4, 3, 2, '2019-05-20'),
+(NULL, NULL, NULL, 3, 4, 2, '2019-05-20'),
+(NULL, NULL, NULL, 2, 5, 2, '2019-05-20'),
+(NULL, NULL, NULL, 3, 4, 3, '2019-06-11'),
+(NULL, NULL, NULL, 4, 5, 4, '2019-06-26'),
+(NULL, NULL, NULL, 3, 3, 5, '2019-06-19'),
+(NULL, NULL, NULL, 5, 4, 6, '2019-06-26'),
+(NULL, NULL, NULL, 5, 5, 7, '2019-06-18'),
+(NULL, NULL, NULL, 4, 3, 8, '2019-06-21'),
+(NULL, NULL, NULL, 5, 4, 10, '2019-06-15'),
+(NULL, NULL, NULL, 4, 5, 11, '2019-06-12'),
+(NULL, NULL, NULL, 3, 3, 12, '2019-06-21'),
+(NULL, NULL, NULL, 4, 4, 13, '2019-06-12'),
+(NULL, NULL, NULL, 5, 5, 14, '2019-06-02'),
+(NULL, NULL, NULL, 2, 3, 15, '2019-06-08'),
+(NULL, NULL, NULL, 5, 4, 16, '2019-06-02'),
+(NULL, NULL, NULL, 3, 5, 17, '2019-06-14'),
+(NULL, NULL, NULL, 4, 3, 18, '2019-06-06'),
+(NULL, NULL, NULL, 5, 4, 19, '2019-06-03'),
+(NULL, NULL, NULL, 4, 5, 20, '2019-06-08'),
+(NULL, NULL, NULL, 5, 3, 21, '2019-06-04'),
+(NULL, NULL, NULL, 4, 4, 22, '2019-06-06');
 
 -- --------------------------------------------------------
 
@@ -202,7 +203,10 @@ CREATE TABLE `Roles` (
 --
 
 INSERT INTO `Roles` (`id_roles`, `name`, `edit_product`, `create_product`, `delete_product`, `edit_review`, `create_review`, `delete_review`, `dashboard_access`, `edit_category`, `create_category`, `delete_category`, `edit_user`, `create_user`, `delete_user`, `edit_role`, `create_role`, `delete_role`) VALUES
-(1, 'fullaccess', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+(1, 'Administrador', 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+(2, 'Registrado', 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(3, 'Avanzado', 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(4, 'Profesional', 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -227,7 +231,10 @@ CREATE TABLE `Users` (
 
 INSERT INTO `Users` (`id_user`, `first_name`, `last_name`, `gender`, `email`, `password`, `rol`, `date_add`) VALUES
 (1, 'Javier', 'Delgado', 'male', 'mohatar@yahoo.com', 'zanfona', 1, '2019-05-20'),
-(2, 'Sergio', 'Garcia', 'male', 'sergio@gmail.com', 'zanfona', 1, '2019-06-02');
+(2, 'Sergio', 'Garcia', 'male', 'sergio@gmail.com', 'zanfona', 1, '2019-06-01'),
+(3, 'Laura', 'Fernandez', 'female', 'laura@gmail.com', 'zanfona', 2, '2019-06-02'),
+(4, 'Natalia', 'Urrutia', 'female', 'natalia@gmail.com', 'zanfona', 3, '2019-03-02'),
+(5, 'Maria', 'Escribano', 'female', 'maria@gmail.com', 'zanfona', 4, '2018-06-02');
 
 --
 -- Índices para tablas volcadas
