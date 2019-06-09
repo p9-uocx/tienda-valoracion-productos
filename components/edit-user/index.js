@@ -43,7 +43,7 @@ export const AdminEditUser = ({ data = {}, onCloseClick }) => {
   };
 
   return (
-    <Card className="modal-container">
+    <Card className="edit-user-modal-container modal-container">
       <CardHeader
         title="Editar Usuario"
         className="modal-header"

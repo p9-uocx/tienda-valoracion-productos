@@ -19,9 +19,6 @@ export class ListReview extends PureComponent {
 
 
   render() {
-    
-    console.log(this.props.data);
-    
     return (
       <div>
         <Grid item md={12}>
@@ -39,24 +36,21 @@ export class ListReview extends PureComponent {
                   </ListItemAvatar>
                   <ListItemText
                     primary={
-                      <div>
+                      <div >
                         <div className="user-list">
                           <span>
                             User ID: <b>{elem.user_id}</b>
                           </span>
                           <span>
-                            {' '}
                             - Product ID: <b>{elem.product_id}</b>
                           </span>
                         </div>
                         <div className="user-list">
                           <span>
-                            {' '}
                             Review Date: <b>{elem.date_add}</b>
                           </span>
                           <span>
-                            {' '}
-                            - Rating: ({elem.rating})
+                             - Rating: ({elem.rating})
                             <StarRatingComponent className="rating-position"
                               starCount={5}
                               value={elem.rating}

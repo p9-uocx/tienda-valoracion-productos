@@ -67,20 +67,14 @@ export class ListCategory extends PureComponent {
                             Name Category: <b>{elem.name}</b>
                           </span>
                           <span>
-                            {' '}
                             - Id Category: <b>{elem.id_category}</b>
                           </span>
                         </div>
                         <div className="user-list">
                           <span>
-                            Email: <b>{elem.email}</b>
+                            Date Added: <b>{elem.date_add}</b>
                           </span>
                           <span>
-                            {' '}
-                            - Date Added: <b>{elem.date_add}</b>
-                          </span>
-                          <span>
-                            {' '}
                             - Excerpt: <b>{elem.excerpt}</b>
                           </span>
                         </div>

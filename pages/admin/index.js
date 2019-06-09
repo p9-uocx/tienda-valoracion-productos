@@ -74,42 +74,32 @@ export default class Admin extends PureComponent {
           <nav className={classNames('nav-contanier', { open: this.state.menu })}>
             <Grid container direction="column" justify="flex-start" alignItems="stretch">
               <Link href={{ pathname: '/admin', query: { service: 'user' } }}>
-                <Button color="primary" className="link-menu">
-                  <IconButton color="primary" onClick={this.openMenu}>
-                    <AccountCircle className="padding-right-icon" />
-                  </IconButton>
+                <Button color="primary" className="link-menu" onClick={this.openMenu}>
+                  <AccountCircle className="padding-right-icon" />
                   Usuarios
                 </Button>
               </Link>
               <Link href={{ pathname: '/admin', query: { service: 'product' } }}>
-                <Button color="primary" className="link-menu">
-                  <IconButton color="primary" onClick={this.openMenu}>
-                    <Dashboard className="padding-right-icon" />
-                  </IconButton>
+                <Button color="primary" className="link-menu" onClick={this.openMenu}>
+                  <Dashboard className="padding-right-icon" />
                   Productos
                 </Button>
               </Link>
               <Link href={{ pathname: '/admin', query: { service: 'category' } }}>
-                <Button color="primary" className="link-menu">
-                  <IconButton color="primary" onClick={this.openMenu}>
-                    <Category className="padding-right-icon" />
-                  </IconButton>
+                <Button color="primary" className="link-menu" onClick={this.openMenu}>
+                  <Category className="padding-right-icon" />
                   Categorias
                 </Button>
               </Link>
               <Link href={{ pathname: '/admin', query: { service: 'role' } }}>
-                <Button color="primary" className="link-menu">
-                  <IconButton color="primary" onClick={this.openMenu}>
-                    <CheckCircle className="padding-right-icon" />
-                  </IconButton>
+                <Button color="primary" className="link-menu" onClick={this.openMenu}>
+                  <CheckCircle className="padding-right-icon" />
                   Roles
                 </Button>
               </Link>
               <Link href={{ pathname: '/admin', query: { service: 'review' } }}>
-                <Button color="primary" className="link-menu">
-                  <IconButton color="primary" onClick={this.openMenu}>
-                    <LocalActivity className="padding-right-icon" />
-                  </IconButton>
+                <Button color="primary" className="link-menu" onClick={this.openMenu}>
+                  <LocalActivity className="padding-right-icon" />
                   Reviews
                 </Button>
               </Link>
@@ -139,7 +129,7 @@ export default class Admin extends PureComponent {
 
         <div className="footer-div">
           <Container>
-          <span>Copyright © 2019 Expert Inc. Developed with <span className="red">&#10084;</span> by JASE Team.</span>
+            <span>Copyright © 2019 Expert Inc. Developed with <span className="red">&#10084;</span> by JASE Team.</span>
             <Image fluid id="logo-footer" src="/static/img/header/logo2-1.png" />
           </Container>
         </div>
