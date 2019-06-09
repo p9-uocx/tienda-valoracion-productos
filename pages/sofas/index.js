@@ -13,7 +13,7 @@ import './sofas.scss'
 export default class SofasPage extends PureComponent {
 
 	static async getInitialProps({ req }) {
-    const res = await fetch(`${process.env.DB_API_HOST}/category/5`);
+    const res = await fetch(`${process.env.DB_API_HOST}/category/4`);
     const categoryData = await res.json();
 
     const apiReqReview = await fetch(`${process.env.DB_API_HOST}/review`);
