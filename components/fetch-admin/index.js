@@ -4,35 +4,51 @@ import fetch from 'isomorphic-unfetch';
 
 import {
   ModalNotification,
-  ListProduct,
   ListCategory,
+  ListProduct,
   ListReview,
   ListRole,
   ListUser,
+  AdminEditCategory,
+  AdminEditProduct,
+  AdminEditReview,
+  AdminEditRole,
+  AdminEditUser,
+  AdminCreateCategory,
+  AdminCreateProduct,
+  AdminCreateReview,
+  AdminCreateRole,
+  AdminCreateUser,
 } from '@Components';
 import Container from '@material-ui/core/Container';
 import Modal from '@material-ui/core/Modal';
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
 
 console.log(ModalNotification);
 
 const listServiceSelector = {
-  product: ListProduct,
   category: ListCategory,
-  user: ListUser,
+  product: ListProduct,
   review: ListReview,
   role: ListRole,
+  user: ListUser,
 };
 
 const modalServiceSelector = {
   notification: ModalNotification,
-  productCreate: ListProduct,
-  productEdit: ListProduct,
-  category: ListProduct,
-  user: ListProduct,
+  categoryEdit: AdminEditCategory,
+  productEdit: AdminEditProduct,
+  reviewEdit: AdminEditReview,
+  roleEdit: AdminEditRole,
+  userEdit: AdminEditUser,
+  categoryCreate: AdminCreateCategory,
+  productCreate: AdminCreateProduct,
+  reviewCreate: AdminCreateReview,
+  roleCreate: AdminCreateRole,
+  userCreate: AdminCreateUser,
 };
 
-console.log(modalServiceSelector);
-console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
 export class FetchAdmin extends PureComponent {
   state = {
     listData: [],
@@ -83,7 +99,12 @@ export class FetchAdmin extends PureComponent {
   };
 
   fetchEditItem = (service, id, postData) => {
-    fetch(`${process.env.DB_API_HOST}/${service}/${id}`)
+    fetch(`${process.env.DB_API_HOST}/${service}/${id}`, {
+      method: 'DELETE',
+      headers: new Headers(),
+      mode: 'cors',
+      cache: 'default',
+    })
       .then(res => res.json())
       .then(res => {
         this.setState({ modal: 'notification', modalData: res });
@@ -91,7 +112,12 @@ export class FetchAdmin extends PureComponent {
   };
 
   fetchCreateItem = (service, postData) => {
-    fetch(`${process.env.DB_API_HOST}/${service}`)
+    fetch(`${process.env.DB_API_HOST}/${service}`, {
+      method: 'DELETE',
+      headers: new Headers(),
+      mode: 'cors',
+      cache: 'default',
+    })
       .then(res => res.json())
       .then(res => {
         this.setState({ modal: 'notification', modalData: res });
@@ -102,11 +128,9 @@ export class FetchAdmin extends PureComponent {
     this.fetchDeleteItem(this.props.query.service, id);
   };
   onEditClick = id => () => {
-    debugger;
     this.fetchDataItem(this.props.query.service, id);
   };
   onCreateClick = () => {
-    debugger;
     this.setState({ modal: `${this.props.query.service}Create` });
   };
   onEditSave = (id, postData) => {
@@ -126,6 +150,8 @@ export class FetchAdmin extends PureComponent {
     const ListService = listServiceSelector[this.props.query.service];
     const ModalService = modalServiceSelector[this.state.modal];
 
+    console.log(this.state.modal);
+
     return (
       <Container>
         {ListService && (
@@ -135,6 +161,9 @@ export class FetchAdmin extends PureComponent {
             onEditClick={this.onEditClick}
           />
         )}
+        <Fab color="primary" className="float-icon" onClick={this.onCreateClick}>
+          <AddIcon />
+        </Fab>
         <Modal open={Boolean(modal)}>
           <div>
             <p>asdasd</p>

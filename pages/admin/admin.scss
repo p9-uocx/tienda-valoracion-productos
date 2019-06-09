@@ -51,6 +51,12 @@
 
   .main-container {
     grid-area: main;
+
+    .float-icon {
+      position: absolute;
+      right: 40px;
+      bottom: 110px;
+    }
   }
 
   .footer-container {

@@ -1,5 +1,5 @@
 // Hay que importar simepre la libreria de React para que pueda interpretar el html, el PoreCompoente es un tipo de compoente nuevo que puedes uasr o no
-import React, { memo, PureComponent, Fragment } from 'react';
+import React, { Fragment } from 'react';
 
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
@@ -9,7 +9,7 @@ import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 
 export const ModalNotification = ({ data = {}, onCloseClick }) => {
-  const titleCard = data.error ? 'Alerta Error!' : 'Notificacion!';
+  const titleCard = data.error ? 'Alerta!' : 'Notificacion';
   const MsgCard = (
     <Fragment>
       {data.error && data.error.sql && (
