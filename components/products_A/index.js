@@ -5,19 +5,18 @@ import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
 import StarRatingComponent from 'react-star-rating-component';
 
+import { reviewsTotalValue } from '@Helpers';
+
 export class ProductsA extends PureComponent {
   render() {
-
     const productSlices = this.props.data.products.slice(0, 4);
     console.log(this.props.data);
-    
+
     return (
       <section id="product-section">
         <Row>
           {productSlices.map((product, index) => {
-
-            console.log(product.reviews)
-            
+            const reviewsValue = reviewsTotalValue(product.reviews);
 
             return (
               <Col className="border-right-product" sm={3}>
@@ -34,7 +33,7 @@ export class ProductsA extends PureComponent {
                   <StarRatingComponent
                     name="rate1"
                     starCount={5}
-                    value={product.reviews.rating}
+                    value={reviewsValue}
                     emptyStarColor={'#CCCCCC'}
                   />
                 </div>
@@ -42,7 +41,7 @@ export class ProductsA extends PureComponent {
                   <a>{product.title}</a>
                 </Link>
               </Col>
-            )
+            );
           })}
         </Row>
       </section>

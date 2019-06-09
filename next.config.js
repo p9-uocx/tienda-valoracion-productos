@@ -11,6 +11,7 @@ module.exports = withSass({
     config.resolve.alias['@Components'] = path.join(__dirname, 'components');
     config.resolve.alias['@Pages'] = path.join(__dirname, 'pages');
     config.resolve.alias['@Images'] = path.join(__dirname, 'static/img');
+    config.resolve.alias['@Helpers'] = path.join(__dirname, 'helpers');
     return config;
   },
 });

@@ -33,10 +33,16 @@ export class Layout extends PureComponent {
             integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
             crossOrigin="anonymous"
           />
-          <link rel="icon" href="/static/img/favicon.png" sizes="64x64"></link>
+
+          <link rel="icon" href="/static/img/favicon.png" sizes="64x64" />
           <link rel="stylesheet" type="text/css" href="/static/flaticon-font/flaticon.css" />
-          <script defer src="/static/fontawesome/js/all.js"></script>
+          <script defer src="/static/fontawesome/js/all.js" />
         </Head>
+        <style jsx global>{`
+          *:focus {
+            outline: 0 !important;
+          }
+        `}</style>
         <header>
           <div className="header_container container">
             <div>
@@ -45,7 +51,7 @@ export class Layout extends PureComponent {
                 <Link href="/login">
                   <div className="account_icon">
                     <div className="account_icon">
-                      <span className="fas fa-user icons"></span>
+                      <span className="fas fa-user icons" />
                     </div>
                     <div className="account_icon">
                       <div className="text-account text-bold">Account</div>
@@ -55,7 +61,7 @@ export class Layout extends PureComponent {
                 </Link>
                 <div className="account_icon">
                   <div className="account_icon">
-                    <span className="fas fa-shopping-basket icons"></span>
+                    <span className="fas fa-shopping-basket icons" />
                   </div>
                   <div className="account_icon">
                     <div className="text-account text-bold">Cart</div>
@@ -75,19 +81,23 @@ export class Layout extends PureComponent {
                 <h4 className="h4-padding-bottom">Contact Details</h4>
                 <ul className="contact-details no-padding">
                   <li>
-                    <i className="fa fa-map-marker contact-icon"/>
-                    <span className="contact-content">45 Grand Central Terminal NewYork<br />NY 017 United States USA</span>
+                    <i className="fa fa-map-marker contact-icon" />
+                    <span className="contact-content">
+                      45 Grand Central Terminal NewYork
+                      <br />
+                      NY 017 United States USA
+                    </span>
                   </li>
                   <li>
-                    <i className="fa fa-phone contact-icon"/>
+                    <i className="fa fa-phone contact-icon" />
                     <span className="contact-content">+(123) 456 789 - (+204) 666 888</span>
                   </li>
                   <li>
-                    <i className="fa fa-envelope contact-icon"/>
+                    <i className="fa fa-envelope contact-icon" />
                     <span className="contact-content">contact@expert.com</span>
                   </li>
                   <li>
-                    <i className="fa fa-clock contact-icon"/>
+                    <i className="fa fa-clock contact-icon" />
                     <span className="contact-content">Mon-Sat 9:00am - 5:00pm Sun:Closed</span>
                   </li>
                 </ul>
@@ -106,7 +116,14 @@ export class Layout extends PureComponent {
                 <h4 className="h4-padding-bottom">SUBSCRIBE OUR NEWSLETTER</h4>
                 <div>
                   <div>
-                    <input name="email" type="email" id="newsletter" className="input-text" placeholder="Enter your email" data-validate="{required:true, 'validate-email':true}"></input>
+                    <input
+                      name="email"
+                      type="email"
+                      id="newsletter"
+                      className="input-text"
+                      placeholder="Enter your email"
+                      data-validate="{required:true, 'validate-email':true}"
+                    />
                   </div>
                   <div>
                     <button className="subscribe-button" title="Subscribe" type="submit">
@@ -121,7 +138,10 @@ export class Layout extends PureComponent {
 
         <footer>
           <Container>
-            <span>Copyright © 2019 Expert Inc. Developed with <span className="red">&#10084;</span> by JASE Team.</span>
+            <span>
+              Copyright © 2019 Expert Inc. Developed with <span className="red">&#10084;</span> by
+              JASE Team.
+            </span>
             <Image fluid id="logo-footer" src="/static/img/header/logo2-1.png" />
           </Container>
         </footer>
