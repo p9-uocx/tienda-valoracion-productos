@@ -21,7 +21,7 @@ export class ProductsReview extends PureComponent {
     numReviews: 3,
     contentReview:
       'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.',
-    user: 'Tuyen Le',
+    user: '',
     fechaReview: '12/4/19',
     userRating: 0,
   };
@@ -73,12 +73,12 @@ export class ProductsReview extends PureComponent {
                   </div>
                 </Col>
                 <Col sm={8}>
-                  {this.state.contentReview}
+                  {review.descripction}
                   <div className="review-details">
                     <span>
-                      Review by <strong>{this.state.user}</strong>
+                      Review by <strong>{review.user.first_name} {review.user.last_name}</strong>
                     </span>
-                    <p>Posted on {this.state.fechaReview}</p>
+                    <p>Posted on {review.date_add}</p>
                   </div>
                 </Col>
               </Row>
