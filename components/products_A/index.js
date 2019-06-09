@@ -9,13 +9,15 @@ export class ProductsA extends PureComponent {
   render() {
 
     const productSlices = this.props.data.products.slice(0, 4);
+    console.log(this.props.data);
     
     return (
       <section id="product-section">
         <Row>
           {productSlices.map((product, index) => {
 
-            console.log(product.reviews[index])
+            console.log(product.reviews)
+            
 
             return (
               <Col className="border-right-product" sm={3}>
