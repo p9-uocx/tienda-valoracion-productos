@@ -3,112 +3,140 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import StarRatingComponent from 'react-star-rating-component';
 
-import './products_review.scss'
+import './products_review.scss';
 
 export class ProductsReview extends PureComponent {
-	static async getInitialProps({ req }) {
-		
-		const apiReqProduct = await fetch(`${process.env.DB_API_HOST}/user/`);
-		const productData = await apiReqProduct.json();
+  static async getInitialProps({ req }) {
+    const apiReqProduct = await fetch(`${process.env.DB_API_HOST}/user/`);
+    const productData = await apiReqProduct.json();
 
-    return { api: { productData: productData.data }};
+    return { api: { productData: productData.data } };
   }
 
-	state = {
-		imgUrl: '/static/img/products/2_4.jpg',
-		title: this.props.data.title,
-		rating: 3,
-		numReviews: 3,
-		contentReview: 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.',
-		user: 'Tuyen Le',
-		fechaReview: '12/4/19',
-		userRating: 0
-	};
+  state = {
+    reviewContent: '',
+    imgUrl: '/static/img/products/2_4.jpg',
+    title: this.props.data.title,
+    rating: 3,
+    numReviews: 3,
+    contentReview:
+      'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.',
+    user: 'Tuyen Le',
+    fechaReview: '12/4/19',
+    userRating: 0,
+  };
 
+  onStarClick(nextValue, prevValue, name) {
+    console.log('name: %s, nextValue: %s, prevValue: %s', name, nextValue, prevValue);
+    this.setState({ userRating: nextValue });
+  }
 
-	onStarClick(nextValue, prevValue, name) {
-		console.log('name: %s, nextValue: %s, prevValue: %s', name, nextValue, prevValue);
-		this.setState({ userRating: nextValue });
-	}
+  onChangeReviewContent = event => {
+    this.setState({ reviewContent: event.currentTarget.value });
+  };
 
-	render() {
+  addNewReview = () => {
+    console.log({
+      title: 'none',
+      descripction: this.state.reviewContent,
+      images_url: 'none',
+      rating: this.state.userRating,
+      user_id: null,
+      product_id: this.props.data.id_product,
+    });
+  };
 
-		console.log(this.props.data)
+  render() {
+    console.log(this.props.data);
 
+    return (
+      <div className="reviews-container">
+        <Row>
+          <div className="block-title">
+            <strong>Customer Reviews</strong>
+          </div>
+        </Row>
 
-		return (
-			<div className="reviews-container">
-				<Row>
-					<div className="block-title">
-						<strong>Customer Reviews</strong>
-					</div>
-				</Row>
+        {this.props.data.reviews.map(review => {
+          return (
+            <div>
+              <Row className="review-content">
+                <Col sm={4}>
+                  <p className="product-title">{this.state.title}</p>
+                  <div className="rating-container">
+                    <StarRatingComponent
+                      name="rate1"
+                      starCount={5}
+                      value={review.rating}
+                      emptyStarColor={'#CCCCCC'}
+                    />
+                  </div>
+                </Col>
+                <Col sm={8}>
+                  {this.state.contentReview}
+                  <div className="review-details">
+                    <span>
+                      Review by <strong>{this.state.user}</strong>
+                    </span>
+                    <p>Posted on {this.state.fechaReview}</p>
+                  </div>
+                </Col>
+              </Row>
+            </div>
+          );
+        })}
 
-				{this.props.data.reviews.map(review => {
-					return (
-						<div>
-							<Row className="review-content">
-								<Col sm={4}>
-									<p className="product-title">{this.state.title}</p>
-									<div className="rating-container">
-										<StarRatingComponent
-											name="rate1"
-											starCount={5}
-											value={review.rating}
-											emptyStarColor={'#CCCCCC'}
-										/>
-									</div>
-								</Col>
-								<Col sm={8}>
-									{this.state.contentReview}
-									<div className="review-details">
-										<span>Review by <strong>{this.state.user}</strong></span>
-										<p>Posted on {this.state.fechaReview}</p>
-									</div>
-								</Col>
-							</Row>
-						</div>
-					)
-				})}
+        {/* CONDITIONAL REVIEW - Solo debe verse si el usuario está logeado */}
 
-				{/* CONDITIONAL REVIEW - Solo debe verse si el usuario está logeado */}
-
-				<Row>
-					<div className="user-review-intro">
-						<span>You're Reviewing:</span>
-						<p className="product-title">{this.state.title}</p>
-					</div>
-				</Row>
-				<Row>
-					<div className="user-review-rating">
-						<span>Your Rating <span>*</span></span>
-					</div>
-				</Row>
-				<Row>
-					<div className="rating-container">
-						<StarRatingComponent
-							name="userRating"
-							starCount={5}
-							value={this.state.userRating}
-							emptyStarColor={'#CCCCCC'}
-							onStarClick={this.onStarClick.bind(this)}
-						/>
-					</div>
-				</Row>
-				<Row>
-					<div className="user-review-content">
-						<label>Review <span>*</span></label>
-						<textarea name="" id="review-content" cols="103" rows="3"></textarea>
-					</div>
-					<div className="review-button-container">
-						<button className="review-button" title="Submit Review" type="submit">
-							<span>Submit Review</span>
-						</button>
-					</div>
-				</Row>
-
-			</div>
-
-		);
-	}
+        <Row>
+          <div className="user-review-intro">
+            <span>You're Reviewing:</span>
+            <p className="product-title">{this.state.title}</p>
+          </div>
+        </Row>
+        <Row>
+          <div className="user-review-rating">
+            <span>
+              Your Rating <span>*</span>
+            </span>
+          </div>
+        </Row>
+        <Row>
+          <div className="rating-container">
+            <StarRatingComponent
+              name="userRating"
+              starCount={5}
+              value={this.state.userRating}
+              emptyStarColor={'#CCCCCC'}
+              onStarClick={this.onStarClick.bind(this)}
+            />
+          </div>
+        </Row>
+        <Row>
+          <div className="user-review-content">
+            <label>
+              Review <span>*</span>
+            </label>
+            <textarea
+              name=""
+              id="review-content"
+              cols="103"
+              rows="3"
+              value={this.state.reviewContent}
+              onChange={this.onChangeReviewContent}
+            />
+          </div>
+          <div className="review-button-container">
+            <button
+              className="review-button"
+              title="Submit Review"
+              type="submit"
+              onClick={this.addNewReview}>
+              <span>Submit Review</span>
+            </button>
+          </div>
+        </Row>
+      </div>
+    );
+  }
 }

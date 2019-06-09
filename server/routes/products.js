@@ -5,6 +5,7 @@ const { ReviewModel } = require('../db/review');
 const { ProductModel } = require('../db/product');
 const { CategoryModel } = require('../db/category');
 const { CatHasProdModel } = require('../db/category-product');
+const { UserModel } = require('../db/user');
 
 router.get('/product', (req, res) => {
   ProductModel.getAllProducts()
@@ -35,10 +36,22 @@ router.get('/product/:id', (req, res) => {
       ),
     )
     .then(data =>
-      ReviewModel.getReviewsByProductId(data.id_product).then(reviews => {
-        res.send(200, { data: { ...data, reviews } });
-      }),
+      ReviewModel.getReviewsByProductId(data.id_product).then(reviews =>
+        Promise.all(
+          reviews.map(review =>
+            UserModel.getUserById(review.user_id).then(user => {
+              return { ...review, user: user[0] };
+            }),
+          ),
+        ).then(reviews => ({
+          ...data,
+          reviews,
+        })),
+      ),
     )
+    .then(data => {
+      res.send(200, { data: data });
+    })
     .catch(error => {
       res.send(500, { error: error.message });
     });
