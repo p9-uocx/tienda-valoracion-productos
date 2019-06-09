@@ -20,9 +20,9 @@
   grid-template-columns: auto 1fr auto;
   grid-template-rows: auto 1fr;
   grid-template-areas:
-    "nav header"
-    "nav main"
-    "footer footer";
+    'nav header'
+    'nav main'
+    'footer footer';
 
   .nav-contanier {
     min-height: 90.1vh;
