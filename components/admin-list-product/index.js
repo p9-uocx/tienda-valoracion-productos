@@ -311,7 +311,7 @@ export class ListProduct extends PureComponent {
               <CardMedia
                 className="heigth-media"
                 image="/static/img/baseline_add_circle_black_48.png"
-                title={'Add Product'}
+                title={'Add New Product'}
               />
               <CardContent>
 

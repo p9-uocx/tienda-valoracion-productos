@@ -75,7 +75,7 @@ export default class Admin extends PureComponent {
             <Grid container direction="column" justify="flex-start" alignItems="stretch">
               <Link href={{ pathname: '/admin', query: { service: 'user' } }}>
                 <Button color="primary" className="link-menu">
-                  <IconButton color="inherit" onClick={this.openMenu}>
+                  <IconButton color="primary" onClick={this.openMenu}>
                     <AccountCircle className="padding-right-icon" />
                   </IconButton>
                   Usuarios
@@ -83,7 +83,7 @@ export default class Admin extends PureComponent {
               </Link>
               <Link href={{ pathname: '/admin', query: { service: 'product' } }}>
                 <Button color="primary" className="link-menu">
-                  <IconButton color="inherit" onClick={this.openMenu}>
+                  <IconButton color="primary" onClick={this.openMenu}>
                     <Dashboard className="padding-right-icon" />
                   </IconButton>
                   Productos
@@ -91,7 +91,7 @@ export default class Admin extends PureComponent {
               </Link>
               <Link href={{ pathname: '/admin', query: { service: 'category' } }}>
                 <Button color="primary" className="link-menu">
-                  <IconButton color="inherit" onClick={this.openMenu}>
+                  <IconButton color="primary" onClick={this.openMenu}>
                     <Category className="padding-right-icon" />
                   </IconButton>
                   Categorias
@@ -99,7 +99,7 @@ export default class Admin extends PureComponent {
               </Link>
               <Link href={{ pathname: '/admin', query: { service: 'role' } }}>
                 <Button color="primary" className="link-menu">
-                  <IconButton color="inherit" onClick={this.openMenu}>
+                  <IconButton color="primary" onClick={this.openMenu}>
                     <CheckCircle className="padding-right-icon" />
                   </IconButton>
                   Roles
@@ -107,7 +107,7 @@ export default class Admin extends PureComponent {
               </Link>
               <Link href={{ pathname: '/admin', query: { service: 'review' } }}>
                 <Button color="primary" className="link-menu">
-                  <IconButton color="inherit" onClick={this.openMenu}>
+                  <IconButton color="primary" onClick={this.openMenu}>
                     <LocalActivity className="padding-right-icon" />
                   </IconButton>
                   Reviews
