@@ -18,7 +18,6 @@ export class ListProduct extends PureComponent {
       <div>
         <Typography variant="h6">List of products</Typography>
         <GridList cols={5} cellHeight={'auto'}>
-          <Typography variant="h6">List of products</Typography>
           <Card className="margin-card">
             <CardActionArea>
               <CardMedia
