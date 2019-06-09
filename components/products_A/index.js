@@ -10,8 +10,7 @@ import { reviewsTotalValue } from '@Helpers';
 export class ProductsA extends PureComponent {
   render() {
     const productSlices = this.props.data.products.slice(0, 4);
-    console.log(this.props.data);
-
+    
     return (
       <section id="product-section">
         <Row>
@@ -36,6 +35,7 @@ export class ProductsA extends PureComponent {
                     value={reviewsValue}
                     emptyStarColor={'#CCCCCC'}
                   />
+                  <span className="reviews_info">{product.reviews.length} review(s)</span>
                 </div>
                 <Link href={{ pathname: '/product', query: { product: product.id_product } }}>
                   <a>{product.title}</a>

@@ -66,9 +66,7 @@ state = {
 										starCount={5}
 										value={reviewsValue}
 										emptyStarColor={'#CCCCCC'} />
-									<span>{this.state.numReviews} review(s)</span>
-									<span>|</span>
-									<span>Add your review</span>
+									<span>{this.state.numReviews} review(s)</span>									
 								</div>
 								<div className="price-box product-price-box">
 									<span className="price-label product-price-label">${this.state.price}</span>
