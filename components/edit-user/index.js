@@ -9,6 +9,7 @@ import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 import './edit-user.scss';
 
@@ -87,6 +88,9 @@ export const AdminEditUser = ({ data = {}, onCloseClick }) => {
             margin="normal"
             variant="outlined"
           />
+          <Button variant="outlined" color="secondary" className="margin-button">
+            Save Changes
+          </Button>
         </form>
       </CardContent>
     </Card>
