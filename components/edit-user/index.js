@@ -4,11 +4,42 @@ import React from 'react';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
-import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
+import MenuItem from '@material-ui/core/MenuItem';
+import TextField from '@material-ui/core/TextField';
+
+import './edit-user.scss';
 
 export const AdminEditUser = ({ data = {}, onCloseClick }) => {
+  const defaultProps = {
+    data: [
+      {
+        id_user: 1,
+        first_name: 'Javier',
+        last_name: 'Delgado',
+        gender: 'male',
+        email: 'mohatar@yahoo.com',
+        password: 'zanfona',
+        rol: 1,
+        date_add: '2019-05-20',
+        id: 1,
+      },
+      {
+        id_user: 2,
+        first_name: 'Sergio',
+        last_name: 'Garcia',
+        gender: 'male',
+        email: 'sergio@gmail.com',
+        password: 'zanfona',
+        rol: 1,
+        date_add: '2019-06-02',
+        id: 2,
+      },
+    ],
+  };
+
   return (
     <Card className="modal-container">
       <CardHeader
@@ -21,10 +52,45 @@ export const AdminEditUser = ({ data = {}, onCloseClick }) => {
         }
       />
       <CardContent>
-        <Typography variant="body1" color="textSecondary" component="p">
-          asadada
-        </Typography>
+        <form className="form-edit-user" noValidate autoComplete="off">
+
+          <TextField
+            id="outlined-name"
+            label="First Name"
+            className="flex-child"
+            value={defaultProps.data[0].first_name}
+            margin="normal"
+            variant="outlined"
+          />
+
+          <TextField
+            id="outlined-name"
+            label="Last Name"
+            className="flex-child"
+            value={defaultProps.data[0].last_name}
+            margin="normal"
+            variant="outlined"
+          />
+          <TextField
+            id="outlined-name"
+            label="Email"
+            className="flex-child"
+            value={defaultProps.data[0].email}
+            margin="normal"
+            variant="outlined"
+          />
+          <TextField
+            id="outlined-name"
+            label="Password"
+            className="flex-child"
+            value={defaultProps.data[0].password}
+            margin="normal"
+            variant="outlined"
+          />
+        </form>
       </CardContent>
     </Card>
   );
 };
+
+
