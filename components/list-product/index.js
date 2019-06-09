@@ -56,7 +56,7 @@ export class ListProduct extends PureComponent {
               <CardActions className="float-right-icons">
                 <IconButton
                   edge="end"
-                  aria-label="Delete"
+                  aria-label="Create"
                   onClick={this.props.onEditClick(elem.id_product)}>
                   <Create edgeMode="end" className="margin-right" />
                 </IconButton>
