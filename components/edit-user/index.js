@@ -4,7 +4,8 @@ import React from 'react';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
-import { makeStyles } from '@material-ui/core/styles';
+import CardActions from '@material-ui/core/CardActions';
+
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -52,9 +53,8 @@ export const AdminEditUser = ({ data = {}, onCloseClick }) => {
           </IconButton>
         }
       />
-      <CardContent>
+      <CardContent className="padding-top-card-content">
         <form className="form-edit-user" noValidate autoComplete="off">
-
           <TextField
             id="outlined-name"
             label="First Name"
@@ -63,7 +63,6 @@ export const AdminEditUser = ({ data = {}, onCloseClick }) => {
             margin="normal"
             variant="outlined"
           />
-
           <TextField
             id="outlined-name"
             label="Last Name"
@@ -88,11 +87,13 @@ export const AdminEditUser = ({ data = {}, onCloseClick }) => {
             margin="normal"
             variant="outlined"
           />
-          <Button variant="outlined" color="secondary" className="margin-button">
-            Save Changes
-          </Button>
         </form>
       </CardContent>
+      <CardActions>
+        <Button variant="outlined" color="secondary" className="margin-button">
+          Save Changes
+          </Button>
+      </CardActions>
     </Card>
   );
 };
