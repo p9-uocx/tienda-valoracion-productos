@@ -52,25 +52,6 @@ export class ListCategory extends PureComponent {
           </Typography>
           <div>
             <List>
-              <ListItem className="bottom-border">
-                <ListItemAvatar>
-                  <Avatar>
-                    <AddCircle />
-                  </Avatar>
-                </ListItemAvatar>
-                <ListItemText
-                  primary={
-                    <div className="user-list">
-                      <span><b>Add New Category</b></span>
-                    </div>
-                  }
-                />
-                <ListItemSecondaryAction>
-                  <IconButton edge="end" aria-label="Delete">
-                    <AddCircle className="margin-right"></AddCircle>
-                  </IconButton>
-                </ListItemSecondaryAction>
-              </ListItem>
               {this.props.data.map(elem => (
                 <ListItem className="bottom-border">
                   <ListItemAvatar>

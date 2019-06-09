@@ -18,24 +18,6 @@ export class ListProduct extends PureComponent {
       <div>
         <Typography variant="h6">List of products</Typography>
         <GridList cols={5} cellHeight={'auto'}>
-          <Card className="margin-card">
-            <CardActionArea>
-              <CardMedia
-                className="heigth-media"
-                image="/static/img/baseline_add_circle_black_48.png"
-                title={'Add New Product'}
-              />
-              <CardContent>
-
-              </CardContent>
-              <CardActions align="center">
-                <Typography color="textSecondary" gutterBottom variant="subtitle1" component="h6">
-                  {'Add New Product'}
-                </Typography>
-
-              </CardActions>
-            </CardActionArea>
-          </Card>
           {this.props.data.map(elem => (
             <Card className="margin-card">
               <CardActionArea>

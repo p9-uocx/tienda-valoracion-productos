@@ -49,26 +49,7 @@ export class ListUser extends PureComponent {
         <Grid item md={12}>
           <Typography variant="h6">List of users</Typography>
           <div>
-            <List>
-              <ListItem className="bottom-border">
-                <ListItemAvatar>
-                  <Avatar>
-                    <AddCircle />
-                  </Avatar>
-                </ListItemAvatar>
-                <ListItemText
-                  primary={
-                    <div className="user-list">
-                      <span><b>Add New User</b></span>
-                    </div>
-                  }
-                />
-                <ListItemSecondaryAction>
-                  <IconButton edge="end" aria-label="Delete">
-                    <AddCircle className="margin-right"></AddCircle>
-                  </IconButton>
-                </ListItemSecondaryAction>
-              </ListItem>
+            <List>              
               {this.props.data.map(elem => (
                 <ListItem className="bottom-border">
                   <ListItemAvatar>
