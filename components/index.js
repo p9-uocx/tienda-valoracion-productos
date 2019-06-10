@@ -15,7 +15,6 @@ export * from './list-role';
 export * from './list-user';
 export * from './modal-notification';
 export * from './fetch-admin';
-
 export * from './carousel';
 export * from './layout';
 export * from './nav';
@@ -23,3 +22,4 @@ export * from './policy_section';
 export * from './products_A';
 export * from './products_B';
 export * from './product_loader';
+export * from './products_review';

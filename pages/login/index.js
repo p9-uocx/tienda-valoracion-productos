@@ -3,8 +3,8 @@ import Link from 'next/link';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { Layout } from '../../components/layout';
-import { NavMenu } from '../../components/nav';
+import { Layout } from '@Components';
+import { NavMenu } from '@Components';
 
 import './login.scss';
 
@@ -44,11 +44,11 @@ export default class Login extends PureComponent {
 										<form className="login-form" action="" method="post">
 											<div className="input-padding">
 												<label htmlFor="mail">Email Address<span className="red"> *</span></label><br />
-												<input id="mail" required type="text" /><br />
+												<input className="login-input" id="mail" required type="text" /><br />
 											</div>
 											<div>
 												<label htmlFor="password">Password<span className="red"> *</span></label><br />
-												<input id="password" required type="password" />
+												<input className="login-input" id="password" required type="password" />
 											</div>
 										</form>
 										<div className="login-button-container">
@@ -58,9 +58,7 @@ export default class Login extends PureComponent {
 										</div>
 										<span className="red">* Required Fields</span>
 									</div>
-
 								</div>
-
 							</Col>
 						</Row>
 					</Container>

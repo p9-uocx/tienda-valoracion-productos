@@ -8,7 +8,6 @@ import Col from 'react-bootstrap/Col';
 import Link from 'next/link';
 
 import './layout.scss';
-import '../../pages/login/login.scss';
 
 export class Layout extends PureComponent {
   static propTypes = {
