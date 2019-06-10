@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import Router from 'next/router'
 import Link from 'next/link';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -38,13 +39,14 @@ export default class Login extends PureComponent {
 
 
 	handleSubmit = event => {
-		event.preventDefault();		
+		event.preventDefault();
 		this.state.usersData.map(user => {
 			if (this.state.email === user.email && this.state.password === user.password) {
-				
-				//Tendras que meter algo más que un alert aqui.. xDD. 
-				
-				alert ("OK");
+				if (user.rol === 1) {
+					Router.push('/admin')
+				} else {
+					Router.push('/home')
+				}
 			}
 		})
 
