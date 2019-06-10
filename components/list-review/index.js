@@ -4,6 +4,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListItemText from '@material-ui/core/ListItemText';
+
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import StarRatingComponent from 'react-star-rating-component';
@@ -16,8 +17,6 @@ import Create from '@material-ui/icons/Create';
 import './admin-list-review.scss';
 
 export class ListReview extends PureComponent {
-
-
   render() {
     return (
       <div>
@@ -50,7 +49,7 @@ export class ListReview extends PureComponent {
                             Review Date: <b>{elem.date_add}</b>
                           </span>
                           <span>
-                             - Rating: ({elem.rating})
+                            - Rating: ({elem.rating})
                             <StarRatingComponent className="rating-position"
                               starCount={5}
                               value={elem.rating}

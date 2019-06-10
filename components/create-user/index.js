@@ -4,13 +4,15 @@ import React from 'react';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
-import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
+import CardActions from '@material-ui/core/CardActions';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 export const AdminCreateUser = ({ data = {}, onCloseClick }) => {
   return (
-    <Card className="modal-container">
+    <Card className="edit-user-modal-container modal-container">
       <CardHeader
         title="Crear Usuario"
         className="modal-header"
@@ -20,11 +22,43 @@ export const AdminCreateUser = ({ data = {}, onCloseClick }) => {
           </IconButton>
         }
       />
-      <CardContent>
-        <Typography variant="body1" color="textSecondary" component="p">
-          adasda
-        </Typography>
+      <CardContent className="padding-top-card-content">
+        <form className="form-edit-user" noValidate autoComplete="off">
+          <TextField
+            id="outlined-name"
+            label="First Name"
+            className="flex-child"
+            margin="normal"
+            variant="outlined"
+          />
+          <TextField
+            id="outlined-name"
+            label="Last Name"
+            className="flex-child"
+            margin="normal"
+            variant="outlined"
+          />
+          <TextField
+            id="outlined-name"
+            label="Email"
+            className="flex-child"
+            margin="normal"
+            variant="outlined"
+          />
+          <TextField
+            id="outlined-name"
+            label="Password"
+            className="flex-child"
+            margin="normal"
+            variant="outlined"
+          />
+        </form>
       </CardContent>
+      <CardActions>
+        <Button variant="outlined" color="secondary" className="margin-button">
+          Create User
+          </Button>
+      </CardActions>
     </Card>
   );
 };
