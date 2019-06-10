@@ -9,8 +9,51 @@ import { NavMenu } from '@Components';
 import './login.scss';
 
 export default class Login extends PureComponent {
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			email: "",
+			password: "",
+			usersData: {}
+		};
+	}
+
+	handleChange = event => {
+		this.setState({
+			[event.target.id]: event.target.value
+		});
+	}
+
+	componentDidMount() {
+		fetch(`${process.env.DB_API_HOST}/user`)
+			.then(results => {
+				return results.json()
+			})
+			.then(data => {
+				this.setState({ usersData: data.data })
+				console.log(this.state.usersData)
+			});
+	}
+
+
+	handleSubmit = event => {
+		event.preventDefault();		
+		this.state.usersData.map(user => {
+			if (this.state.email === user.email && this.state.password === user.password) {
+				
+				//Tendras que meter algo más que un alert aqui.. xDD. 
+				
+				alert ("OK");
+			}
+		})
+
+	}
 
 	render() {
+		console.log("email" + this.state.email);
+		console.log("pass" + this.state.password);
+
 		return (
 			<div>
 				<Layout title="Login" {...this.props}>
@@ -30,7 +73,7 @@ export default class Login extends PureComponent {
 										</p>
 										<div>
 											<button className="register-button" title="register" type="submit">
-												<span className="no-link"><Link  href="/register">Create an Account</Link></span>
+												<span className="no-link"><Link href="/register">Create an Account</Link></span>
 											</button>
 										</div>
 									</div>
@@ -41,21 +84,33 @@ export default class Login extends PureComponent {
 									<div className="login-user-content">
 										<h6>Registered Customers</h6>
 										<p>If you have an account with us, please log in</p>
-										<form className="login-form" action="" method="post">
+										<form className="login-form" onSubmit={this.handleSubmit}>
 											<div className="input-padding">
 												<label htmlFor="mail">Email Address<span className="red"> *</span></label><br />
-												<input className="login-input" id="mail" required type="text" /><br />
+												<input
+													value={this.state.email}
+													onChange={this.handleChange}
+													className="login-input"
+													id="email"
+													required
+													type="text" /><br />
 											</div>
 											<div>
 												<label htmlFor="password">Password<span className="red"> *</span></label><br />
-												<input className="login-input" id="password" required type="password" />
+												<input
+													value={this.state.password}
+													onChange={this.handleChange}
+													className="login-input"
+													id="password"
+													required
+													type="password" />
+											</div>
+											<div className="login-button-container">
+												<button className="login-button" title="login" type="submit">
+													<span>Login</span>
+												</button>
 											</div>
 										</form>
-										<div className="login-button-container">
-											<button className="login-button" title="login" type="submit">
-												<span>Login</span>
-											</button>											
-										</div>
 										<span className="red">* Required Fields</span>
 									</div>
 								</div>
