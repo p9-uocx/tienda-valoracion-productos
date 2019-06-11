@@ -92,7 +92,7 @@ export class FetchAdmin extends PureComponent {
     fetch(`${process.env.DB_API_HOST}/${service}/${id}`)
       .then(res => res.json())
       .then(res => {
-        this.setState({ modal: `${this.props.query.service}Edit`, modalData: res });
+        this.setState({ modal: `${this.props.query.service}Edit`, modalData: res.data });
       });
   };
 
