@@ -8,11 +8,19 @@ import CardActions from '@material-ui/core/CardActions';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import TextField from '@material-ui/core/TextField';
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import InputLabel from '@material-ui/core/InputLabel';
 import Button from '@material-ui/core/Button';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 import './edit-user.scss';
 
-export const AdminEditUser = ({ data = {}, onCloseClick }) => {
+export const AdminEditUser = ({ data = {}, onCloseClick, onEditSave }) => {
+
   return (
     <Card className="edit-user-modal-container modal-container">
       <CardHeader
@@ -25,43 +33,72 @@ export const AdminEditUser = ({ data = {}, onCloseClick }) => {
         }
       />
       <CardContent className="padding-top-card-content">
-        <form className="form-edit-user" noValidate autoComplete="off">
-          <TextField
-            id="outlined-name"
-            label="First Name"
-            className="flex-child"
-            value={data.first_name}
-            margin="normal"
-            variant="outlined"
-          />
-          <TextField
-            id="outlined-name"
-            label="Last Name"
-            className="flex-child"
-            value={data.last_name}
-            margin="normal"
-            variant="outlined"
-          />
-          <TextField
-            id="outlined-name"
-            label="Email"
-            className="flex-child"
-            value={data.email}
-            margin="normal"
-            variant="outlined"
-          />
-          <TextField
-            id="outlined-name"
-            label="Password"
-            className="flex-child"
-            value={data.password}
-            margin="normal"
-            variant="outlined"
-          />
-        </form>
+        <Container>
+          <form id="form-edit-user" noValidate autoComplete="off" onSubmit={onEditSave}>
+            <Row className="padding-bottom-row">
+              <Col>
+                <TextField defaultValue={data.first_name} name="first_name" label="First Name" variant="outlined" />
+              </Col>
+              <Col>
+                <TextField defaultValue={data.last_name} name="last_name" label="Last Name" variant="outlined" />
+              </Col>
+            </Row>
+            <Row className="padding-bottom-row">
+              <Col>
+                <TextField defaultValue={data.email} name="email" label="Email" variant="outlined" />
+              </Col>
+              <Col>
+                <TextField defaultValue={data.password} name="password" label="Password" variant="outlined" />
+              </Col>
+            </Row>
+            <Row >
+              <Col>
+                <FormControl variant="outlined">
+                  <InputLabel htmlFor="rol">Rol</InputLabel>
+                  <Select
+                    className="min-width-select"
+                    defaultValue={data.rol}
+                    name="rol"
+                    inputProps={{
+                      name: 'rol',
+                      id: 'rol'
+                    }}
+                  >
+                    <MenuItem value={2}>2</MenuItem>
+                    <MenuItem value={3}>3</MenuItem>
+                    <MenuItem value={4}>4</MenuItem>
+                  </Select>
+                </FormControl>
+              </Col>
+              <Col>
+                <FormControl variant="outlined" >
+                  <InputLabel htmlFor="gender">Gender</InputLabel>
+                  <Select
+                    className="min-width-select"
+                    name="gender"
+                    inputProps={{
+                      name: 'gender',
+                      id: 'gender',
+                      defaultValue: ''
+                    }}
+                  >
+                    <MenuItem value={'Male'}>Male</MenuItem>
+                    <MenuItem value={'Female'}>Female</MenuItem>
+                  </Select>
+                </FormControl>
+              </Col>
+            </Row>
+          </form>
+        </Container>
       </CardContent>
       <CardActions>
-        <Button variant="outlined" color="secondary" className="margin-button">
+        <Button
+          variant="outlined"
+          color="secondary"
+          className="margin-button"
+          type="submit"
+          form="form-edit-user">
+
           Save Changes
         </Button>
       </CardActions>
