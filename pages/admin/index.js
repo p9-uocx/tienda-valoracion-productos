@@ -52,7 +52,7 @@ export default class Admin extends PureComponent {
     const ListService = listServiceSelector[query.service];
     const ModalService = modalServiceSelector[modal];
 
-    function Welcome(props) {
+    function Welcome() {
       if (typeof query.service === "undefined") {
         return <AdminWelcome />
       } else {
@@ -61,9 +61,6 @@ export default class Admin extends PureComponent {
     }
 
     return (
-
-
-
       <Fragment>
         <Head>
           <title>{this.props.title}</title>
