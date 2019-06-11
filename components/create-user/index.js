@@ -10,7 +10,14 @@ import CardActions from '@material-ui/core/CardActions';
 import TextField from '@material-ui/core/TextField';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
+import InputLabel from '@material-ui/core/InputLabel';
+import FormControl from '@material-ui/core/FormControl';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import Button from '@material-ui/core/Button';
+
+import './create-user.scss';
 
 export const AdminCreateUser = ({ data = {}, onCloseClick, onCreateSave }) => {
   return (
@@ -25,29 +32,62 @@ export const AdminCreateUser = ({ data = {}, onCloseClick, onCreateSave }) => {
         }
       />
       <CardContent className="padding-top-card-content">
-        <form id="form-create-user" onSubmit={onCreateSave}>
-          <TextField
-            name="first_name"
-            label="First Name"
-            className="flex-child"
-            variant="outlined"
-          />
-          <TextField name="last_name" label="Last Name" className="flex-child" variant="outlined" />
-          <Select
-            value="gender"
-            name="gender"
-            className="flex-child"
-            inputProps={{
-              name: 'gender'
-            }}
-          >
-            <MenuItem value={'Male'}>Male</MenuItem>
-            <MenuItem value={'Female'}>Female</MenuItem>
-          </Select>
-          <TextField name="email" label="Email" className="flex-child" variant="outlined" />
-          <TextField name="password" label="Password" className="flex-child" variant="outlined" />
-          <TextField name="rol" label="Password" className="flex-child" variant="outlined" />
-        </form>
+        <Container>
+          <form id="form-create-user" onSubmit={onCreateSave}>
+            <Row className="padding-bottom-row">
+              <Col>
+                <TextField name="first_name" label="First Name" variant="outlined" />
+              </Col>
+              <Col>
+                <TextField name="last_name" label="Last Name" variant="outlined" />
+              </Col>
+            </Row>
+            <Row className="padding-bottom-row">
+              <Col>
+                <TextField name="email" label="Email" variant="outlined" />
+              </Col>
+              <Col>
+                <TextField name="password" label="Password" variant="outlined" />
+              </Col>
+            </Row>
+            <Row >
+              <Col>
+                <FormControl variant="outlined">
+                  <InputLabel htmlFor="rol">Rol</InputLabel>
+                  <Select
+                    className="min-width-select"
+                    
+                    name="rol"
+                    inputProps={{
+                      name: 'rol',
+                      id: 'rol'
+                    }}
+                  >
+                    <MenuItem value={2}>2</MenuItem>
+                    <MenuItem value={3}>3</MenuItem>
+                    <MenuItem value={3}>4</MenuItem>
+                  </Select>
+                </FormControl>
+              </Col>
+              <Col>
+                <FormControl variant="outlined" >
+                  <InputLabel htmlFor="gender">Gender</InputLabel>
+                  <Select
+                   className="min-width-select"
+                    name="gender"
+                    inputProps={{
+                      name: 'gender',
+                      id: 'gender'
+                    }}
+                  >
+                    <MenuItem value={'Male'}>Male</MenuItem>
+                    <MenuItem value={'Female'}>Female</MenuItem>
+                  </Select>
+                </FormControl>
+              </Col>
+            </Row>
+          </form>
+        </Container>
       </CardContent>
       <CardActions>
         <Button
