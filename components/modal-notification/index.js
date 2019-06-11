@@ -20,6 +20,14 @@ export const ModalNotification = ({ data = {}, onCloseClick }) => {
           <p>Mensaje:{data.error.sqlMessage}</p>
         </div>
       )}
+      {data.error && (
+        <div>
+          <p>Se ha producido un error:</p>
+          <p>
+            <strong>{data.error}</strong>
+          </p>
+        </div>
+      )}
       {data.data && data.data.affectedRows && (
         <div>
           <p>Se ha procesado correctamente la peticion</p>

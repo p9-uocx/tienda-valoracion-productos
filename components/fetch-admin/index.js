@@ -25,8 +25,6 @@ import Modal from '@material-ui/core/Modal';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 
-console.log(ModalNotification);
-
 const listServiceSelector = {
   category: ListCategory,
   product: ListProduct,
@@ -113,8 +111,9 @@ export class FetchAdmin extends PureComponent {
 
   fetchCreateItem = (service, postData) => {
     fetch(`${process.env.DB_API_HOST}/${service}`, {
-      method: 'DELETE',
+      method: 'POST',
       headers: new Headers(),
+      body: postData,
       mode: 'cors',
       cache: 'default',
     })
@@ -133,12 +132,14 @@ export class FetchAdmin extends PureComponent {
   onCreateClick = () => {
     this.setState({ modal: `${this.props.query.service}Create` });
   };
-  onEditSave = (id, postData) => {
-    debugger;
+  onEditSave = (id, event) => {
+    event.preventDefault();
+    const postData = new FormData(event.currentTarget);
     this.fetchEditItem(this.props.query.service, id, postData);
   };
-  onCreateSave = postData => {
-    debugger;
+  onCreateSave = event => {
+    event.preventDefault();
+    const postData = new FormData(event.currentTarget);
     this.fetchCreateItem(this.props.query.service, postData);
   };
   onCloseClick = () => {
@@ -167,7 +168,13 @@ export class FetchAdmin extends PureComponent {
         <Modal open={Boolean(modal)}>
           <div>
             <p>asdasd</p>
-            {ModalService && <ModalService data={modalData} onCloseClick={this.onCloseClick} />}
+            {ModalService && (
+              <ModalService
+                data={modalData}
+                onCloseClick={this.onCloseClick}
+                onCreateSave={this.onCreateSave}
+              />
+            )}
           </div>
         </Modal>
       </Container>

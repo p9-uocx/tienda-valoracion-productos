@@ -10,7 +10,7 @@ import CardActions from '@material-ui/core/CardActions';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
-export const AdminCreateUser = ({ data = {}, onCloseClick }) => {
+export const AdminCreateUser = ({ data = {}, onCloseClick, onCreateSave }) => {
   return (
     <Card className="edit-user-modal-container modal-container">
       <CardHeader
@@ -23,41 +23,29 @@ export const AdminCreateUser = ({ data = {}, onCloseClick }) => {
         }
       />
       <CardContent className="padding-top-card-content">
-        <form className="form-edit-user" noValidate autoComplete="off">
+        <form id="form-edit-user" onSubmit={onCreateSave}>
           <TextField
-            id="outlined-name"
+            name="first_name"
             label="First Name"
             className="flex-child"
-            margin="normal"
             variant="outlined"
           />
-          <TextField
-            id="outlined-name"
-            label="Last Name"
-            className="flex-child"
-            margin="normal"
-            variant="outlined"
-          />
-          <TextField
-            id="outlined-name"
-            label="Email"
-            className="flex-child"
-            margin="normal"
-            variant="outlined"
-          />
-          <TextField
-            id="outlined-name"
-            label="Password"
-            className="flex-child"
-            margin="normal"
-            variant="outlined"
-          />
+          <TextField name="last_name" label="Last Name" className="flex-child" variant="outlined" />
+          <TextField name="gender" label="Last Name" className="flex-child" variant="outlined" />
+          <TextField name="email" label="Email" className="flex-child" variant="outlined" />
+          <TextField name="password" label="Password" className="flex-child" variant="outlined" />
+          <TextField name="rol" label="Password" className="flex-child" variant="outlined" />
         </form>
       </CardContent>
       <CardActions>
-        <Button variant="outlined" color="secondary" className="margin-button">
+        <Button
+          variant="outlined"
+          color="secondary"
+          className="margin-button"
+          type="submit"
+          form="form-edit-user">
           Create User
-          </Button>
+        </Button>
       </CardActions>
     </Card>
   );
