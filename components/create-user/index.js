@@ -8,11 +8,13 @@ import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import CardActions from '@material-ui/core/CardActions';
 import TextField from '@material-ui/core/TextField';
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
 import Button from '@material-ui/core/Button';
 
 export const AdminCreateUser = ({ data = {}, onCloseClick, onCreateSave }) => {
   return (
-    <Card className="edit-user-modal-container modal-container">
+    <Card className="create-user-modal-container modal-container">
       <CardHeader
         title="Crear Usuario"
         className="modal-header"
@@ -23,7 +25,7 @@ export const AdminCreateUser = ({ data = {}, onCloseClick, onCreateSave }) => {
         }
       />
       <CardContent className="padding-top-card-content">
-        <form id="form-edit-user" onSubmit={onCreateSave}>
+        <form id="form-create-user" onSubmit={onCreateSave}>
           <TextField
             name="first_name"
             label="First Name"
@@ -31,7 +33,17 @@ export const AdminCreateUser = ({ data = {}, onCloseClick, onCreateSave }) => {
             variant="outlined"
           />
           <TextField name="last_name" label="Last Name" className="flex-child" variant="outlined" />
-          <TextField name="gender" label="Last Name" className="flex-child" variant="outlined" />
+          <Select
+            value="gender"
+            name="gender"
+            className="flex-child"
+            inputProps={{
+              name: 'gender'
+            }}
+          >
+            <MenuItem value={'Male'}>Male</MenuItem>
+            <MenuItem value={'Female'}>Female</MenuItem>
+          </Select>
           <TextField name="email" label="Email" className="flex-child" variant="outlined" />
           <TextField name="password" label="Password" className="flex-child" variant="outlined" />
           <TextField name="rol" label="Password" className="flex-child" variant="outlined" />
@@ -43,7 +55,7 @@ export const AdminCreateUser = ({ data = {}, onCloseClick, onCreateSave }) => {
           color="secondary"
           className="margin-button"
           type="submit"
-          form="form-edit-user">
+          form="form-create-user">
           Create User
         </Button>
       </CardActions>

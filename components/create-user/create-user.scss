@@ -1,0 +1,21 @@
+#form-create-user {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#form-create-user > .flex-child {
+  margin: 10px auto;
+}
+
+.margin-button {
+  left: 35px;
+  top: 5px;
+}
+
+.padding-top-card-content {
+  margin-top: 30px !important;
+}
+
+.create-user-modal-container {
+  height: 450px;
+}
