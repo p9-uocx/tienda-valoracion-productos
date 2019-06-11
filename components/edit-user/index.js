@@ -13,7 +13,6 @@ import Button from '@material-ui/core/Button';
 import './edit-user.scss';
 
 export const AdminEditUser = ({ data = {}, onCloseClick }) => {
-  debugger;
   return (
     <Card className="edit-user-modal-container modal-container">
       <CardHeader

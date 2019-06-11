@@ -24,3 +24,4 @@ export * from './products_B';
 export * from './product_loader';
 export * from './products_review';
 export * from './admin-welcome';
+export * from './auth';

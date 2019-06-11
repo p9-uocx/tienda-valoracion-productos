@@ -58,7 +58,7 @@ export default class Product extends PureComponent {
                     value={reviewsValue}
                     emptyStarColor={'#CCCCCC'}
                   />
-                  <span>{this.state.numReviews} review(s)</span>                  
+                  <span>{this.state.numReviews} review(s)</span>
                 </div>
                 <div className="price-box product-price-box">
                   <span className="price-label product-price-label">${this.state.price}</span>
@@ -81,7 +81,7 @@ export default class Product extends PureComponent {
                 </div>
                 <div className="description-text">
                   <p>{this.state.description}</p>
-                </div>                
+                </div>
               </Col>
             </Row>
             {/* Policy Section */}
