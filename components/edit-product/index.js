@@ -7,6 +7,9 @@ import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 
 export const AdminEditProduct = ({ data = {}, onCloseClick }) => {
@@ -37,55 +40,79 @@ export const AdminEditProduct = ({ data = {}, onCloseClick }) => {
         }
       />
       <CardContent className="padding-top-card-content">
-        <form className="form-edit-user" noValidate autoComplete="off">
-          <TextField
-            id="outlined-name"
-            label="Reference"
-            className="flex-child"
-            value={defaultProps.data.reference}
-            margin="normal"
-            variant="outlined"
-          />
-          <TextField
-            id="outlined-name"
-            label="Title"
-            className="flex-child"
-            value={defaultProps.data.title}
-            margin="normal"
-            variant="outlined"
-          />
-          <TextField
-            multiline
-            rowsMax="5"
-            id="outlined-name"
-            label="Description"
-            className="flex-child"
-            value={defaultProps.data.description}
-            margin="normal"
-            variant="outlined"
-          />
-          <TextField
-            id="outlined-name"
-            label="Price"
-            className="flex-child"
-            value={defaultProps.data.price}
-            margin="normal"
-            variant="outlined"
-          />
-          <TextField
-            id="outlined-name"
-            label="Img Url"
-            className="flex-child img-url"
-            value={defaultProps.data.img_url}
-            margin="normal"
-            variant="outlined"
-          />
+        <form id="form-edit-product" noValidate autoComplete="off">
+          <Container>
+            <Row>
+              <Col>
+                <TextField
+                  id="outlined-name"
+                  label="Reference"
+                  defaultValue={data.reference}
+                  margin="normal"
+                  variant="outlined"
+                />
+              </Col>
+              <Col>
+                <TextField
+                  id="outlined-name"
+                  label="Title"
+                  defaultValue={data.title}
+                  margin="normal"
+                  variant="outlined"
+                />
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <TextField
+                  multiline
+                  rowsMax="5"
+                  id="outlined-name"
+                  label="Description"
+                  defaultValue={data.description}
+                  margin="normal"
+                  variant="outlined"
+                />
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <TextField
+                  id="outlined-name"
+                  label="Price"
+                  defaultValue={data.price}
+                  margin="normal"
+                  variant="outlined"
+                />
+              </Col>
+              <Col>
+                <TextField
+                  id="outlined-name"
+                  label="Img Url"
+                  defaultValue={data.img_url}
+                  margin="normal"
+                  variant="outlined"
+                />
+              </Col>
+            </Row>
+          </Container>
         </form>
+
       </CardContent>
       <CardActions>
-        <Button variant="outlined" color="secondary" className="margin-button">
-          Save Changes
+        <Row>
+          <Col>
+            <Button
+              variant="outlined"
+              color="secondary"
+              className="margin-button"
+              type="submit"
+              form="form-edit-product"
+            >
+              Save Changes
           </Button>
+          </Col>
+        </Row>
       </CardActions>
     </Card>
   );
