@@ -98,8 +98,9 @@ export class FetchAdmin extends PureComponent {
 
   fetchEditItem = (service, id, postData) => {
     fetch(`${process.env.DB_API_HOST}/${service}/${id}`, {
-      method: 'DELETE',
+      method: 'PUT',
       headers: new Headers(),
+      body: postData,
       mode: 'cors',
       cache: 'default',
     })
@@ -173,6 +174,7 @@ export class FetchAdmin extends PureComponent {
                 data={modalData}
                 onCloseClick={this.onCloseClick}
                 onCreateSave={this.onCreateSave}
+                onEditSave={this.onEditSave}
               />
             )}
           </div>
