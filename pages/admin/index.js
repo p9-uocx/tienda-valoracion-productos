@@ -3,7 +3,7 @@ import React, { PureComponent, Fragment } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import classNames from 'classnames';
-import { ListProduct, ListCategory, ListReview, FetchAdmin } from '@Components';
+import { ListProduct, ListCategory, ListReview, FetchAdmin, AdminWelcome } from '@Components';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
@@ -52,7 +52,18 @@ export default class Admin extends PureComponent {
     const ListService = listServiceSelector[query.service];
     const ModalService = modalServiceSelector[modal];
 
+    function Welcome(props) {
+      if (typeof query.service === "undefined") {
+        return <AdminWelcome />
+      } else {
+        return <FetchAdmin query={query} />
+      }
+    }
+
     return (
+
+
+
       <Fragment>
         <Head>
           <title>{this.props.title}</title>
@@ -124,7 +135,7 @@ export default class Admin extends PureComponent {
           </header>
 
           <main className="main-container">
-            <FetchAdmin query={query} />
+            <Welcome></Welcome>
           </main>
 
         </section>
