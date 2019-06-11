@@ -24,7 +24,16 @@ export class ProductsReview extends PureComponent {
     user: '',
     fechaReview: '12/4/19',
     userRating: 0,
+    reviewEnable: false,
   };
+
+  componentDidMount() {
+    if (window.localStorage.user) {
+      this.setState({
+        reviewEnable: true,
+      });
+    }
+  }
 
   onStarClick(nextValue, prevValue, name) {
     console.log('name: %s, nextValue: %s, prevValue: %s', name, nextValue, prevValue);
@@ -76,7 +85,10 @@ export class ProductsReview extends PureComponent {
                   {review.descripction}
                   <div className="review-details">
                     <span>
-                      Review by <strong>{review.user.first_name} {review.user.last_name}</strong>
+                      Review by{' '}
+                      <strong>
+                        {review.user.first_name} {review.user.last_name}
+                      </strong>
                     </span>
                     <p>Posted on {review.date_add}</p>
                   </div>
@@ -86,56 +98,58 @@ export class ProductsReview extends PureComponent {
           );
         })}
 
-        {/* CONDITIONAL REVIEW - Solo debe verse si el usuario está logeado */}
-
-        <Row>
-          <div className="user-review-intro">
-            <span>You're Reviewing:</span>
-            <p className="product-title">{this.state.title}</p>
-          </div>
-        </Row>
-        <Row>
-          <div className="user-review-rating">
-            <span>
-              Your Rating <span>*</span>
-            </span>
-          </div>
-        </Row>
-        <Row>
-          <div className="rating-container">
-            <StarRatingComponent
-              name="userRating"
-              starCount={5}
-              value={this.state.userRating}
-              emptyStarColor={'#CCCCCC'}
-              onStarClick={this.onStarClick.bind(this)}
-            />
-          </div>
-        </Row>
-        <Row>
-          <div className="user-review-content">
-            <label>
-              Review <span>*</span>
-            </label>
-            <textarea
-              name=""
-              id="review-content"
-              cols="103"
-              rows="3"
-              value={this.state.reviewContent}
-              onChange={this.onChangeReviewContent}
-            />
-          </div>
-          <div className="review-button-container">
-            <button
-              className="review-button"
-              title="Submit Review"
-              type="submit"
-              onClick={this.addNewReview}>
-              <span>Submit Review</span>
-            </button>
-          </div>
-        </Row>
+        {this.state.reviewEnable && (
+          <section>
+            <Row>
+              <div className="user-review-intro">
+                <span>You're Reviewing:</span>
+                <p className="product-title">{this.state.title}</p>
+              </div>
+            </Row>
+            <Row>
+              <div className="user-review-rating">
+                <span>
+                  Your Rating <span>*</span>
+                </span>
+              </div>
+            </Row>
+            <Row>
+              <div className="rating-container">
+                <StarRatingComponent
+                  name="userRating"
+                  starCount={5}
+                  value={this.state.userRating}
+                  emptyStarColor={'#CCCCCC'}
+                  onStarClick={this.onStarClick.bind(this)}
+                />
+              </div>
+            </Row>
+            <Row>
+              <div className="user-review-content">
+                <label>
+                  Review <span>*</span>
+                </label>
+                <textarea
+                  name=""
+                  id="review-content"
+                  cols="103"
+                  rows="3"
+                  value={this.state.reviewContent}
+                  onChange={this.onChangeReviewContent}
+                />
+              </div>
+              <div className="review-button-container">
+                <button
+                  className="review-button"
+                  title="Submit Review"
+                  type="submit"
+                  onClick={this.addNewReview}>
+                  <span>Submit Review</span>
+                </button>
+              </div>
+            </Row>
+          </section>
+        )}
       </div>
     );
   }

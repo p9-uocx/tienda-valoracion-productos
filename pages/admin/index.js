@@ -2,8 +2,9 @@
 import React, { PureComponent, Fragment } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import Router from 'next/router';
 import classNames from 'classnames';
-import { ListProduct, ListCategory, ListReview, FetchAdmin, AdminWelcome } from '@Components';
+import { ListProduct, ListCategory, ListReview, FetchAdmin, AdminWelcome, Auth } from '@Components';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
@@ -35,9 +36,14 @@ const modalServiceSelector = {
   review: ListCategory,
 };
 
-export default class Admin extends PureComponent {
+class Admin extends PureComponent {
   state = {
     menu: true,
+  };
+
+  handleLogout = () => {
+    window.localStorage.removeItem('user');
+    Router.push('/login');
   };
 
   openMenu = () => {
@@ -53,10 +59,10 @@ export default class Admin extends PureComponent {
     const ModalService = modalServiceSelector[modal];
 
     function Welcome() {
-      if (typeof query.service === "undefined") {
-        return <AdminWelcome />
+      if (typeof query.service === 'undefined') {
+        return <AdminWelcome />;
       } else {
-        return <FetchAdmin query={query} />
+        return <FetchAdmin query={query} />;
       }
     }
 
@@ -122,29 +128,36 @@ export default class Admin extends PureComponent {
                 <IconButton onClick={this.openMenu}>
                   <MenuIcon className="fill-white" />
                 </IconButton>
-                <Typography className="color-white" variant="h4">Admin Page</Typography>
+                <Typography className="color-white" variant="h4">
+                  Admin Page
+                </Typography>
                 <IconButton>
                   <PowerSettingsNew className="fill-white" />
-                  <span className="color-white logout">LOGOUT</span>
+                  <span className="color-white logout" onClick={this.handleLogout}>
+                    LOGOUT
+                  </span>
                 </IconButton>
               </Grid>
             </Toolbar>
           </header>
 
           <main className="main-container">
-            <Welcome></Welcome>
+            <Welcome />
           </main>
-
         </section>
 
         <div className="footer-div">
           <Container>
-            <span>Copyright © 2019 Expert Inc. Developed with <span className="red">&#10084;</span> by JASE Team.</span>
+            <span>
+              Copyright © 2019 Expert Inc. Developed with <span className="red">&#10084;</span> by
+              JASE Team.
+            </span>
             <Image fluid id="logo-footer" src="/static/img/header/logo2-1.png" />
           </Container>
         </div>
-
       </Fragment>
     );
   }
 }
+
+export default Auth('admin')(Admin);
