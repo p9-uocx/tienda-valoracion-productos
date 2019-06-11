@@ -24,7 +24,7 @@ router.get('/review/:userId/:productId', (req, res) => {
 });
 
 router.post('/review', (req, res) => {
-  ReviewModel.createReview(req.body)
+  ReviewModel.createReview(JSON.parse(req.body))
     .then(data => {
       res.send(200, { data });
     })

@@ -25,18 +25,23 @@ export class ProductsReview extends PureComponent {
     fechaReview: '12/4/19',
     userRating: 0,
     reviewEnable: false,
+    reviews: this.props.data.reviews,
+    updateComponent: false,
   };
 
   componentDidMount() {
-    if (window.localStorage.user) {
+    const storage = window.localStorage.user;
+    if (storage) {
+      const userSession = JSON.parse(storage);
       this.setState({
         reviewEnable: true,
+        userSession,
       });
     }
   }
 
   onStarClick(nextValue, prevValue, name) {
-    console.log('name: %s, nextValue: %s, prevValue: %s', name, nextValue, prevValue);
+    // console.log('name: %s, nextValue: %s, prevValue: %s', name, nextValue, prevValue);
     this.setState({ userRating: nextValue });
   }
 
@@ -45,19 +50,37 @@ export class ProductsReview extends PureComponent {
   };
 
   addNewReview = () => {
-    console.log({
+    const postData = {
       title: 'none',
       descripction: this.state.reviewContent,
       images_url: 'none',
       rating: this.state.userRating,
-      user_id: null,
+      user_id: this.state.userSession.id_user,
       product_id: this.props.data.id_product,
-    });
+    };
+
+    fetch(`${process.env.DB_API_HOST}/review`, {
+      method: 'POST',
+      headers: new Headers(),
+      body: JSON.stringify(postData),
+      mode: 'cors',
+      cache: 'default',
+    })
+      .then(res => res.json())
+      .then(res => {
+        debugger;
+        if (res.data) {
+          fetch(`${process.env.DB_API_HOST}/product/${this.props.data.id_product}`)
+            .then(res => res.json())
+            .then(res => {
+              debugger;
+              this.setState({ reviews: res.data.reviews });
+            });
+        }
+      });
   };
 
   render() {
-    console.log(this.props.data);
-
     return (
       <div className="reviews-container">
         <Row>
@@ -66,7 +89,7 @@ export class ProductsReview extends PureComponent {
           </div>
         </Row>
 
-        {this.props.data.reviews.map(review => {
+        {this.state.reviews.map(review => {
           return (
             <div>
               <Row className="review-content">
