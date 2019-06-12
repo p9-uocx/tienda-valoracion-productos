@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 05-06-2019 a las 18:35:10
+-- Tiempo de generación: 12-06-2019 a las 02:31:19
 -- Versión del servidor: 5.7.26-0ubuntu0.18.04.1
--- Versión de PHP: 7.2.17-0ubuntu0.18.04.1
+-- Versión de PHP: 7.2.19-0ubuntu0.18.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -148,28 +148,29 @@ CREATE TABLE `reviews` (
 --
 
 INSERT INTO `reviews` (`title`, `descripction`, `images_url`, `rating`, `user_id`, `product_id`, `date_add`) VALUES
-(NULL, NULL, NULL, 4, 3, 2, '2019-05-20'),
-(NULL, NULL, NULL, 3, 4, 2, '2019-05-20'),
-(NULL, NULL, NULL, 2, 5, 2, '2019-05-20'),
-(NULL, NULL, NULL, 3, 4, 3, '2019-06-11'),
-(NULL, NULL, NULL, 4, 5, 4, '2019-06-26'),
-(NULL, NULL, NULL, 3, 3, 5, '2019-06-19'),
-(NULL, NULL, NULL, 5, 4, 6, '2019-06-26'),
-(NULL, NULL, NULL, 5, 5, 7, '2019-06-18'),
-(NULL, NULL, NULL, 4, 3, 8, '2019-06-21'),
-(NULL, NULL, NULL, 5, 4, 10, '2019-06-15'),
-(NULL, NULL, NULL, 4, 5, 11, '2019-06-12'),
-(NULL, NULL, NULL, 3, 3, 12, '2019-06-21'),
-(NULL, NULL, NULL, 4, 4, 13, '2019-06-12'),
-(NULL, NULL, NULL, 5, 5, 14, '2019-06-02'),
-(NULL, NULL, NULL, 2, 3, 15, '2019-06-08'),
-(NULL, NULL, NULL, 5, 4, 16, '2019-06-02'),
-(NULL, NULL, NULL, 3, 5, 17, '2019-06-14'),
-(NULL, NULL, NULL, 4, 3, 18, '2019-06-06'),
-(NULL, NULL, NULL, 5, 4, 19, '2019-06-03'),
-(NULL, NULL, NULL, 4, 5, 20, '2019-06-08'),
-(NULL, NULL, NULL, 5, 3, 21, '2019-06-04'),
-(NULL, NULL, NULL, 4, 4, 22, '2019-06-06');
+(NULL, 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', NULL, 4, 3, 2, '2019-05-20'),
+(NULL, 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', NULL, 3, 3, 5, '2019-06-19'),
+(NULL, 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', NULL, 4, 3, 8, '2019-06-21'),
+(NULL, 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', NULL, 3, 3, 12, '2019-06-21'),
+(NULL, 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', NULL, 2, 3, 15, '2019-06-08'),
+(NULL, 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', NULL, 4, 3, 18, '2019-06-06'),
+(NULL, 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', NULL, 5, 3, 21, '2019-06-04'),
+(NULL, 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', NULL, 3, 4, 2, '2019-05-20'),
+(NULL, 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', NULL, 3, 4, 3, '2019-06-11'),
+(NULL, 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', NULL, 5, 4, 6, '2019-06-26'),
+(NULL, 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', NULL, 5, 4, 10, '2019-06-15'),
+(NULL, 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', NULL, 4, 4, 13, '2019-06-12'),
+(NULL, 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', NULL, 5, 4, 16, '2019-06-02'),
+(NULL, 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', NULL, 5, 4, 19, '2019-06-03'),
+(NULL, 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', NULL, 4, 4, 22, '2019-06-06'),
+(NULL, 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', NULL, 2, 5, 2, '2019-05-20'),
+(NULL, 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', NULL, 4, 5, 4, '2019-06-26'),
+(NULL, 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', NULL, 5, 5, 7, '2019-06-18'),
+(NULL, 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', NULL, 4, 5, 11, '2019-06-12'),
+(NULL, 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', NULL, 5, 5, 14, '2019-06-02'),
+(NULL, 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', NULL, 3, 5, 17, '2019-06-14'),
+(NULL, 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', NULL, 4, 5, 20, '2019-06-08'),
+(NULL, 'Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, at everti meliore erroribus sea. Vero graeco cotidieque ea duo, in eirmod insolens interpretaris nam. Pro at nostrud percipit definitiones, eu tale porro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.', NULL, 5, 5, 22, '2019-06-02');
 
 -- --------------------------------------------------------
 
@@ -230,7 +231,7 @@ CREATE TABLE `Users` (
 --
 
 INSERT INTO `Users` (`id_user`, `first_name`, `last_name`, `gender`, `email`, `password`, `rol`, `date_add`) VALUES
-(1, 'Javier', 'Delgado', 'male', 'mohatar@yahoo.com', 'zanfona', 1, '2019-05-20'),
+(1, 'Javier', 'Delgado', NULL, 'mohatar@yahoo.com', 'zanfona', 1, '2019-05-20'),
 (2, 'Sergio', 'Garcia', 'male', 'sergio@gmail.com', 'zanfona', 1, '2019-06-01'),
 (3, 'Laura', 'Fernandez', 'female', 'laura@gmail.com', 'zanfona', 2, '2019-06-02'),
 (4, 'Natalia', 'Urrutia', 'female', 'natalia@gmail.com', 'zanfona', 3, '2019-03-02'),
@@ -303,12 +304,12 @@ ALTER TABLE `Products`
 -- AUTO_INCREMENT de la tabla `Roles`
 --
 ALTER TABLE `Roles`
-  MODIFY `id_roles` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_roles` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `Users`
 --
 ALTER TABLE `Users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- Restricciones para tablas volcadas
 --
