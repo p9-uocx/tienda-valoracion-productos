@@ -30,8 +30,8 @@ export const AdminCreateProduct = ({ data = {}, onCloseClick }) => {
           <Container>
             <Row>
               <Col>
-                <TextField
-                  id="outlined-name"
+                <TextField                  
+                  name="reference"
                   label="Reference"
                   defaultValue=""
                   margin="normal"
@@ -39,8 +39,8 @@ export const AdminCreateProduct = ({ data = {}, onCloseClick }) => {
                 />
               </Col>
               <Col>
-                <TextField
-                  id="outlined-name"
+                <TextField                  
+                  name="title"
                   label="Title"
                   defaultValue=""
                   margin="normal"
@@ -53,7 +53,7 @@ export const AdminCreateProduct = ({ data = {}, onCloseClick }) => {
                 <TextField
                   multiline
                   rowsMax="5"
-                  id="outlined-name"
+                  name="description"
                   label="Description"
                   defaultValue=""
                   margin="normal"
@@ -64,7 +64,7 @@ export const AdminCreateProduct = ({ data = {}, onCloseClick }) => {
             <Row>
               <Col>
                 <TextField
-                  id="outlined-name"
+                  name="price"
                   label="Price"
                   defaultValue=""
                   margin="normal"
@@ -73,7 +73,7 @@ export const AdminCreateProduct = ({ data = {}, onCloseClick }) => {
               </Col>
               <Col>
                 <TextField
-                  id="outlined-name"
+                  name="img_url"
                   label="Img Url"
                   defaultValue=""
                   margin="normal"

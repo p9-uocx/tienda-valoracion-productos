@@ -56,7 +56,6 @@ export const AdminCreateUser = ({ data = {}, onCloseClick, onCreateSave }) => {
                   <InputLabel htmlFor="rol">Rol</InputLabel>
                   <Select
                     className="min-width-select"
-                    
                     name="rol"
                     inputProps={{
                       name: 'rol',
@@ -73,7 +72,7 @@ export const AdminCreateUser = ({ data = {}, onCloseClick, onCreateSave }) => {
                 <FormControl variant="outlined" >
                   <InputLabel htmlFor="gender">Gender</InputLabel>
                   <Select
-                   className="min-width-select"
+                    className="min-width-select"
                     name="gender"
                     inputProps={{
                       name: 'gender',
