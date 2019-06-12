@@ -1,17 +1,11 @@
 export * from './create-category';
 export * from './create-product';
-
-
 export * from './create-user';
 export * from './edit-category';
 export * from './edit-product';
-
-
 export * from './edit-user';
 export * from './list-category';
 export * from './list-product';
-
-
 export * from './list-user';
 export * from './modal-notification';
 export * from './fetch-admin';

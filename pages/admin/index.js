@@ -14,8 +14,6 @@ import MenuIcon from '@material-ui/icons/Menu';
 import PowerSettingsNew from '@material-ui/icons/PowerSettingsNew';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import Category from '@material-ui/icons/Category';
-import LocalActivity from '@material-ui/icons/LocalActivity';
-import CheckCircle from '@material-ui/icons/CheckCircle';
 import Dashboard from '@material-ui/icons/Dashboard';
 import Image from 'react-bootstrap/Image';
 import Container from 'react-bootstrap/Container';

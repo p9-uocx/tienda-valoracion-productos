@@ -44,6 +44,9 @@ export default class Index extends PureComponent {
     return { api: { ...productData.data, products: productDataMap } };
   }
 
+
+
+
   // este metodo tiene que estar siempre en React, es el encargado de pintar el html
   render() {
     return (

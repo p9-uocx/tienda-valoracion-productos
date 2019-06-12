@@ -6,6 +6,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Link from 'next/link';
+import Router from 'next/router';
 
 import './layout.scss';
 
@@ -31,6 +32,11 @@ export class Layout extends PureComponent {
       });
     }
   }
+
+  handleLogout = () => {
+    window.localStorage.removeItem('user');
+    Router.push('/login');
+  };
 
   render() {
     return (
@@ -70,26 +76,40 @@ export class Layout extends PureComponent {
                     </div>
                     <div className="account_icon">
                       <div className="text-account text-bold">Account</div>
-
                       {this.state.userSession.first_name ? (
                         <div className="text-account">
                           Hello {this.state.userSession.first_name}!
                         </div>
                       ) : (
-                        <div className="text-account">Sign in</div>
-                      )}
+                          <div className="text-account">Sign in</div>
+                        )}
                     </div>
                   </div>
                 </Link>
-                <div className="account_icon">
-                  <div className="account_icon">
-                    <span className="fas fa-shopping-basket icons" />
+                {this.state.userSession.first_name ? (
+                  <div className="account_icon" onClick={this.handleLogout}>
+                    <div className="account_icon">
+                      <span className="fas fa-sign-out-alt icons" />
+                    </div>
+                    <div className="account_icon">
+                      <div className="text-account text-bold">Sign-Out</div>
+                      <div className="text-account">Goodbye!</div>                      
+                    </div>
                   </div>
-                  <div className="account_icon">
-                    <div className="text-account text-bold">Cart</div>
-                    <div className="text-account">0.00 €</div>
-                  </div>
-                </div>
+
+                ) : (
+                    <div className="account_icon">
+                      <div className="account_icon">
+                        <span className="fas fa-shopping-basket icons" />
+                      </div>
+                      <div className="account_icon">
+                        <div className="text-account text-bold">Cart</div>
+                        <div className="text-account">0.00 €</div>
+                      </div>
+                    </div>
+
+                  )}
+
               </div>
             </div>
           </div>
