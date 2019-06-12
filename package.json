@@ -14,8 +14,8 @@
   "scripts": {
     "backend": "nodemon server",
     "backend:debug": "nodemon --inspect server",
-    "frontend:serve": "next start",
-    "frontend:build": "next build",
+    "serve": "next start",
+    "build": "next build",
     "frontend": "next",
     "start": "concurrently 'npm run backend' 'npm run frontend'",
     "start:debug": "concurrently 'npm run backend:debug' 'npm run frontend'"
