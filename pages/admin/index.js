@@ -104,21 +104,7 @@ class Admin extends PureComponent {
                   <Category className="padding-right-icon" />
                   Categorias
                 </Button>
-              </Link>
-              {/*
-              <Link href={{ pathname: '/admin', query: { service: 'role' } }}>
-                <Button color="primary" className="link-menu" onClick={this.openMenu}>
-                  <CheckCircle className="padding-right-icon" />
-                  Roles
-                </Button>
-              </Link>
-              */}
-              <Link href={{ pathname: '/admin', query: { service: 'review' } }}>
-                <Button color="primary" className="link-menu" onClick={this.openMenu}>
-                  <LocalActivity className="padding-right-icon" />
-                  Reviews
-                </Button>
-              </Link>
+              </Link>              
             </Grid>
           </nav>
 
