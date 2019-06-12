@@ -8,6 +8,9 @@ import CloseIcon from '@material-ui/icons/Close';
 import CardActions from '@material-ui/core/CardActions';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 
 export const AdminCreateProduct = ({ data = {}, onCloseClick }) => {
@@ -22,49 +25,74 @@ export const AdminCreateProduct = ({ data = {}, onCloseClick }) => {
           </IconButton>
         }
       />
-            <CardContent className="padding-top-card-content">
-        <form className="form-edit-user" noValidate autoComplete="off">
-          <TextField
-            id="outlined-name"
-            label="Reference"
-            className="flex-child"
-            margin="normal"
-            variant="outlined"
-          />
-          <TextField
-            id="outlined-name"
-            label="Title"
-            className="flex-child"
-            margin="normal"
-            variant="outlined"
-          />
-          <TextField
-            multiline
-            rowsMax="5"
-            id="outlined-name"
-            label="Description"
-            className="flex-child"
-            margin="normal"
-            variant="outlined"
-          />
-          <TextField
-            id="outlined-name"
-            label="Price"
-            className="flex-child"
-            margin="normal"
-            variant="outlined"
-          />
-          <TextField
-            id="outlined-name"
-            label="Img Url"
-            className="flex-child img-url"
-            margin="normal"
-            variant="outlined"
-          />
+      <CardContent className="padding-top-card-content">
+        <form id="form-create-user" noValidate autoComplete="off">
+          <Container>
+            <Row>
+              <Col>
+                <TextField                  
+                  name="reference"
+                  label="Reference"
+                  defaultValue=""
+                  margin="normal"
+                  variant="outlined"
+                />
+              </Col>
+              <Col>
+                <TextField                  
+                  name="title"
+                  label="Title"
+                  defaultValue=""
+                  margin="normal"
+                  variant="outlined"
+                />
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <TextField
+                  multiline
+                  rowsMax="5"
+                  name="description"
+                  label="Description"
+                  defaultValue=""
+                  margin="normal"
+                  variant="outlined"
+                />
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <TextField
+                  name="price"
+                  label="Price"
+                  defaultValue=""
+                  margin="normal"
+                  variant="outlined"
+                />
+              </Col>
+              <Col>
+                <TextField
+                  name="img_url"
+                  label="Img Url"
+                  defaultValue=""
+                  margin="normal"
+                  variant="outlined"
+                />
+              </Col>
+            </Row>
+          </Container>
         </form>
       </CardContent>
       <CardActions>
-        <Button variant="outlined" color="secondary" className="margin-button">
+        <Button
+          variant="outlined"
+          color="secondary"
+          className="margin-button"
+          type="submit"
+          form="form-create-product"
+
+        >
           Create Product
           </Button>
       </CardActions>
