@@ -118,11 +118,11 @@ export default class Login extends PureComponent {
                         />
                       </div>
                     </form>
-                      <div className="login-button-container">
-                        <button form="login-form" className="login-button" title="login" type="submit">
-                          <span>Login</span>
-                        </button>
-                      </div>
+                    <div className="login-button-container">
+                      <button form="login-form" className="login-button" title="login" type="submit">
+                        <span>Login</span>
+                      </button>
+                    </div>
                     <span className="red">* Required Fields</span>
                   </div>
                 </div>
