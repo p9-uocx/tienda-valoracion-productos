@@ -152,8 +152,6 @@ export class FetchAdmin extends PureComponent {
     const ListService = listServiceSelector[this.props.query.service];
     const ModalService = modalServiceSelector[this.state.modal];
 
-    console.log(this.state.modal);
-
     return (
       <Container>
         {ListService && (

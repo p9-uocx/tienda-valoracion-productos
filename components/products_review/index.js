@@ -68,12 +68,10 @@ export class ProductsReview extends PureComponent {
     })
       .then(res => res.json())
       .then(res => {
-        debugger;
         if (res.data) {
           fetch(`${process.env.DB_API_HOST}/product/${this.props.data.id_product}`)
             .then(res => res.json())
             .then(res => {
-              debugger;
               this.setState({ reviews: res.data.reviews });
             });
         }

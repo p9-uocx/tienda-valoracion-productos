@@ -8,11 +8,10 @@ import { Layout } from '../../components/layout';
 import { NavMenu } from '../../components/nav';
 import { ProductLoader } from '@Components';
 
-import './coffe_tables.scss'
+import './coffe_tables.scss';
 
 export default class CoffeTablesPage extends PureComponent {
-
-	static async getInitialProps({ req }) {
+  static async getInitialProps({ req }) {
     const res = await fetch(`${process.env.DB_API_HOST}/category/3`);
     const categoryData = await res.json();
 
@@ -32,32 +31,27 @@ export default class CoffeTablesPage extends PureComponent {
     return { api: { ...categoryData.data, products: categoryDataMap } };
   }
 
-
-	render() {
-
-		console.log(this.props.api)		
-
-		return (
-			<Layout title="Coffe Tables" {...this.props}>
-				<Container>
-					<NavMenu></NavMenu>
-					{/* Deal Section */}
-					<section className="deal-title">
-						<Row>
-							<Col sm="auto">
-								<div>
-									<h4>Coffe Tables</h4>
-								</div>
-							</Col>
-							<Col id="hr">
-								<hr />
-							</Col>
-						</Row>
-					</section>
-					<ProductLoader data={this.props.api}></ProductLoader>
-
-				</Container>
-			</Layout>
-		);
-	}
+  render() {
+    return (
+      <Layout title="Coffe Tables" {...this.props}>
+        <Container>
+          <NavMenu />
+          {/* Deal Section */}
+          <section className="deal-title">
+            <Row>
+              <Col sm="auto">
+                <div>
+                  <h4>Coffe Tables</h4>
+                </div>
+              </Col>
+              <Col id="hr">
+                <hr />
+              </Col>
+            </Row>
+          </section>
+          <ProductLoader data={this.props.api} />
+        </Container>
+      </Layout>
+    );
+  }
 }

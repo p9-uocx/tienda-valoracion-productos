@@ -18,6 +18,20 @@ export class Layout extends PureComponent {
     title: 'Tienda Online',
   };
 
+  state = {
+    userSession: {},
+  };
+
+  componentDidMount() {
+    const storage = window.localStorage.user;
+    if (storage) {
+      const userSession = JSON.parse(storage);
+      this.setState({
+        userSession,
+      });
+    }
+  }
+
   render() {
     return (
       <div>
@@ -45,7 +59,9 @@ export class Layout extends PureComponent {
         <header>
           <div className="header_container container">
             <div>
-              <img id="logo" src="/static/img/header/logo2.png" />
+              <Link href="/">
+                <img id="logo" src="/static/img/header/logo2.png" />
+              </Link>
               <div className="account_container">
                 <Link href="/login">
                   <div className="account_icon">
@@ -54,7 +70,14 @@ export class Layout extends PureComponent {
                     </div>
                     <div className="account_icon">
                       <div className="text-account text-bold">Account</div>
-                      <div className="text-account">Hello! Sign in</div>
+
+                      {this.state.userSession.first_name ? (
+                        <div className="text-account">
+                          Hello {this.state.userSession.first_name}!
+                        </div>
+                      ) : (
+                        <div className="text-account">Sign in</div>
+                      )}
                     </div>
                   </div>
                 </Link>

@@ -33,9 +33,6 @@ export default class Product extends PureComponent {
   };
 
   render() {
-    console.log(this.props.query);
-    console.log(this.props.api.productData);
-
     const reviewsValue = reviewsTotalValue(this.props.api.productData.reviews);
 
     return (
