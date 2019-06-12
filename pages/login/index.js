@@ -87,7 +87,7 @@ export default class Login extends PureComponent {
                   <div className="login-user-content">
                     <h6>Registered Customers</h6>
                     <p>If you have an account with us, please log in</p>
-                    <form className="login-form" onSubmit={this.handleSubmit}>
+                    <form id="login-form" className="login-form" onSubmit={this.handleSubmit}>
                       <div className="input-padding">
                         <label htmlFor="mail">
                           Email Address<span className="red"> *</span>
@@ -117,12 +117,12 @@ export default class Login extends PureComponent {
                           type="password"
                         />
                       </div>
+                    </form>
                       <div className="login-button-container">
-                        <button className="login-button" title="login" type="submit">
+                        <button form="login-form" className="login-button" title="login" type="submit">
                           <span>Login</span>
                         </button>
                       </div>
-                    </form>
                     <span className="red">* Required Fields</span>
                   </div>
                 </div>

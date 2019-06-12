@@ -96,7 +96,6 @@ export class Layout extends PureComponent {
                       <div className="text-account">Goodbye!</div>                      
                     </div>
                   </div>
-
                 ) : (
                     <div className="account_icon">
                       <div className="account_icon">
@@ -107,9 +106,7 @@ export class Layout extends PureComponent {
                         <div className="text-account">0.00 €</div>
                       </div>
                     </div>
-
                   )}
-
               </div>
             </div>
           </div>
