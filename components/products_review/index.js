@@ -27,6 +27,7 @@ export class ProductsReview extends PureComponent {
     reviewEnable: false,
     reviews: this.props.data.reviews,
     updateComponent: false,
+    errorReview: false
   };
 
   componentDidMount() {
@@ -74,6 +75,8 @@ export class ProductsReview extends PureComponent {
             .then(res => {
               this.setState({ reviews: res.data.reviews });
             });
+        } else if (res.error) {
+          this.setState({ errorReview: true })
         }
       });
   };
@@ -131,6 +134,15 @@ export class ProductsReview extends PureComponent {
               <div className="user-review-rating">
                 <span>
                   Your Rating <span>*</span>
+                  {this.state.errorReview ? (
+                    <div>
+                      <p className="red">Sorry but this user has reviewed this product before! Only one review per user/product is allowed!</p>
+                    </div>
+                  ) : (
+                      <div>
+                        <p className="red"></p>
+                      </div>
+                    )}
                 </span>
               </div>
             </Row>
@@ -167,7 +179,7 @@ export class ProductsReview extends PureComponent {
                   onClick={this.addNewReview}>
                   <span>Submit Review</span>
                 </button>
-              </div>
+              </div>              
             </Row>
           </section>
         )}

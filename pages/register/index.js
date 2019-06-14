@@ -85,7 +85,6 @@ export default class Register extends PureComponent {
                               required
                             />
                           </div>
-
                         </Col>
                       </Row>
                       <Row>
