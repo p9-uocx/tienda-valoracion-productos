@@ -12,6 +12,7 @@
     "url": "https://github.com/p9-uocx/tienda-valoracion-productos/issues"
   },
   "scripts": {
+    "build": "react-scripts build",
     "backend": "nodemon server",
     "backend:pro": "node server",
     "backend:debug": "nodemon --inspect server",
