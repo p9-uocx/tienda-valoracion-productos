@@ -6,18 +6,12 @@ import {
   ModalNotification,
   ListCategory,
   ListProduct,
-  ListReview,
-  ListRole,
   ListUser,
   AdminEditCategory,
   AdminEditProduct,
-  AdminEditReview,
-  AdminEditRole,
   AdminEditUser,
   AdminCreateCategory,
   AdminCreateProduct,
-  AdminCreateReview,
-  AdminCreateRole,
   AdminCreateUser,
 } from '@Components';
 import Container from '@material-ui/core/Container';
@@ -28,8 +22,6 @@ import AddIcon from '@material-ui/icons/Add';
 const listServiceSelector = {
   category: ListCategory,
   product: ListProduct,
-  review: ListReview,
-  role: ListRole,
   user: ListUser,
 };
 
@@ -37,13 +29,9 @@ const modalServiceSelector = {
   notification: ModalNotification,
   categoryEdit: AdminEditCategory,
   productEdit: AdminEditProduct,
-  reviewEdit: AdminEditReview,
-  roleEdit: AdminEditRole,
   userEdit: AdminEditUser,
   categoryCreate: AdminCreateCategory,
   productCreate: AdminCreateProduct,
-  reviewCreate: AdminCreateReview,
-  roleCreate: AdminCreateRole,
   userCreate: AdminCreateUser,
 };
 
